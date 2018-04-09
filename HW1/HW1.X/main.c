@@ -54,11 +54,17 @@ int main() {
     DDPCONbits.JTAGEN = 0;
 
     // do your TRIS and LAT commands here
+    TRISA = 0b0111; //set for LED
+    LATA = 0b1000;  //set LED ON
+    TRISB = 0b1111; //set for pushbutton  
 
     __builtin_enable_interrupts();
 
     while(1) {
 	// use _CP0_SET_COUNT(0) and _CP0_GET_COUNT() to test the PIC timing
-	// remember the core timer runs at half the sysclk
+	// remember the core timer runs at half the sysclk (CT runs at 24MHz)
+       // _CPO_SET_COUNT(0);
+       // LATA = 0b1000;  //set LED ON
+        
     }
 }
