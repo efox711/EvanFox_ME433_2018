@@ -7839,6 +7839,35 @@ diameter 5 mm, grid 2.54 mm</description>
 <text x="-8" y="-6" size="1.778" layer="21">&gt;NAME</text>
 <text x="2" y="-6" size="1.778" layer="21">&gt;VALUE</text>
 </package>
+<package name="PB">
+<wire x1="1.905" y1="2.54" x2="2.54" y2="2.54" width="0.2032" layer="21"/>
+<wire x1="2.54" y1="2.54" x2="3.175" y2="1.27" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="1.27" x2="3.81" y2="0.635" width="0.2032" layer="21"/>
+<wire x1="3.81" y1="-0.635" x2="3.175" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="-1.27" x2="2.54" y2="-2.54" width="0.2032" layer="21"/>
+<wire x1="2.54" y1="-2.54" x2="1.905" y2="-2.54" width="0.2032" layer="21"/>
+<wire x1="-3.175" y1="1.27" x2="-2.54" y2="2.54" width="0.2032" layer="21"/>
+<wire x1="-2.54" y1="2.54" x2="-1.905" y2="2.54" width="0.2032" layer="21"/>
+<wire x1="-3.81" y1="0.635" x2="-3.81" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="-3.175" y1="1.27" x2="-3.81" y2="0.635" width="0.2032" layer="21"/>
+<wire x1="-3.81" y1="-0.635" x2="-3.175" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="-1.905" y1="-2.54" x2="-2.54" y2="-2.54" width="0.2032" layer="21"/>
+<wire x1="-2.54" y1="-2.54" x2="-3.175" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="3.81" y1="0.635" x2="3.81" y2="-0.635" width="0.2032" layer="21"/>
+<pad name="1" x="-2.54" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="2" x="2.54" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<text x="-8.89" y="1.397" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="-8.89" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+<wire x1="-1.905" y1="2.54" x2="1.905" y2="2.54" width="0.2" layer="21"/>
+<wire x1="-1.905" y1="-2.54" x2="1.905" y2="-2.54" width="0.2" layer="21"/>
+<wire x1="-1.016" y1="-1.905" x2="-1.016" y2="0.254" width="0.2" layer="21"/>
+<wire x1="1.016" y1="-1.905" x2="1.016" y2="0.254" width="0.2" layer="21"/>
+<wire x1="-1.016" y1="1.016" x2="0" y2="1.016" width="0.2" layer="21"/>
+<wire x1="1.016" y1="1.016" x2="0" y2="1.016" width="0.2" layer="21"/>
+<wire x1="0" y1="1.016" x2="0" y2="1.778" width="0.2" layer="21"/>
+<wire x1="-1.016" y1="-1.905" x2="-1.905" y2="-1.905" width="0.2" layer="21"/>
+<wire x1="1.016" y1="-1.905" x2="1.905" y2="-1.905" width="0.2" layer="21"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="C0402" urn="urn:adsk.eagle:package:26136/1" type="box">
@@ -13758,6 +13787,22 @@ diameter 5 mm, grid 2.54 mm</description>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 <connect gate="G$1" pin="3" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PB">
+<gates>
+<gate name="G$1" symbol="PB" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="PB">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
