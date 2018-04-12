@@ -411,6 +411,26 @@ package type P</description>
 <wire x1="1.27" y1="0" x2="0.762" y2="0" width="0.2" layer="21"/>
 <wire x1="0.762" y1="0" x2="-0.635" y2="0.762" width="0.2" layer="21"/>
 </package>
+<package name="1X08">
+<description>&lt;h3&gt;Plated Through Hole -8 Pin&lt;/h3&gt;
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count:8&lt;/li&gt;
+&lt;li&gt;Pin pitch:0.1"&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;CONN_08&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<pad name="1" x="0" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="2" x="2.54" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="3" x="5.08" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="4" x="7.62" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="5" x="10.16" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="6" x="12.7" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="7" x="15.24" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="8" x="17.78" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<text x="-1.27" y="1.397" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="-1.27" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+</package>
 </packages>
 <packages3d>
 <package3d name="C025-025X050" urn="urn:adsk.eagle:package:26151/1" type="box">
@@ -678,8 +698,8 @@ design rules under a new name.</description>
 <element name="C4" library="HW2" package="C025-025X050" package3d_urn="urn:adsk.eagle:package:26151/1" value="0.1uF" x="-50" y="-300"/>
 <element name="R1" library="HW2" package="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="330" x="-50" y="-400"/>
 <element name="R2" library="HW2" package="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k" x="-50" y="-450"/>
-<element name="R3" library="HW2" package="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="" x="-50" y="-500"/>
-<element name="R4" library="HW2" package="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="" x="-50" y="-550"/>
+<element name="R3" library="HW2" package="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="330" x="-50" y="-500"/>
+<element name="R4" library="HW2" package="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k" x="-50" y="-550"/>
 <element name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" package="LED3MM" package3d_urn="urn:adsk.eagle:package:15797/1" value="RED" x="-50" y="-600"/>
 <element name="LED2" library="led" library_urn="urn:adsk.eagle:library:259" package="LED3MM" package3d_urn="urn:adsk.eagle:package:15797/1" value="GREEN" x="-50" y="-650"/>
 <element name="C6" library="HW2" package="B45181B" package3d_urn="urn:adsk.eagle:package:25794/1" value="10uF" x="-50" y="-700"/>
@@ -688,7 +708,9 @@ design rules under a new name.</description>
 <element name="U$4" library="HW2" package="DIL28-3" value="PIC32MX250F128B" x="0" y="-850"/>
 <element name="U$5" library="HW2" package="OSC" value="OSCOSC" x="-50" y="-900"/>
 <element name="RESET" library="HW2" package="PB" value="PB" x="-50.8" y="-939.8"/>
-<element name="U$6" library="HW2" package="PB" value="PB" x="-50.8" y="-965.2"/>
+<element name="USER" library="HW2" package="PB" value="PB" x="-50.8" y="-965.2"/>
+<element name="J3" library="HW2" package="1X08" value="CONN8" x="-50.8" y="-990.6"/>
+<element name="J4" library="HW2" package="1X08" value="CONN8" x="-50.8" y="-1016"/>
 </elements>
 <signals>
 <signal name="+3V3">
@@ -702,10 +724,12 @@ design rules under a new name.</description>
 <contactref element="U$4" pad="23"/>
 <contactref element="C3" pad="1"/>
 <contactref element="R2" pad="2"/>
+<contactref element="R4" pad="2"/>
 <wire x1="-39.84" y1="-800" x2="-52.54" y2="-700" width="0" layer="19" extent="1-1"/>
 <wire x1="-3.81" y1="-846.19" x2="-39.84" y2="-800" width="0" layer="19" extent="1-1"/>
 <wire x1="13.97" y1="-853.81" x2="-3.81" y2="-846.19" width="0" layer="19" extent="1-1"/>
-<wire x1="-44.92" y1="-450" x2="-52.54" y2="-700" width="0" layer="19" extent="1-1"/>
+<wire x1="-44.92" y1="-550" x2="-52.54" y2="-700" width="0" layer="19" extent="1-1"/>
+<wire x1="-44.92" y1="-450" x2="-44.92" y2="-550" width="0" layer="19" extent="1-1"/>
 <wire x1="-44.92" y1="-400" x2="-44.92" y2="-450" width="0" layer="19" extent="1-1"/>
 <wire x1="-51.27" y1="-300" x2="-44.92" y2="-400" width="0" layer="19" extent="1-1"/>
 <wire x1="-51.27" y1="-250" x2="-51.27" y2="-300" width="0" layer="19" extent="1-1"/>
@@ -736,21 +760,23 @@ design rules under a new name.</description>
 <contactref element="C3" pad="2"/>
 <contactref element="RESET" pad="2"/>
 <contactref element="R3" pad="1"/>
-<wire x1="-48.73" y1="-150" x2="-48.73" y2="-200" width="0" layer="19" extent="1-1"/>
-<wire x1="-48.73" y1="-250" x2="-48.73" y2="-200" width="0" layer="19" extent="1-1"/>
-<wire x1="-48.73" y1="-300" x2="-48.73" y2="-250" width="0" layer="19" extent="1-1"/>
-<wire x1="-51.27" y1="-50" x2="-48.73" y2="-150" width="0" layer="19" extent="1-1"/>
-<wire x1="-44.9" y1="48.4" x2="-51.27" y2="-50" width="0" layer="19" extent="1-1"/>
-<wire x1="-55.08" y1="-500" x2="-48.73" y2="-300" width="0" layer="19" extent="1-1"/>
-<wire x1="-48.73" y1="-600" x2="-55.08" y2="-500" width="0" layer="19" extent="1-1"/>
-<wire x1="-47.46" y1="-700" x2="-48.73" y2="-600" width="0" layer="19" extent="1-1"/>
-<wire x1="-47.46" y1="-750" x2="-47.46" y2="-700" width="0" layer="19" extent="1-1"/>
-<wire x1="-50" y1="-800" x2="-47.46" y2="-750" width="0" layer="19" extent="1-1"/>
-<wire x1="-13.97" y1="-846.19" x2="-50" y2="-800" width="0" layer="19" extent="1-1"/>
+<contactref element="USER" pad="2"/>
+<wire x1="-48.26" y1="-939.8" x2="-48.26" y2="-965.2" width="0" layer="19" extent="1-1"/>
+<wire x1="-52.54" y1="-900" x2="-48.26" y2="-939.8" width="0" layer="19" extent="1-1"/>
+<wire x1="-13.97" y1="-846.19" x2="-52.54" y2="-900" width="0" layer="19" extent="1-1"/>
 <wire x1="1.27" y1="-853.81" x2="-13.97" y2="-846.19" width="0" layer="19" extent="1-1"/>
 <wire x1="6.35" y1="-846.19" x2="1.27" y2="-853.81" width="0" layer="19" extent="1-1"/>
-<wire x1="-52.54" y1="-900" x2="-13.97" y2="-846.19" width="0" layer="19" extent="1-1"/>
-<wire x1="-48.26" y1="-939.8" x2="-52.54" y2="-900" width="0" layer="19" extent="1-1"/>
+<wire x1="-50" y1="-800" x2="-13.97" y2="-846.19" width="0" layer="19" extent="1-1"/>
+<wire x1="-47.46" y1="-750" x2="-50" y2="-800" width="0" layer="19" extent="1-1"/>
+<wire x1="-47.46" y1="-700" x2="-47.46" y2="-750" width="0" layer="19" extent="1-1"/>
+<wire x1="-48.73" y1="-600" x2="-47.46" y2="-700" width="0" layer="19" extent="1-1"/>
+<wire x1="-55.08" y1="-500" x2="-48.73" y2="-600" width="0" layer="19" extent="1-1"/>
+<wire x1="-48.73" y1="-300" x2="-55.08" y2="-500" width="0" layer="19" extent="1-1"/>
+<wire x1="-48.73" y1="-250" x2="-48.73" y2="-300" width="0" layer="19" extent="1-1"/>
+<wire x1="-48.73" y1="-200" x2="-48.73" y2="-250" width="0" layer="19" extent="1-1"/>
+<wire x1="-48.73" y1="-150" x2="-48.73" y2="-200" width="0" layer="19" extent="1-1"/>
+<wire x1="-51.27" y1="-50" x2="-48.73" y2="-150" width="0" layer="19" extent="1-1"/>
+<wire x1="-44.9" y1="48.4" x2="-51.27" y2="-50" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="U$1" pad="2"/>
@@ -822,6 +848,10 @@ design rules under a new name.</description>
 </signal>
 <signal name="B4/USER">
 <contactref element="U$4" pad="11"/>
+<contactref element="R4" pad="1"/>
+<contactref element="USER" pad="1"/>
+<wire x1="8.89" y1="-853.81" x2="-55.08" y2="-550" width="0" layer="19" extent="1-1"/>
+<wire x1="-53.34" y1="-965.2" x2="8.89" y2="-853.81" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="A4/LED">
 <contactref element="U$4" pad="12"/>
