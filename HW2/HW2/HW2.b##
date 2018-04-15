@@ -1914,6 +1914,7 @@
 <rectangle x1="14.3764" y1="48.9204" x2="15.1892" y2="49.022" layer="200"/>
 <rectangle x1="14.3764" y1="49.022" x2="14.7828" y2="49.1236" layer="200"/>
 <text x="45.085" y="33.782" size="6.4516" layer="200" font="vector" ratio="10" rot="R90">FOX</text>
+<text x="20.955" y="2.667" size="1.27" layer="25" font="vector" ratio="10">SW</text>
 </plain>
 <libraries>
 <library name="HW2">
