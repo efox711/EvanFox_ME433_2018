@@ -2486,7 +2486,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="45.555" y="30.672" size="1.27" layer="27" ratio="10" rot="R180"/>
 </element>
 <element name="U$3" library="HW2" package="1X05" value="PICKIT" x="1.424" y="37.122" smashed="yes" rot="R90">
-<attribute name="VALUE" x="2.883" y="35.587" size="0.6096" layer="27" font="vector" ratio="20" rot="R180"/>
+<attribute name="VALUE" x="6.693" y="36.857" size="0.6096" layer="27" font="vector" ratio="20" rot="R180"/>
 </element>
 <element name="U$4" library="HW2" package="DIL28-3" value="PIC32MX250F128B" x="30.48" y="30.48" smashed="yes" rot="R270">
 <attribute name="VALUE" x="29.5402" y="46.228" size="1.778" layer="27" ratio="10" rot="R270"/>
@@ -2540,7 +2540,7 @@ design rules under a new name.</description>
 <wire x1="8.98" y1="21.12" x2="6.135" y2="21.12" width="0.3048" layer="1"/>
 <wire x1="6.135" y1="21.12" x2="3.43" y2="19.05" width="0.3048" layer="1"/>
 <wire x1="3.43" y1="19.05" x2="1.27" y2="19.05" width="0.3048" layer="1"/>
-<wire x1="27.7302" y1="47.9552" x2="25.6098" y2="47.9552" width="0.3048" layer="1"/>
+<wire x1="25.6098" y1="47.9552" x2="27.7302" y2="47.9552" width="0.3048" layer="1"/>
 <wire x1="28.6954" y1="46.99" x2="34.29" y2="46.99" width="0.3048" layer="1"/>
 <wire x1="27.7302" y1="47.9552" x2="28.6954" y2="46.99" width="0.3048" layer="1"/>
 <wire x1="34.29" y1="46.99" x2="30.48" y2="43.18" width="0.3048" layer="1"/>
@@ -2578,6 +2578,7 @@ design rules under a new name.</description>
 <wire x1="25.6098" y1="47.9552" x2="18.9168" y2="41.2622" width="0.3048" layer="1"/>
 <wire x1="8.07841875" y1="39.37" x2="3.81" y2="39.37" width="0.3048" layer="1"/>
 <wire x1="3.81" y1="39.37" x2="1.424" y2="39.662" width="0" layer="19" extent="1-1"/>
+<wire x1="3.81" y1="39.37" x2="3.81" y2="39.37" width="0.3048" layer="1"/>
 </signal>
 <signal name="+5V">
 <contactref element="U$4" pad="15"/>
@@ -2731,7 +2732,8 @@ design rules under a new name.</description>
 <via x="30.48" y="15.24" extent="1-16" drill="0.35"/>
 <wire x1="30.48" y1="4.953" x2="33.655" y2="1.524" width="0.3048" layer="16"/>
 <wire x1="30.48" y1="15.24" x2="30.48" y2="4.953" width="0.3048" layer="16"/>
-<wire x1="1.424" y1="37.122" x2="9.182" y2="37.122" width="0.3048" layer="1"/>
+<wire x1="1.424" y1="37.122" x2="5.08" y2="37.122" width="0.3048" layer="1"/>
+<wire x1="5.08" y1="37.122" x2="9.182" y2="37.122" width="0.3048" layer="1"/>
 <wire x1="9.182" y1="37.122" x2="10.16" y2="38.1" width="0.3048" layer="1"/>
 </signal>
 <signal name="PGD">
