@@ -9832,34 +9832,34 @@ diameter 5 mm, grid 2.54 mm</description>
 </packages3d>
 <symbols>
 <symbol name="PIC32MX250F128B">
-<pin name="P$1" x="-30.48" y="12.7" length="middle"/>
-<pin name="P$2" x="-30.48" y="7.62" length="middle"/>
-<pin name="P$3" x="-30.48" y="2.54" length="middle"/>
+<pin name="5.PGEC1/B1" x="-30.48" y="12.7" length="middle"/>
+<pin name="6.B2" x="-30.48" y="7.62" length="middle"/>
+<pin name="7.B3" x="-30.48" y="2.54" length="middle"/>
 <pin name="8.VSS" x="-30.48" y="-2.54" length="middle"/>
-<pin name="P$5" x="-30.48" y="-7.62" length="middle"/>
-<pin name="P$6" x="-30.48" y="-12.7" length="middle"/>
-<pin name="P$7" x="-30.48" y="-17.78" length="middle"/>
-<pin name="P$8" x="-30.48" y="-22.86" length="middle"/>
-<pin name="P$9" x="-30.48" y="-27.94" length="middle"/>
-<pin name="P$10" x="-30.48" y="-33.02" length="middle"/>
-<pin name="4.B0" x="-30.48" y="17.78" length="middle"/>
+<pin name="9.OSC1" x="-30.48" y="-7.62" length="middle"/>
+<pin name="10.OSC2" x="-30.48" y="-12.7" length="middle"/>
+<pin name="11.B4" x="-30.48" y="-17.78" length="middle"/>
+<pin name="12.A4" x="-30.48" y="-22.86" length="middle"/>
+<pin name="13.VDD" x="-30.48" y="-27.94" length="middle"/>
+<pin name="14.USBID/B5" x="-30.48" y="-33.02" length="middle"/>
+<pin name="4.PGED1/B0" x="-30.48" y="17.78" length="middle"/>
 <pin name="3.A1" x="-30.48" y="22.86" length="middle"/>
 <pin name="2.A0" x="-30.48" y="27.94" length="middle"/>
 <pin name="1.MCLR" x="-30.48" y="33.02" length="middle"/>
-<pin name="19.VSS" x="10.16" y="12.7" length="middle" rot="R180"/>
-<pin name="P$16" x="10.16" y="7.62" length="middle" rot="R180"/>
-<pin name="P$17" x="10.16" y="2.54" length="middle" rot="R180"/>
-<pin name="P$18" x="10.16" y="-2.54" length="middle" rot="R180"/>
-<pin name="P$19" x="10.16" y="-7.62" length="middle" rot="R180"/>
-<pin name="P$20" x="10.16" y="-12.7" length="middle" rot="R180"/>
-<pin name="P$21" x="10.16" y="-17.78" length="middle" rot="R180"/>
-<pin name="P$22" x="10.16" y="-22.86" length="middle" rot="R180"/>
-<pin name="P$23" x="10.16" y="-27.94" length="middle" rot="R180"/>
-<pin name="P$24" x="10.16" y="-33.02" length="middle" rot="R180"/>
-<pin name="P$25" x="10.16" y="17.78" length="middle" rot="R180"/>
-<pin name="P$26" x="10.16" y="22.86" length="middle" rot="R180"/>
-<pin name="P$27" x="10.16" y="27.94" length="middle" rot="R180"/>
-<pin name="P$28" x="10.16" y="33.02" length="middle" rot="R180"/>
+<pin name="24.B13" x="10.16" y="12.7" length="middle" rot="R180"/>
+<pin name="23.VUSB3V3" x="10.16" y="7.62" length="middle" rot="R180"/>
+<pin name="22.D-/B11" x="10.16" y="2.54" length="middle" rot="R180"/>
+<pin name="21.D+/B10" x="10.16" y="-2.54" length="middle" rot="R180"/>
+<pin name="20.VCAP" x="10.16" y="-7.62" length="middle" rot="R180"/>
+<pin name="19.VSS" x="10.16" y="-12.7" length="middle" rot="R180"/>
+<pin name="18.B9" x="10.16" y="-17.78" length="middle" rot="R180"/>
+<pin name="17.B8" x="10.16" y="-22.86" length="middle" rot="R180"/>
+<pin name="16.B7" x="10.16" y="-27.94" length="middle" rot="R180"/>
+<pin name="15.VBUS" x="10.16" y="-33.02" length="middle" rot="R180"/>
+<pin name="25.B14" x="10.16" y="17.78" length="middle" rot="R180"/>
+<pin name="26..B15" x="10.16" y="22.86" length="middle" rot="R180"/>
+<pin name="27.AVSS" x="10.16" y="27.94" length="middle" rot="R180"/>
+<pin name="28.AVDD" x="10.16" y="33.02" length="middle" rot="R180"/>
 <wire x1="-27.94" y1="35.56" x2="-27.94" y2="-35.56" width="0.254" layer="94"/>
 <wire x1="-27.94" y1="-35.56" x2="7.62" y2="-35.56" width="0.254" layer="94"/>
 <wire x1="7.62" y1="-35.56" x2="7.62" y2="35.56" width="0.254" layer="94"/>
@@ -13809,6 +13809,48 @@ diameter 5 mm, grid 2.54 mm</description>
 <connect gate="G$1" pin="PGC" pad="3"/>
 <connect gate="G$1" pin="PGD" pad="4"/>
 <connect gate="G$1" pin="VDD" pad="5"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PIC32MX250F128B">
+<gates>
+<gate name="G$1" symbol="PIC32MX250F128B" x="10.16" y="0"/>
+</gates>
+<devices>
+<device name="" package="DIL28-3">
+<connects>
+<connect gate="G$1" pin="1.MCLR" pad="1"/>
+<connect gate="G$1" pin="10.OSC2" pad="10"/>
+<connect gate="G$1" pin="11.B4" pad="11"/>
+<connect gate="G$1" pin="12.A4" pad="12"/>
+<connect gate="G$1" pin="13.VDD" pad="13"/>
+<connect gate="G$1" pin="14.USBID/B5" pad="14"/>
+<connect gate="G$1" pin="15.VBUS" pad="15"/>
+<connect gate="G$1" pin="16.B7" pad="16"/>
+<connect gate="G$1" pin="17.B8" pad="17"/>
+<connect gate="G$1" pin="18.B9" pad="18"/>
+<connect gate="G$1" pin="19.VSS" pad="19"/>
+<connect gate="G$1" pin="2.A0" pad="2"/>
+<connect gate="G$1" pin="20.VCAP" pad="20"/>
+<connect gate="G$1" pin="21.D+/B10" pad="21"/>
+<connect gate="G$1" pin="22.D-/B11" pad="22"/>
+<connect gate="G$1" pin="23.VUSB3V3" pad="23"/>
+<connect gate="G$1" pin="24.B13" pad="24"/>
+<connect gate="G$1" pin="25.B14" pad="25"/>
+<connect gate="G$1" pin="26..B15" pad="26"/>
+<connect gate="G$1" pin="27.AVSS" pad="27"/>
+<connect gate="G$1" pin="28.AVDD" pad="28"/>
+<connect gate="G$1" pin="3.A1" pad="3"/>
+<connect gate="G$1" pin="4.PGED1/B0" pad="4"/>
+<connect gate="G$1" pin="5.PGEC1/B1" pad="5"/>
+<connect gate="G$1" pin="6.B2" pad="6"/>
+<connect gate="G$1" pin="7.B3" pad="7"/>
+<connect gate="G$1" pin="8.VSS" pad="8"/>
+<connect gate="G$1" pin="9.OSC1" pad="9"/>
 </connects>
 <technologies>
 <technology name=""/>

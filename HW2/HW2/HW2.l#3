@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -7602,8 +7602,8 @@ diameter 5 mm, grid 2.54 mm</description>
 <pad name="GND" x="5.1" y="-1.6" drill="0.8"/>
 <pad name="D-" x="3.9" y="0.8" drill="0.8"/>
 <pad name="ID" x="3.9" y="-0.8" drill="0.8"/>
-<pad name="P$6" x="0" y="-3.65" drill="1.9"/>
-<pad name="P$7" x="0" y="3.65" drill="1.9"/>
+<pad name="NC1" x="0" y="-3.65" drill="1.9"/>
+<pad name="NC2" x="0" y="3.65" drill="1.9"/>
 <text x="7.25" y="1.5" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 <rectangle x1="3.25" y1="3" x2="5.75" y2="4.4" layer="43"/>
 <rectangle x1="3.25" y1="-4.4" x2="5.75" y2="-3" layer="43"/>

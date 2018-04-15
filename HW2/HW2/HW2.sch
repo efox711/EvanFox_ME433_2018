@@ -13717,11 +13717,11 @@ diameter 5 mm, grid 2.54 mm</description>
 <devices>
 <device name="" package="1X05">
 <connects>
-<connect gate="G$1" pin="GND" pad="1"/>
-<connect gate="G$1" pin="MCLR" pad="2"/>
-<connect gate="G$1" pin="PGC" pad="3"/>
+<connect gate="G$1" pin="GND" pad="3"/>
+<connect gate="G$1" pin="MCLR" pad="1"/>
+<connect gate="G$1" pin="PGC" pad="5"/>
 <connect gate="G$1" pin="PGD" pad="4"/>
-<connect gate="G$1" pin="VDD" pad="5"/>
+<connect gate="G$1" pin="VDD" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -15841,8 +15841,8 @@ Source: www.kingbright.com</description>
 <instance part="GND6" gate="1" x="30.48" y="33.02"/>
 <instance part="U$3" gate="G$1" x="25.4" y="-35.56" rot="R180"/>
 <instance part="U$4" gate="G$1" x="76.2" y="-78.74"/>
-<instance part="+3V2" gate="G$1" x="33.02" y="-40.64" smashed="yes" rot="R270">
-<attribute name="VALUE" x="30.48" y="-43.18" size="1.778" layer="96"/>
+<instance part="+3V2" gate="G$1" x="30.48" y="-40.64" smashed="yes" rot="R270">
+<attribute name="VALUE" x="27.94" y="-43.18" size="1.778" layer="96"/>
 </instance>
 <instance part="GND7" gate="1" x="40.64" y="-40.64"/>
 <instance part="U$5" gate="G$1" x="20.32" y="-91.44" rot="R180"/>
@@ -15904,7 +15904,7 @@ Source: www.kingbright.com</description>
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="VDD"/>
-<wire x1="25.4" y1="-40.64" x2="30.48" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="-40.64" x2="27.94" y2="-40.64" width="0.1524" layer="91"/>
 <pinref part="+3V2" gate="G$1" pin="+3V3"/>
 </segment>
 <segment>
