@@ -100,25 +100,25 @@ int main() {
        _CP0_SET_COUNT(0);
        
        // Sine wave
-//       f = 512.0+512.0 * sin(i*2.0*M_PI/1000.0*10.0);   //10Hz created by mutipliers
-//       setVoltage(0,f);
-//       i++;
-       if(i==1){
-        setVoltage(1,512);
-        i = 0;
-       }
-       else{
-           setVoltage(1,1024);
-           i = 1;
-       }
+       f = 512.0+512.0 * sin(i*2.0*M_PI/1000.0*10.0);   //10Hz created by mutipliers
+       setVoltage(0,f);
+       i++;
+       
+//       test for timing - successfully running every 1ms
+//       if(i==1){
+//        setVoltage(1,512);
+//        i = 0;
+//       }
+//       else{
+//           setVoltage(1,1020);
+//           i = 1;
+//       }
        
 //       if((n < 5000) || (n > -5000)) {
 //            n = n+1;
 //       }
-//       i
-         
           
-       while(_CP0_GET_COUNT() < 48000) {
+       while(_CP0_GET_COUNT() < 24000) { //wait until 1ms has passed
                 ;
             }
    } 
