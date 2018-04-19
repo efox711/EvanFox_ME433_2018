@@ -96,6 +96,8 @@ int main() {
        // setVoltage(0,512);
        // setVoltage(1,128);
        
+       _CP0_SET_COUNT(0);
+       
        // Sine wave
        f = 512.0+512.0 * sin(i*2.0*M_PI/1000.0*10.0);   //10Hz created by mutipliers
        setVoltage(0,f);
@@ -108,5 +110,8 @@ int main() {
 //       i
          
           
+       while(_CP0_GET_COUNT() < 48000) {
+                ;
+            }
    } 
 }
