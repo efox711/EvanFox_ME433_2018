@@ -82,8 +82,12 @@ void setVoltage(char channel, int voltage) {
     T = T | ((voltage & 0b1111111111) << 2);
     spi_io(T >> 8);
     spi_io(T & 0xFF);
+    CS = 1;
 }
 
 int main() {
-    
+   while(1) {
+       setVoltage(0,512);
+       setVoltage(1,256);
+   } 
 }
