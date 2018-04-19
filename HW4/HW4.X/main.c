@@ -90,6 +90,7 @@ int main() {
     spi_init();
     float f;
     int i, n;
+    i = 1;
     
    while(1) {
        // Test
@@ -99,10 +100,17 @@ int main() {
        _CP0_SET_COUNT(0);
        
        // Sine wave
-       f = 512.0+512.0 * sin(i*2.0*M_PI/1000.0*10.0);   //10Hz created by mutipliers
-       setVoltage(0,f);
-       i++;
-       setVoltage(1,512);
+//       f = 512.0+512.0 * sin(i*2.0*M_PI/1000.0*10.0);   //10Hz created by mutipliers
+//       setVoltage(0,f);
+//       i++;
+       if(i==1){
+        setVoltage(1,512);
+        i = 0;
+       }
+       else{
+           setVoltage(1,1024);
+           i = 1;
+       }
        
 //       if((n < 5000) || (n > -5000)) {
 //            n = n+1;
