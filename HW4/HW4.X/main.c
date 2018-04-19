@@ -88,9 +88,9 @@ void setVoltage(char channel, int voltage) {
 
 int main() {
     spi_init();
-    float f;
-    int i, n;
-    i = 1;
+    float f, n;
+    int i;
+    i = 0;
     
    while(1) {
        // Test
@@ -100,9 +100,12 @@ int main() {
        _CP0_SET_COUNT(0);
        
        // Sine wave
-       f = 512.0+512.0 * sin(i*2.0*M_PI/1000.0*10.0);   //10Hz created by mutipliers
+       f = 512.0 + 511.99 * sin(i*10.0*2.0*M_PI/(1000.0));   //10Hz created by mutipliers
        setVoltage(0,f);
        i++;
+       
+       // Triangle Wave
+       n = n + 102;
        
 //       test for timing - successfully running every 1ms
 //       if(i==1){
