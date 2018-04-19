@@ -51,8 +51,8 @@ unsigned char spi_io(unsigned char o) {
 void spi_init() {
   // declare which pins are set for SPI
   // SS1Rbits.SS1R = 0001;
-    RPB2Rbits.RPB2R = 0011;
-    SDI1Rbits.SDI1R = 0100;
+    RPB2Rbits.RPB2R = 0b0011;
+    SDI1Rbits.SDI1R = 0b0100;
     
   // set up the chip select pin as an output
   TRISBbits.TRISB3 = 0;
@@ -65,7 +65,7 @@ void spi_init() {
   // setup spi 1
   SPI1CON = 0;              // turn off the spi module and reset it
   SPI1BUF;                  // clear the rx buffer by reading from it
-  SPI1BRG = 0x1;            // baud rate to 10 MHz [SPI1BRG = (48000000/(2*desired))-1]
+  SPI1BRG = 1000;            // baud rate to 10 MHz [SPI1BRG = (48000000/(2*desired))-1]
   SPI1STATbits.SPIROV = 0;  // clear the overflow bit
   SPI1CONbits.CKE = 1;      // data changes when clock goes from hi to lo (since CKP is 0)
   SPI1CONbits.MSTEN = 1;    // master operation
@@ -86,8 +86,10 @@ void setVoltage(char channel, int voltage) {
 }
 
 int main() {
+    spi_init();
+    
    while(1) {
        setVoltage(0,512);
-       setVoltage(1,256);
+       setVoltage(1,128);
    } 
 }
