@@ -72,3 +72,18 @@ void spi_init() {
   SPI1CONbits.ON = 1;       // turn on spi 1
 }
 
+//channel A is 0, B is 1
+//voltage is 10 bit number
+void setVoltage(char channel, int voltage) {
+    CS = 0;
+    int T;
+    T = channel << 15;
+    T = T | 0b0111000000000000;
+    T = T | ((voltage & 0b1111111111) << 2);
+    spi_io(T >> 8);
+    spi_io(T & 0xFF);
+}
+
+int main() {
+    
+}
