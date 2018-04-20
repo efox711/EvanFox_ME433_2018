@@ -89,8 +89,10 @@ void setVoltage(char channel, int voltage) {
 int main() {
     spi_init();
     float f, n;
-    int i;
+    int i, k;
     i = 0;
+    k = 0;
+    n = 0.0;
     
    while(1) {
        // Test
@@ -105,7 +107,19 @@ int main() {
        i++;
        
        // Triangle Wave
-       n = n + 102;
+       if(k == 0){
+            n = n + 1024 * 10.0 / 1000;
+       }
+       else if(k == 1){
+           n = n - 1024 * 10.0 / 1000;
+       }
+       
+       if(n >= 1023.5) {
+           k = 1;
+       }else if(n <= 0.5){
+           k = 0;
+       }
+       setVoltage(1,n);
        
 //       test for timing - successfully running every 1ms
 //       if(i==1){
