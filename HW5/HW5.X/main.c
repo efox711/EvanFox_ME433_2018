@@ -49,9 +49,9 @@ void initExpander(void){
 
 void setExpander(char pin, char level){
     i2c_master_start();
-    i2c_master_send(address<1|0);
+    i2c_master_send((address<1)|0b00000000);
     i2c_master_send(0x0A);
-    i2c_master_send(level<pin);
+    i2c_master_send((level<pin)|0b00000000);
     i2c_master_stop();
 }
 
@@ -61,34 +61,27 @@ char getExpander(void){
 
 int main() {
 
-    
   __builtin_disable_interrupts();
   initExpander();                       // init I2C2, which we use as a master
   __builtin_enable_interrupts();
   
+  //set GP0 to be output, GP7 to be input
+    i2c_master_start();
+    i2c_master_send(address<1|0);
+    i2c_master_send(0x00);
+    i2c_master_send(0x80);
+    i2c_master_stop();
+    
+    i2c_master_start();
+    i2c_master_send((address<1)|0b00000000);
+    i2c_master_send(0x0A);
+    i2c_master_send((1<3)|0b00000000);
+    i2c_master_stop();
+    
+   TRISAbits.TRISA4 = 0; //set A4 pin to output
+   LATAbits.LATA4 = 1; //set A4 ON
   while(1) {
-    WriteUART3("Master: Press Enter to begin transmission.\r\n");
-    ReadUART3(buf,2);
-    i2c_master_start();                     // Begin the start sequence
-    i2c_master_send(SLAVE_ADDR << 1);       // send the slave address, left shifted by 1, 
-                                            // which clears bit 0, indicating a write
-    i2c_master_send(master_write0);         // send a byte to the slave       
-    i2c_master_send(master_write1);         // send another byte to the slave
-    i2c_master_restart();                   // send a RESTART so we can begin reading 
-    i2c_master_send((SLAVE_ADDR << 1) | 1); // send slave address, left shifted by 1,
-                                            // and then a 1 in lsb, indicating read
-    master_read0 = i2c_master_recv();       // receive a byte from the bus
-    i2c_master_ack(0);                      // send ACK (0): master wants another byte!
-    master_read1 = i2c_master_recv();       // receive another byte from the bus
-    i2c_master_ack(1);                      // send NACK (1):  master needs no more bytes
-    i2c_master_stop();                      // send STOP:  end transmission, give up bus
-
-    sprintf(buf,"Master Wrote: 0x%x 0x%x\r\n", master_write0, master_write1);
-    WriteUART3(buf);
-    sprintf(buf,"Master Read: 0x%x 0x%x\r\n", master_read0, master_read1);
-    WriteUART3(buf);
-    ++master_write0;                        // change the data the master sends
-    ++master_write1;
+         setExpander(3,1); 
   }
   return 0;
 }
