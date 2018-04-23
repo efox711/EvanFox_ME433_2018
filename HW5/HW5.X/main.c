@@ -72,16 +72,15 @@ int main() {
     i2c_master_send(0x80);
     i2c_master_stop();
     
-    i2c_master_start();
-    i2c_master_send((address<1)|0b00000000);
-    i2c_master_send(0x0A);
-    i2c_master_send((1<3)|0b00000000);
-    i2c_master_stop();
-    
    TRISAbits.TRISA4 = 0; //set A4 pin to output
    LATAbits.LATA4 = 1; //set A4 ON
   while(1) {
-         setExpander(3,1); 
+    setExpander(0,1); 
+    i2c_master_start();
+    i2c_master_send(0b01000000);
+    i2c_master_send(0x0A);
+    i2c_master_send(0b00000001);
+    i2c_master_stop();
   }
   return 0;
 }
