@@ -49,9 +49,9 @@ void initExpander(void){
 
 void setExpander(char pin, char level){
     i2c_master_start();
-    i2c_master_send((address<1)|0b00000000);
+    i2c_master_send((address<<1)|0b00000000);
     i2c_master_send(0x0A);
-    i2c_master_send((level<pin)|0b00000000);
+    i2c_master_send((level<<pin)|0b00000000);
     i2c_master_stop();
 }
 
@@ -67,7 +67,7 @@ int main() {
   
   //set GP0 to be output, GP7 to be input
     i2c_master_start();
-    i2c_master_send(address<1|0);
+    i2c_master_send(address<<1|0);
     i2c_master_send(0x00);
     i2c_master_send(0x80);
     i2c_master_stop();
@@ -75,6 +75,7 @@ int main() {
    TRISAbits.TRISA4 = 0; //set A4 pin to output
    LATAbits.LATA4 = 1; //set A4 ON
   while(1) {
+    _CP0_SET_COUNT(0);
     setExpander(0,1); 
     i2c_master_start();
     i2c_master_send(0b01000000);
