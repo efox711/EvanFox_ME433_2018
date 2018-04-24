@@ -56,7 +56,15 @@ void setExpander(char pin, char level){
 }
 
 char getExpander(void){
-    
+    i2c_master_start();
+    i2c_master_send((address<<1)|0b00000000);
+    i2c_master_send(0x09);
+    i2c_master_restart();
+    i2c_master_send((address<<1)|0b00000001);
+    char input = i2c_master_recv();
+    i2c_master_ack(1);
+    i2c_master_stop();
+    return input;
 }
 
 int main() {
@@ -65,6 +73,9 @@ int main() {
   initExpander();                       // init I2C2, which we use as a master
   __builtin_enable_interrupts();
   
+   TRISAbits.TRISA4 = 0; //set A4 pin to output
+   LATAbits.LATA4 = 1; //set A4 OFF
+   
   //set GP0 to be output, GP7 to be input
     i2c_master_start();
     i2c_master_send(address<<1|0);
@@ -72,14 +83,16 @@ int main() {
     i2c_master_send(0x80);
     i2c_master_stop();
     
-   TRISAbits.TRISA4 = 0; //set A4 pin to output
-   LATAbits.LATA4 = 1; //set A4 ON
-  while(1) {
-    _CP0_SET_COUNT(0);
-    setExpander(0,1); 
+    setExpander(0,1);
     
-    
-    while(_CP0_GET_COUNT()<2400){}
-  }
+    while(1){
+        _CP0_SET_COUNT(0);
+        if((getExpander()>>7)==0){
+            setExpander(0,1);
+        }else{
+            setExpander(0,0);
+        }
+        while(_CP0_GET_COUNT()<24000){;}
+    }
   return 0;
 }
