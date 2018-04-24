@@ -77,11 +77,9 @@ int main() {
   while(1) {
     _CP0_SET_COUNT(0);
     setExpander(0,1); 
-    i2c_master_start();
-    i2c_master_send(0b01000000);
-    i2c_master_send(0x0A);
-    i2c_master_send(0b00000001);
-    i2c_master_stop();
+    
+    
+    while(_CP0_GET_COUNT()<2400){}
   }
   return 0;
 }
