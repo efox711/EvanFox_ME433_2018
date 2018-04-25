@@ -2,6 +2,7 @@
 #include<sys/attribs.h>  // __ISR macro
 #include<math.h>        //math functions
 #include<stdio.h>
+#include<ST7735.h>
 
 // DEVCFG0
 #pragma config DEBUG = 0b10 // no debugging
@@ -38,106 +39,18 @@
 #pragma config FUSBIDIO = 1 // USB pins controlled by USB module
 #pragma config FVBUSONIO = 1 // USB BUSON controlled by USB module
 
-#define CS LATBbits.LATB3       // chip select pin
+//#define CS LATBbits.LATB7       // chip select pin
 
-// send a byte via spi and return the response
-unsigned char spi_io(unsigned char o) {
-  SPI1BUF = o;
-  while(!SPI1STATbits.SPIRBF) { // wait to receive the byte
-    ;
-  }
-  return SPI1BUF;
-}
-
-// initialize spi1
-void spi_init() {
-  // declare which pins are set for SPI
-  // SS1Rbits.SS1R = 0001;
-    RPB2Rbits.RPB2R = 0b0011;
-    SDI1Rbits.SDI1R = 0b0100;
-    
-  // set up the chip select pin as an output
-  TRISBbits.TRISB3 = 0;
-  CS = 1;
-
-  // Master - SPI1, pins are: SDI1(B8), SDO1(B2), SCK1(SCK1).  
-  // we manually control SS1 as a digital output (B3)
-  // since the pic is just starting, we know that spi is off. We rely on defaults here
- 
-  // setup spi 1
-  SPI1CON = 0;              // turn off the spi module and reset it
-  SPI1BUF;                  // clear the rx buffer by reading from it
-  SPI1BRG = 1;            // baud rate to 10 MHz [SPI1BRG = (48000000/(2*desired))-1]
-  SPI1STATbits.SPIROV = 0;  // clear the overflow bit
-  SPI1CONbits.CKE = 1;      // data changes when clock goes from hi to lo (since CKP is 0)
-  SPI1CONbits.MSTEN = 1;    // master operation
-  SPI1CONbits.ON = 1;       // turn on spi 1
-}
-
-//channel A is 0, B is 1
-//voltage is 10 bit number
-void setVoltage(char channel, int voltage) {
-    CS = 0;
-    int T;
-    T = channel << 15;
-    T = T | 0b0111000000000000;
-    T = T | ((voltage & 0b1111111111) << 2);
-    spi_io(T >> 8);
-    spi_io(T & 0xFF);
-    CS = 1;
-}
+unsigned char spi_io(unsigned char); // send and rx a byte over spi
+void LCD_command(unsigned char); // send a command to the LCD
+void LCD_data(unsigned char); // send data to the LCD
+void LCD_data16(unsigned short); // send 16 bit data to the LCD
+void LCD_init(void); // send the initializations to the LCD
+void LCD_drawPixel(unsigned short, unsigned short, unsigned short); // set the x,y pixel to a color
+void LCD_setAddr(unsigned short, unsigned short, unsigned short, unsigned short); // set the memory address you are writing to
+void LCD_clearScreen(unsigned short); // set the color of every pixel
 
 int main() {
-    spi_init();
-    float f, n;
-    int i, k;
-    i = 0;
-    k = 0;
-    n = 0.0;
+    LCD_init();
     
-   while(1) {
-       // Test
-       // setVoltage(0,512);
-       // setVoltage(1,128);
-       
-       _CP0_SET_COUNT(0);
-       
-       // Sine wave
-       f = 512.0 + 511.99 * sin(i*10.0*2.0*M_PI/(1000.0));   //10Hz created by mutipliers
-       setVoltage(0,f);
-       i++;
-       
-       // Triangle Wave
-       if(k == 0){
-            n = n + 1024 * 10.0 / 1000;
-       }
-       else if(k == 1){
-           n = n - 1024 * 10.0 / 1000;
-       }
-       
-       if(n >= 1023.5) {
-           k = 1;
-       }else if(n <= 0.5){
-           k = 0;
-       }
-       setVoltage(1,n);
-       
-//       test for timing - successfully running every 1ms
-//       if(i==1){
-//        setVoltage(1,512);
-//        i = 0;
-//       }
-//       else{
-//           setVoltage(1,1020);
-//           i = 1;
-//       }
-       
-//       if((n < 5000) || (n > -5000)) {
-//            n = n+1;
-//       }
-          
-       while(_CP0_GET_COUNT() < 24000) { //wait until 1ms has passed
-                ;
-            }
-   } 
 }
