@@ -28,7 +28,7 @@ void SPI1_init() {
   TRISBbits.TRISB15 = 0;
   LATBbits.LATB15 = 0;
 
-	SPI1CON = 0; // turn off the spi module and reset it
+    SPI1CON = 0; // turn off the spi module and reset it
   SPI1BUF; // clear the rx buffer by reading from it
   SPI1BRG = 0; // baud rate to 12 MHz [SPI1BRG = (48000000/(2*desired))-1]
   SPI1STATbits.SPIROV = 0; // clear the overflow bit

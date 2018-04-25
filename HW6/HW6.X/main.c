@@ -2,7 +2,7 @@
 #include<sys/attribs.h>  // __ISR macro
 #include<math.h>        //math functions
 #include<stdio.h>
-#include<ST7735.h>
+#include "ST7735.h"
 
 // DEVCFG0
 #pragma config DEBUG = 0b10 // no debugging
@@ -41,16 +41,35 @@
 
 //#define CS LATBbits.LATB7       // chip select pin
 
-unsigned char spi_io(unsigned char); // send and rx a byte over spi
-void LCD_command(unsigned char); // send a command to the LCD
-void LCD_data(unsigned char); // send data to the LCD
-void LCD_data16(unsigned short); // send 16 bit data to the LCD
-void LCD_init(void); // send the initializations to the LCD
-void LCD_drawPixel(unsigned short, unsigned short, unsigned short); // set the x,y pixel to a color
-void LCD_setAddr(unsigned short, unsigned short, unsigned short, unsigned short); // set the memory address you are writing to
-void LCD_clearScreen(unsigned short); // set the color of every pixel
+
+void drawChar(short x, short y, char* message, short color1, short color2) {
+    char asciiRow = *message - 0x20;
+    char pixels;
+    int asciiColumn;
+    for(asciiColumn = 0; asciiColumn < 5; asciiColumn++){
+        pixels = ASCII[asciiRow][asciiColumn];
+        int j;
+        for(j = 0;j < 8;j++){
+            if(((pixels >> j) & 1) == 1){
+                LCD_drawPixel(x+asciiColumn,y+j,color1);
+            }else{
+                LCD_drawPixel(x+asciiColumn,y+j,color2);
+            }
+        }  
+    }
+}
+
+drawString(short x, short y, char* message, short color1, short color2) {
+    
+}
 
 int main() {
     LCD_init();
+    LCD_clearScreen(WHITE);
+    LCD_drawPixel(10,10,YELLOW);
+    
+    char message[30];
+    sprintf(message,"D");
+    drawChar(100,100,message,BLACK,RED);
     
 }
