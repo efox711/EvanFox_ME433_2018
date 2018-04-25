@@ -59,8 +59,13 @@ void drawChar(short x, short y, char* message, short color1, short color2) {
     }
 }
 
-drawString(short x, short y, char* message, short color1, short color2) {
+void drawString(short x, short y, char* message, short color1, short color2) {
+    int i = 0;
     
+    while(message[i] != 0){
+        drawChar(x+5*i,y,&message[i],color1,color2);
+        i++;
+    }
 }
 
 int main() {
@@ -69,7 +74,10 @@ int main() {
     LCD_drawPixel(10,10,YELLOW);
     
     char message[30];
-    sprintf(message,"D");
+    sprintf(message,"K");
     drawChar(100,100,message,BLACK,RED);
-    
+    sprintf(message,"Hello world...");
+    drawString(10,8,message,BLACK,WHITE);
+            
+    return 1;
 }
