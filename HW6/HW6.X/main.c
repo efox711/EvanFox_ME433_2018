@@ -97,7 +97,9 @@ int main() {
             drawString(28,32,message,BLACK,WHITE);
             drawProgressBar(12,50,10, num, RED, 100, BLUE);
             
-            fps = _CP0_GET_COUNT()/24000
+//            fps = 1/(_CP0_GET_COUNT()/24000000);
+//            sprintf(message,"%5.2f",fps);
+//            drawString(50,75,message,BLACK,WHITE);
             while(_CP0_GET_COUNT() < 2400000){;}
         }
     }
