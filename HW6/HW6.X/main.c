@@ -71,13 +71,21 @@ void drawString(short x, short y, char* message, short color1, short color2) {
 int main() {
     LCD_init();
     LCD_clearScreen(WHITE);
-    LCD_drawPixel(10,10,YELLOW);
     
-    char message[30];
-    sprintf(message,"K");
-    drawChar(100,100,message,BLACK,RED);
-    sprintf(message,"Hello world...");
-    drawString(10,8,message,BLACK,WHITE);
+    while(1){
+        int num;
+        for(num = 0;num < 101; num++) {
+            _CP0_SET_COUNT(0);
+            char message[30];
+            sprintf(message,"Hello world %d!", num);
+            drawString(28,32,message,BLACK,WHITE);
+            
+
+            while(_CP0_GET_COUNT() < 2400000){;}
+        }
+    }
+    
             
     return 1;
+    
 }
