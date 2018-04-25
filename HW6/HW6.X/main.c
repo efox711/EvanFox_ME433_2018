@@ -68,24 +68,40 @@ void drawString(short x, short y, char* message, short color1, short color2) {
     }
 }
 
+void drawProgressBar(short x, short y, short height, short length1, short color1, short length2, short color2){
+    int xloc, yloc, currentHeight;
+    for(xloc = x; xloc < x+length2; xloc++){
+        for(currentHeight = 0; currentHeight < height+1; currentHeight++){
+            for(yloc = y; yloc < y+currentHeight; yloc++){
+                if(xloc - x < length1){
+                    LCD_drawPixel(xloc,yloc,color1);                   
+                }else{
+                    LCD_drawPixel(xloc,yloc,color2);                   
+                }
+
+            }
+        }
+    }
+}
 int main() {
     LCD_init();
     LCD_clearScreen(WHITE);
-    
+    float fps;
     while(1){
         int num;
         for(num = 0;num < 101; num++) {
             _CP0_SET_COUNT(0);
             char message[30];
-            sprintf(message,"Hello world %d!", num);
-            drawString(28,32,message,BLACK,WHITE);
             
-
+            sprintf(message,"Hello world %d!   ", num);
+            drawString(28,32,message,BLACK,WHITE);
+            drawProgressBar(12,50,10, num, RED, 100, BLUE);
+            
+            fps = _CP0_GET_COUNT()/24000
             while(_CP0_GET_COUNT() < 2400000){;}
         }
     }
-    
-            
+      
     return 1;
     
 }
