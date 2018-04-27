@@ -1,149 +1,94 @@
-/* ************************************************************************** */
-/** Descriptive File Name
+#include<xc.h>           // processor SFR definitions
+#include<sys/attribs.h>  // __ISR macro
+#include "i2c_master_noint.h"
 
-  @Company
-    Company Name
+// DEVCFG0
+#pragma config DEBUG = 0b10 // no debugging
+#pragma config JTAGEN = 0 // no jtag
+#pragma config ICESEL = 0b11 // use PGED1 and PGEC1
+#pragma config PWP = 0b1111111 // no write protect
+#pragma config BWP = 1 // no boot write protect
+#pragma config CP = 1 // no code protect
 
-  @File Name
-    filename.c
+// DEVCFG1
+#pragma config FNOSC = 0b011 // use primary oscillator with pll
+#pragma config FSOSCEN = 0 // turn off secondary oscillator
+#pragma config IESO = 0 // no switching clocks
+#pragma config POSCMOD = 0b10 // high speed crystal mode
+#pragma config OSCIOFNC = 1 // disable secondary osc
+#pragma config FPBDIV = 0 // divide sysclk freq by 1 for peripheral bus clock
+#pragma config FCKSM = 0b11 // do not enable clock switch
+#pragma config WDTPS = 0 // use slowest wdt
+#pragma config WINDIS = 1 // wdt no window mode
+#pragma config FWDTEN = 0 // wdt disabled
+#pragma config FWDTWINSZ = 0b11 // wdt window at 25%
 
-  @Summary
-    Brief description of the file.
+// DEVCFG2 - get the sysclk clock to 48MHz from the 8MHz crystal
+#pragma config FPLLIDIV = 0b001 // divide input clock to be in range 4-5MHz
+#pragma config FPLLMUL = 0b111 // multiply clock after FPLLIDIV
+#pragma config FPLLODIV = 0b001 // divide clock after FPLLMUL to get 48MHz
+#pragma config UPLLIDIV = 0b001 // divider for the 8MHz input clock, then multiplied by 12 to get 48MHz for USB
+#pragma config UPLLEN = 0 // USB clock on
 
-  @Description
-    Describe the purpose of this file.
- */
-/* ************************************************************************** */
+// DEVCFG3
+#pragma config USERID = 0b0000000000000001 // some 16bit userid, doesn't matter what
+#pragma config PMDL1WAY = 0 // allow multiple reconfigurations
+#pragma config IOL1WAY = 0 // allow multiple reconfigurations
+#pragma config FUSBIDIO = 1 // USB pins controlled by USB module
+#pragma config FVBUSONIO = 1 // USB BUSON controlled by USB module
 
-/* ************************************************************************** */
-/* ************************************************************************** */
-/* Section: Included Files                                                    */
-/* ************************************************************************** */
-/* ************************************************************************** */
+// Useful definitions
+#define address 0b1101011
 
-/* This section lists the other files that are included in this file.
- */
-
-/* TODO:  Include other files here if needed. */
-
-
-/* ************************************************************************** */
-/* ************************************************************************** */
-/* Section: File Scope or Global Data                                         */
-/* ************************************************************************** */
-/* ************************************************************************** */
-
-/*  A brief description of a section can be given directly below the section
-    banner.
- */
-
-/* ************************************************************************** */
-/** Descriptive Data Item Name
-
-  @Summary
-    Brief one-line summary of the data item.
+void initIMU(void){
+    ANSELBbits.ANSB2 = 0;
+    ANSELBbits.ANSB3 = 0;
     
-  @Description
-    Full description, explaining the purpose and usage of data item.
-    <p>
-    Additional description in consecutive paragraphs separated by HTML 
-    paragraph breaks, as necessary.
-    <p>
-    Type "JavaDoc" in the "How Do I?" IDE toolbar for more information on tags.
+    i2c_master_setup();
     
-  @Remarks
-    Any additional remarks
- */
-int global_data;
+    // turn on IMU
+    // write to CTRL1_XL register, set smpl rate to 1.66 kHz, 2g sensitivity, 100Hz filter
+    register - 10h
+    bits - 1000 00 10
+    // write to CTRL2_G register, set smpl rate to 1.66 kHz, 1000 dps sensitivity
+    register - 11h
+    bits - 1000 10 0 0
+    // write to CTRL3_C - IF_INC bit, make it 1 to enable multiple read
+    register - 12h
+    bits - 00000100
+}   
 
 
-/* ************************************************************************** */
-/* ************************************************************************** */
-// Section: Local Functions                                                   */
-/* ************************************************************************** */
-/* ************************************************************************** */
-
-/*  A brief description of a section can be given directly below the section
-    banner.
- */
-
-/* ************************************************************************** */
-
-/** 
-  @Function
-    int ExampleLocalFunctionName ( int param1, int param2 ) 
-
-  @Summary
-    Brief one-line description of the function.
-
-  @Description
-    Full description, explaining the purpose and usage of the function.
-    <p>
-    Additional description in consecutive paragraphs separated by HTML 
-    paragraph breaks, as necessary.
-    <p>
-    Type "JavaDoc" in the "How Do I?" IDE toolbar for more information on tags.
-
-  @Precondition
-    List and describe any required preconditions. If there are no preconditions,
-    enter "None."
-
-  @Parameters
-    @param param1 Describe the first parameter to the function.
+void I2C_read_multiple(unsigned char address, unsigned char register, unsigned char * data, int length){
     
-    @param param2 Describe the second parameter to the function.
+}
 
-  @Returns
-    List (if feasible) and describe the return values of the function.
-    <ul>
-      <li>1   Indicates an error occurred
-      <li>0   Indicates an error did not occur
-    </ul>
+int main() {
 
-  @Remarks
-    Describe any special behavior not described above.
-    <p>
-    Any additional remarks.
-
-  @Example
-    @code
-    if(ExampleFunctionName(1, 2) == 0)
-    {
-        return 3;
+  __builtin_disable_interrupts();
+  initExpander();                       // init I2C2, which we use as a master
+  __builtin_enable_interrupts();
+  
+   TRISAbits.TRISA4 = 0; //set A4 pin to output
+   LATAbits.LATA4 = 1; //set A4 OFF
+   
+  //set GP0 to be output, GP7 to be input
+    i2c_master_start();
+    i2c_master_send(address<<1|0);
+    i2c_master_send(0x00);
+    i2c_master_send(0x80);
+    i2c_master_stop();
+    
+    setExpander(0,1);
+    
+    while(1){
+        _CP0_SET_COUNT(0);
+        if((getExpander()>>7)==0){
+            setExpander(0,1);
+        }else{
+            setExpander(0,0);
+        }
+        while(_CP0_GET_COUNT()<24000){;}
     }
- */
-static int ExampleLocalFunction(int param1, int param2) {
-    return 0;
+  return 0;
 }
-
-
-/* ************************************************************************** */
-/* ************************************************************************** */
-// Section: Interface Functions                                               */
-/* ************************************************************************** */
-/* ************************************************************************** */
-
-/*  A brief description of a section can be given directly below the section
-    banner.
- */
-
-// *****************************************************************************
-
-/** 
-  @Function
-    int ExampleInterfaceFunctionName ( int param1, int param2 ) 
-
-  @Summary
-    Brief one-line description of the function.
-
-  @Remarks
-    Refer to the example_file.h interface header for function usage details.
- */
-int ExampleInterfaceFunction(int param1, int param2) {
-    return 0;
-}
-
-
-/* *****************************************************************************
- End of File
- */
