@@ -40,6 +40,14 @@
 // Useful definitions
 #define address 0b1101011
 
+void setRegister(char address, char reg, char bits){
+    i2c_master_start();
+    i2c_master_send((address<<1)|0b00000000);
+    i2c_master_send(reg);
+    i2c_master_send(bits);
+    i2c_master_stop();
+}
+
 void initIMU(void){
     ANSELBbits.ANSB2 = 0;
     ANSELBbits.ANSB3 = 0;
