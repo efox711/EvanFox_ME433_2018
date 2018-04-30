@@ -115,10 +115,23 @@ void initIMU(void){
     //bits - 00000100
 }   
 
-
-//void I2C_read_multiple(unsigned char address, unsigned char register, unsigned char * data, int length){
-//    ;
-//}
+void I2C_read_multiple(unsigned char reg, unsigned char * data, int length){
+    i2c_master_start();
+    i2c_master_send((address<<1)|0b00000000);
+    i2c_master_send(reg);
+    i2c_master_restart();
+    i2c_master_send((address<<1)|0b00000001);
+    int ii;
+    for (ii = 0; ii < length;ii++){ 
+        data[ii] = i2c_master_recv();
+        if(ii == length-1){
+            i2c_master_ack(1);
+        }else{
+            i2c_master_ack(0);
+        }
+    }
+    i2c_master_stop();
+}
 
 int main() {
   __builtin_disable_interrupts();
@@ -129,20 +142,54 @@ int main() {
   
    TRISAbits.TRISA4 = 0; //set A4 pin to output
    LATAbits.LATA4 = 1; //set A4 OFF
+   
+   char message[30];
     
-    i2c_master_start();
-    i2c_master_send((address<<1)|0b00000000);
-    i2c_master_send(0x0F);
-    i2c_master_restart();
-    i2c_master_send((address<<1)|0b00000001);
-    char input = i2c_master_recv();
-    i2c_master_ack(1);
-    i2c_master_stop();
+    int ii,length = 14;
+    unsigned char data[length];
+    unsigned short adjData[length/2];
     
-    char message[30];
-    sprintf(message,"%d",input);
-    drawString(50, 50, message, RED, GREEN);
-    
+    int n=0;
+    while(1){
+        _CP0_SET_COUNT(0);
+        I2C_read_multiple(0x20,data,length);
+//        for (ii = 0; ii < length/2; ii++){ 
+//            adjData[ii] = data[ii];//data[2*ii] || (data[2*ii+1]<<8);
+//        }
+        adjData[0] = (data[9]<<8)|data[8];
+        adjData[1] = (data[11]<<8)|data[10];
+        
+        sprintf(message,"%d",adjData[0]);
+        drawString(20, 20, message, RED, GREEN);
+        sprintf(message,"%d",adjData[1]);
+        drawString(20, 30, message, RED, GREEN);
+        if(n==0){
+            LATAbits.LATA4 = 0; //set A4 OFF
+            n=1;
+        }else{
+            LATAbits.LATA4 = 1;
+            n=0;
+        }
+        
+        //draw bars
+        int xloc, yloc, currentHeight, length1 = 30;
+        for(xloc = 60; xloc < 60+50; xloc++){
+            for(currentHeight = 0; currentHeight < 4; currentHeight++){
+                for(yloc = 120; yloc < 120+currentHeight; yloc++){
+                    if(xloc - 60 < length1){
+                        LCD_drawPixel(xloc,yloc,BLACK);                   
+                    }else{
+                        LCD_drawPixel(xloc,yloc,RED);                   
+                    }
+
+                }
+            }
+        }
+        
+        while(_CP0_GET_COUNT() < 1200000){
+            ;
+        }
+    }
     return(1);
 }
 
