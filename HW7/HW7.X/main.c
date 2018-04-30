@@ -158,11 +158,14 @@ int main() {
 //        }
         adjData[0] = (data[9]<<8)|data[8];
         adjData[1] = (data[11]<<8)|data[10];
+        adjData[2] = (data[13]<<8)|data[12];
         
         sprintf(message,"%d",adjData[0]);
         drawString(20, 20, message, RED, GREEN);
         sprintf(message,"%d",adjData[1]);
         drawString(20, 30, message, RED, GREEN);
+        sprintf(message,"%d",adjData[0]);
+        drawString(20, 40, message, RED, GREEN);
         if(n==0){
             LATAbits.LATA4 = 0; //set A4 OFF
             n=1;
@@ -171,12 +174,30 @@ int main() {
             n=0;
         }
         
+        int xval, yval;
+        xval = (int) (adjData[0]/65535);
+        yval = (int) (adjData[3]/65535);
+        
         //draw bars
-        int xloc, yloc, currentHeight, length1 = 30;
-        for(xloc = 60; xloc < 60+50; xloc++){
+        //horizontal
+        int xloc, yloc, currentHeight, length1 = xval, length2 = yval;
+        for(xloc = 10; xloc < 60+100; xloc++){
             for(currentHeight = 0; currentHeight < 4; currentHeight++){
                 for(yloc = 120; yloc < 120+currentHeight; yloc++){
                     if(xloc - 60 < length1){
+                        LCD_drawPixel(xloc,yloc,BLACK);                   
+                    }else{
+                        LCD_drawPixel(xloc,yloc,RED);                   
+                    }
+
+                }
+            }
+        }
+        //vertical
+        for(yloc = 70; yloc < 70+100; yloc++){
+            for(currentHeight = 0; currentHeight < 4; currentHeight++){
+                for(xloc = 60; xloc < 60+currentHeight; xloc++){
+                    if(yloc - 70 < length2){
                         LCD_drawPixel(xloc,yloc,BLACK);                   
                     }else{
                         LCD_drawPixel(xloc,yloc,RED);                   
