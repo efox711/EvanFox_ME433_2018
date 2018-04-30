@@ -160,10 +160,10 @@ int main() {
         adjData[1] = (data[11]<<8)|data[10];
         adjData[2] = (data[13]<<8)|data[12];
         
-        sprintf(message,"%d",adjData[0]);
-        drawString(20, 20, message, RED, GREEN);
-        sprintf(message,"%d",adjData[2]);
-        drawString(20, 30, message, RED, GREEN);
+        sprintf(message,"X Accel: %d     ",adjData[0]);
+        drawString(20, 20, message, BLACK, WHITE);
+        sprintf(message,"Y Accel: %d     ",adjData[2]);
+        drawString(20, 30, message, BLACK, WHITE);
 //        sprintf(message,"%d",adjData[0]);
 //        drawString(20, 40, message, RED, GREEN);
         if(n==0){
@@ -206,6 +206,8 @@ int main() {
                 }
             }
         }
+        //draw point
+        LCD_drawPixel(xval+60,-yval+100, BLACK);
         
         while(_CP0_GET_COUNT() < 1200000){
             ;
