@@ -147,7 +147,7 @@ int main() {
     
     int ii,length = 14;
     unsigned char data[length];
-    unsigned short adjData[length/2];
+    signed short adjData[(length/2)];
     
     int n=0;
     while(1){
@@ -162,10 +162,10 @@ int main() {
         
         sprintf(message,"%d",adjData[0]);
         drawString(20, 20, message, RED, GREEN);
-        sprintf(message,"%d",adjData[1]);
+        sprintf(message,"%d",adjData[2]);
         drawString(20, 30, message, RED, GREEN);
-        sprintf(message,"%d",adjData[0]);
-        drawString(20, 40, message, RED, GREEN);
+//        sprintf(message,"%d",adjData[0]);
+//        drawString(20, 40, message, RED, GREEN);
         if(n==0){
             LATAbits.LATA4 = 0; //set A4 OFF
             n=1;
@@ -174,17 +174,17 @@ int main() {
             n=0;
         }
         
-        int xval, yval;
-        xval = (int) (adjData[0]/65535);
-        yval = (int) (adjData[3]/65535);
+        signed int xval, yval;
+        xval = (signed int) (100*adjData[0]/65535);
+        yval = (signed int) (100*adjData[2]/65535);
         
         //draw bars
         //horizontal
-        int xloc, yloc, currentHeight, length1 = xval, length2 = yval;
-        for(xloc = 10; xloc < 60+100; xloc++){
+        int xloc, yloc, currentHeight, length1 = xval+50, length2 = yval+50;
+        for(xloc = 10; xloc < 10+100; xloc++){
             for(currentHeight = 0; currentHeight < 4; currentHeight++){
-                for(yloc = 120; yloc < 120+currentHeight; yloc++){
-                    if(xloc - 60 < length1){
+                for(yloc = 100; yloc < 100+currentHeight; yloc++){
+                    if(xloc - 10 < length1){
                         LCD_drawPixel(xloc,yloc,BLACK);                   
                     }else{
                         LCD_drawPixel(xloc,yloc,RED);                   
@@ -194,10 +194,10 @@ int main() {
             }
         }
         //vertical
-        for(yloc = 70; yloc < 70+100; yloc++){
+        for(yloc = 150; yloc > 150-99; yloc--){
             for(currentHeight = 0; currentHeight < 4; currentHeight++){
                 for(xloc = 60; xloc < 60+currentHeight; xloc++){
-                    if(yloc - 70 < length2){
+                    if(150-yloc < length2){
                         LCD_drawPixel(xloc,yloc,BLACK);                   
                     }else{
                         LCD_drawPixel(xloc,yloc,RED);                   
