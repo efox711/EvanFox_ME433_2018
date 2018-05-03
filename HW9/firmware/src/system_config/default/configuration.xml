@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Configuration>
+    <General>
+        <HarmonyPath path="../../../../../../../microchip/harmony/v2_05_01"/>
+        <Board name=" "/>
+        <Processor name="PIC32MX250F128B"/>
+    </General>
+</Configuration>
