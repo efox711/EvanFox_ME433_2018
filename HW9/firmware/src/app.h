@@ -88,9 +88,27 @@ typedef enum
 {
 	/* Application's state machine's initial state. */
 	APP_STATE_INIT=0,
-	APP_STATE_SERVICE_TASKS,
+            
+	/* Application waits for device configuration*/
+    APP_STATE_WAIT_FOR_CONFIGURATION,
 
-	/* TODO: Define states used by the application state machine. */
+    /* The application checks if a switch was pressed */
+    APP_STATE_CHECK_TIMER,
+
+    /* Wait for a character receive */
+    APP_STATE_SCHEDULE_READ,
+
+    /* A character is received from host */
+    APP_STATE_WAIT_FOR_READ_COMPLETE,
+
+    /* Wait for the TX to get completed */
+    APP_STATE_SCHEDULE_WRITE,
+
+    /* Wait for the write to complete */
+    APP_STATE_WAIT_FOR_WRITE_COMPLETE,
+
+    /* Application Error state*/
+    APP_STATE_ERROR
 
 } APP_STATES;
 
@@ -110,10 +128,44 @@ typedef enum
 
 typedef struct
 {
-    /* The application's current state */
+    /* Device layer handle returned by device layer open function */
+    USB_DEVICE_HANDLE deviceHandle;
+
+    /* Application's current state*/
     APP_STATES state;
 
-    /* TODO: Define any additional data used by the application. */
+    /* Set Line Coding Data */
+    USB_CDC_LINE_CODING setLineCodingData;
+
+    /* Device configured state */
+    bool isConfigured;
+
+    /* Get Line Coding Data */
+    USB_CDC_LINE_CODING getLineCodingData;
+
+    /* Control Line State */
+    USB_CDC_CONTROL_LINE_STATE controlLineStateData;
+
+    /* Read transfer handle */
+    USB_DEVICE_CDC_TRANSFER_HANDLE readTransferHandle;
+
+    /* Write transfer handle */
+    USB_DEVICE_CDC_TRANSFER_HANDLE writeTransferHandle;
+
+    /* True if a character was read */
+    bool isReadComplete;
+
+    /* True if a character was written*/
+    bool isWriteComplete;
+
+    /* Flag determines SOF event occurrence */
+    bool sofEventHasOccurred;
+
+    /* Break data */
+    uint16_t breakData;
+
+    /* Application CDC read buffer */
+    uint8_t * readBuffer;
 
 } APP_DATA;
 
