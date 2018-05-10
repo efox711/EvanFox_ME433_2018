@@ -55,7 +55,10 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #include "app.h"
 #include <stdio.h>
-#include <xc.h>
+#include "i2c_master_noint.h"
+#include "ST7735.h"
+#include<xc.h>           // processor SFR definitions
+#include<sys/attribs.h>  // __ISR macro
 
 // *****************************************************************************
 // *****************************************************************************
@@ -65,8 +68,10 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 uint8_t APP_MAKE_BUFFER_DMA_READY dataOut[APP_READ_BUFFER_SIZE];
 uint8_t APP_MAKE_BUFFER_DMA_READY readBuffer[APP_READ_BUFFER_SIZE];
-int len, i = 0;
+int len, i = 0,rflag = 0;
 int startTime = 0; // to remember the loop time
+unsigned char dataIMU[14];
+signed short adjDataIMU[(14/2)];
 
 // *****************************************************************************
 /* Application Data
@@ -266,6 +271,100 @@ void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event, void * eventData, uintptr
 // *****************************************************************************
 // *****************************************************************************
 
+// Useful definitions
+#define address 0b1101011
+
+void drawChar(short x, short y, char* message, short color1, short color2) {
+    char asciiRow = *message - 0x20;
+    char pixels;
+    int asciiColumn;
+    for(asciiColumn = 0; asciiColumn < 5; asciiColumn++){
+        pixels = ASCII[asciiRow][asciiColumn];
+        int j;
+        for(j = 0;j < 8;j++){
+            if(((pixels >> j) & 1) == 1){
+                LCD_drawPixel(x+asciiColumn,y+j,color1);
+            }else{
+                LCD_drawPixel(x+asciiColumn,y+j,color2);
+            }
+        }  
+    }
+}
+
+void drawString(short x, short y, char* message, short color1, short color2) {
+    int i = 0;
+    
+    while(message[i] != 0){
+        drawChar(x+5*i,y,&message[i],color1,color2);
+        i++;
+    }
+}
+
+void drawProgressBar(short x, short y, short height, short length1, short color1, short length2, short color2){
+    int xloc, yloc, currentHeight;
+    for(xloc = x; xloc < x+length2; xloc++){
+        for(currentHeight = 0; currentHeight < height+1; currentHeight++){
+            for(yloc = y; yloc < y+currentHeight; yloc++){
+                if(xloc - x < length1){
+                    LCD_drawPixel(xloc,yloc,color1);                   
+                }else{
+                    LCD_drawPixel(xloc,yloc,color2);                   
+                }
+
+            }
+        }
+    }
+}
+
+void setRegister(char reg, char bits){
+    i2c_master_start();
+    i2c_master_send((address<<1)|0b00000000);
+    i2c_master_send(reg);
+    i2c_master_send(bits);
+    i2c_master_stop();
+}
+
+void initIMU(void){
+    ANSELBbits.ANSB2 = 0;
+    ANSELBbits.ANSB3 = 0;
+    
+    i2c_master_setup();
+    
+    // turn on IMU
+    // write to CTRL1_XL register, set smpl rate to 1.66 kHz, 2g sensitivity, 100Hz filter
+    setRegister(0x10,0b10000010);
+    //register - 10h
+    //bits - 1000 00 10
+    
+    // write to CTRL2_G register, set smpl rate to 1.66 kHz, 1000 dps sensitivity
+    setRegister(0x11,0b10001000);
+    //register - 11h
+    //bits - 1000 10 0 0
+    
+    // write to CTRL3_C - IF_INC bit, make it 1 to enable multiple read
+    setRegister(0x12,0b00000100);
+    //register - 12h
+    //bits - 00000100
+}   
+
+void I2C_read_multiple(unsigned char reg, unsigned char * data, int length){
+    i2c_master_start();
+    i2c_master_send((address<<1)|0b00000000);
+    i2c_master_send(reg);
+    i2c_master_restart();
+    i2c_master_send((address<<1)|0b00000001);
+    int ii;
+    for (ii = 0; ii < length;ii++){ 
+        data[ii] = i2c_master_recv();
+        if(ii == length-1){
+            i2c_master_ack(1);
+        }else{
+            i2c_master_ack(0);
+        }
+    }
+    i2c_master_stop();
+}
+
 /*****************************************************
  * This function is called in every step of the
  * application state machine.
@@ -341,6 +440,14 @@ void APP_Initialize(void) {
     appData.readBuffer = &readBuffer[0];
 
     /* PUT YOUR LCD, IMU, AND PIN INITIALIZATIONS HERE */
+        __builtin_disable_interrupts();
+  initIMU();                       // init I2C2, which we use as a master
+  LCD_init();                       // init LCD
+  LCD_clearScreen(WHITE);
+  __builtin_enable_interrupts();
+  
+   TRISAbits.TRISA4 = 0; //set A4 pin to output
+   LATAbits.LATA4 = 1; //set A4 OFF
 
     startTime = _CP0_GET_COUNT();
 }
@@ -407,6 +514,9 @@ void APP_Tasks(void) {
                         /* YOU COULD PUT AN IF STATEMENT HERE TO DETERMINE WHICH LETTER
                         WAS RECEIVED (USUALLY IT IS THE NULL CHARACTER BECAUSE NOTHING WAS
                       TYPED) */
+                if(appData.readBuffer[0] == 'r'){
+                    rflag = 1;
+                }
 
                 if (appData.readTransferHandle == USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID) {
                     appData.state = APP_STATE_ERROR;
@@ -426,7 +536,7 @@ void APP_Tasks(void) {
             /* Check if a character was received or a switch was pressed.
              * The isReadComplete flag gets updated in the CDC event handler. */
 
-             /* WAIT FOR 5HZ TO PASS OR UNTIL A LETTER IS RECEIVED */
+             /* WAIT FOR 100HZ TO PASS OR UNTIL A LETTER IS RECEIVED */
             if (appData.isReadComplete || _CP0_GET_COUNT() - startTime > (48000000 / 2 / 5)) {
                 appData.state = APP_STATE_SCHEDULE_WRITE;
             }
@@ -450,16 +560,43 @@ void APP_Tasks(void) {
             /* PUT THE TEXT YOU WANT TO SEND TO THE COMPUTER IN dataOut
             AND REMEMBER THE NUMBER OF CHARACTERS IN len */
             /* THIS IS WHERE YOU CAN READ YOUR IMU, PRINT TO THE LCD, ETC */
-            len = sprintf(dataOut, "%d\r\n", i);
+            
+            //added code starts here
+             char message[30];
+    
+            //int lengthIMU = 14;
+            //unsigned char dataIMU[14];
+            //signed short adjDataIMU[(14/2)];
+
+            int n=0;
+            I2C_read_multiple(0x20,dataIMU,14);
+
+            adjDataIMU[0] = (dataIMU[9]<<8)|dataIMU[8]; //ax
+            adjDataIMU[1] = (dataIMU[11]<<8)|dataIMU[10]; //ay
+            adjDataIMU[2] = (dataIMU[13]<<8)|dataIMU[12]; //az
+            adjDataIMU[3] = (dataIMU[3]<<8)|dataIMU[2]; //gx
+            adjDataIMU[4] = (dataIMU[5]<<8)|dataIMU[4]; //gy
+            adjDataIMU[5] = (dataIMU[7]<<8)|dataIMU[6]; //gz
+
+            if(rflag==1){
+                len = sprintf(dataOut, "%d  %d  %d  %d  %d  %d  %d\r\n", i,adjDataIMU[0],adjDataIMU[1],adjDataIMU[2],adjDataIMU[3],adjDataIMU[4],adjDataIMU[5]);
+                n++;
+                if(n==100){
+                    rflag = 0;
+                }
+            }else{
+                len = sprintf(dataOut, "%d\r\n",i);
+            }
             i++; // increment the index so we see a change in the text
-            /* IF A LETTER WAS RECEIVED, ECHO IT BACK SO THE USER CAN SEE IT */
+            
+//             IF A LETTER WAS RECEIVED, ECHO IT BACK SO THE USER CAN SEE IT */
             if (appData.isReadComplete) {
                 USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
                         &appData.writeTransferHandle,
                         appData.readBuffer, 1,
                         USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
             }
-            /* ELSE SEND THE MESSAGE YOU WANTED TO SEND */
+ //            ELSE SEND THE MESSAGE YOU WANTED TO SEND */
             else {
                 USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
                         &appData.writeTransferHandle, dataOut, len,
