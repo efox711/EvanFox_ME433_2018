@@ -537,7 +537,7 @@ void APP_Tasks(void) {
              * The isReadComplete flag gets updated in the CDC event handler. */
 
              /* WAIT FOR 100HZ TO PASS OR UNTIL A LETTER IS RECEIVED */
-            if (appData.isReadComplete || _CP0_GET_COUNT() - startTime > (48000000 / 2 / 5)) {
+            if (appData.isReadComplete || _CP0_GET_COUNT() - startTime > (48000000 / 2 / 100)) {
                 appData.state = APP_STATE_SCHEDULE_WRITE;
             }
 
@@ -587,26 +587,28 @@ void APP_Tasks(void) {
                     n = 0;
                     i = 0;
                 }
+                            
 //                remove for test
             }else{
-                len = sprintf(dataOut, "%d\r\n",i);
+                len = 1;
+                dataOut[0]=0;
             }
 //            i++; // increment the index so we see a change in the text
             
-//             IF A LETTER WAS RECEIVED, ECHO IT BACK SO THE USER CAN SEE IT */
-            if (appData.isReadComplete) {
-                USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
-                        &appData.writeTransferHandle,
-                        appData.readBuffer, 1,
-                        USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
-            }
- //            ELSE SEND THE MESSAGE YOU WANTED TO SEND */
-            else {
+////             IF A LETTER WAS RECEIVED, ECHO IT BACK SO THE USER CAN SEE IT */
+//            if (appData.isReadComplete) {
+//                USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
+//                        &appData.writeTransferHandle,
+//                        appData.readBuffer, 1,
+//                        USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
+//            }
+// //            ELSE SEND THE MESSAGE YOU WANTED TO SEND */
+//            else {
                 USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
                         &appData.writeTransferHandle, dataOut, len,
                         USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
                 startTime = _CP0_GET_COUNT(); // reset the timer for acurate delays
-            }
+//            }
             break;
 
         case APP_STATE_WAIT_FOR_WRITE_COMPLETE:
