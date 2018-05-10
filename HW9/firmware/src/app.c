@@ -68,7 +68,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 uint8_t APP_MAKE_BUFFER_DMA_READY dataOut[APP_READ_BUFFER_SIZE];
 uint8_t APP_MAKE_BUFFER_DMA_READY readBuffer[APP_READ_BUFFER_SIZE];
-int len, i = 0,rflag = 0;
+int len, i = 0,rflag = 0, n=0;
 int startTime = 0; // to remember the loop time
 unsigned char dataIMU[14];
 signed short adjDataIMU[(14/2)];
@@ -568,7 +568,7 @@ void APP_Tasks(void) {
             //unsigned char dataIMU[14];
             //signed short adjDataIMU[(14/2)];
 
-            int n=0;
+            
             I2C_read_multiple(0x20,dataIMU,14);
 
             adjDataIMU[0] = (dataIMU[9]<<8)|dataIMU[8]; //ax
@@ -581,13 +581,17 @@ void APP_Tasks(void) {
             if(rflag==1){
                 len = sprintf(dataOut, "%d  %d  %d  %d  %d  %d  %d\r\n", i,adjDataIMU[0],adjDataIMU[1],adjDataIMU[2],adjDataIMU[3],adjDataIMU[4],adjDataIMU[5]);
                 n++;
+                i++; // increment the index so we see a change in the text
                 if(n==100){
                     rflag = 0;
+                    n = 0;
+                    i = 0;
                 }
+//                remove for test
             }else{
                 len = sprintf(dataOut, "%d\r\n",i);
             }
-            i++; // increment the index so we see a change in the text
+//            i++; // increment the index so we see a change in the text
             
 //             IF A LETTER WAS RECEIVED, ECHO IT BACK SO THE USER CAN SEE IT */
             if (appData.isReadComplete) {
