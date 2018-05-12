@@ -73,6 +73,13 @@ int startTime = 0; // to remember the loop time
 unsigned char dataIMU[14];
 signed short adjDataIMU[(14/2)];
 
+//filter initializations
+int aIIR = 0.8, bIIR = 0.2, prevAvgIIR = 0,IIR;
+int rawData[100];
+for(int ii=0;ii<100;ii++){
+    rawData[ii] = 0;
+}
+
 // *****************************************************************************
 /* Application Data
 
@@ -577,9 +584,34 @@ void APP_Tasks(void) {
             adjDataIMU[3] = (dataIMU[3]<<8)|dataIMU[2]; //gx
             adjDataIMU[4] = (dataIMU[5]<<8)|dataIMU[4]; //gy
             adjDataIMU[5] = (dataIMU[7]<<8)|dataIMU[6]; //gz
+            
+            //apply filters
+            //MAF
+            int MAF = 0;
+            int rawData[100];
+            for(int ii=0;ii<100;ii++){
+                rawData[ii] = 0;
+            }
+            float MAFmult[5] = [0.0338, 0.2401, 0.4521, 0.2401, 0.0338];
+            MAF = 0;
+            rawData[i+5] = adjDataIMU[2];
+            for(int jj=0;jj<5;jj++){
+                MAF = MAF + MAFmult[jj] * rawData[i+5-jj];
+                
+            }
+            
+            
+            //IIR
+            IIR = 0;
+            IIR = aIIR * prevAvgIIR + bIIR * adjDataIMU[2];
+            prevAvgIIR = IIR;
+            
+            //FIR
+            int FIR = 0;
+            
 
             if(rflag==1){
-                len = sprintf(dataOut, "%d  %d  %d  %d  %d  %d  %d\r\n", i,adjDataIMU[0],adjDataIMU[1],adjDataIMU[2],adjDataIMU[3],adjDataIMU[4],adjDataIMU[5]);
+                len = sprintf(dataOut, "%d  %d  %d  %d  %d\r\n", i,adjDataIMU[2],MAF, IIR, FIR);
                 n++;
                 i++; // increment the index so we see a change in the text
                 if(n==100){
