@@ -75,10 +75,8 @@ signed short adjDataIMU[(14/2)];
 
 //filter initializations
 int aIIR = 0.8, bIIR = 0.2, prevAvgIIR = 0,IIR;
-int rawData[100];
-for(int ii=0;ii<100;ii++){
-    rawData[ii] = 0;
-}
+int MAFrawData[105], FIRrawData[105];
+
 
 // *****************************************************************************
 /* Application Data
@@ -456,6 +454,12 @@ void APP_Initialize(void) {
    TRISAbits.TRISA4 = 0; //set A4 pin to output
    LATAbits.LATA4 = 1; //set A4 OFF
 
+   for(int ii=0;ii<105;ii++){
+        MAFrawData[ii] = 0;
+   }
+   for(int ii=0;ii<105;ii++){
+        FIRrawData[ii] = 0;
+   }
     startTime = _CP0_GET_COUNT();
 }
 
@@ -588,18 +592,12 @@ void APP_Tasks(void) {
             //apply filters
             //MAF
             int MAF = 0;
-            int rawData[100];
-            for(int ii=0;ii<100;ii++){
-                rawData[ii] = 0;
-            }
-            float MAFmult[5] = [0.0338, 0.2401, 0.4521, 0.2401, 0.0338];
+            float MAFmult[5] = [0.2, 0.2, 0.2, 0.2, 0.2];
             MAF = 0;
-            rawData[i+5] = adjDataIMU[2];
+            MAFrawData[i+5] = adjDataIMU[2];
             for(int jj=0;jj<5;jj++){
-                MAF = MAF + MAFmult[jj] * rawData[i+5-jj];
-                
+                MAF = MAF + MAFmult[jj] * MAFrawData[i+5-jj];
             }
-            
             
             //IIR
             IIR = 0;
@@ -608,6 +606,12 @@ void APP_Tasks(void) {
             
             //FIR
             int FIR = 0;
+            float FIRmult[5] = [0.0338, 0.2401, 0.4521, 0.2401, 0.0338];
+            FIR = 0;
+            FIRrawData[i+5] = adjDataIMU[2];
+            for(int jj=0;jj<5;jj++){
+                FIR = FIR + FIRmult[jj] * FIRrawData[i+5-jj];
+            }
             
 
             if(rflag==1){
