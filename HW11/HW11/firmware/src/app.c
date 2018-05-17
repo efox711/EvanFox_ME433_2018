@@ -54,13 +54,119 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 
 #include "app.h"
-
+#include <stdio.h>
+#include "i2c_master_noint.h"
+#include "ST7735.h"
+#include<xc.h>           // processor SFR definitions
+#include<sys/attribs.h>  // __ISR macro
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
 // *****************************************************************************
 // *****************************************************************************
+
+int len, i = 0,rflag = 0, n=0;
+int startTime = 0, mouseSpdX, mouseSpdY; // to remember the loop time
+unsigned char dataIMU[14];
+signed short adjDataIMU[(14/2)];
+
+//filter initializations
+int FIRZrawData[105],FIRXrawData[105];
+
+// Useful definitions
+#define address 0b1101011
+
+void drawChar(short x, short y, char* message, short color1, short color2) {
+    char asciiRow = *message - 0x20;
+    char pixels;
+    int asciiColumn;
+    for(asciiColumn = 0; asciiColumn < 5; asciiColumn++){
+        pixels = ASCII[asciiRow][asciiColumn];
+        int j;
+        for(j = 0;j < 8;j++){
+            if(((pixels >> j) & 1) == 1){
+                LCD_drawPixel(x+asciiColumn,y+j,color1);
+            }else{
+                LCD_drawPixel(x+asciiColumn,y+j,color2);
+            }
+        }  
+    }
+}
+
+void drawString(short x, short y, char* message, short color1, short color2) {
+    int i = 0;
+    
+    while(message[i] != 0){
+        drawChar(x+5*i,y,&message[i],color1,color2);
+        i++;
+    }
+}
+
+void drawProgressBar(short x, short y, short height, short length1, short color1, short length2, short color2){
+    int xloc, yloc, currentHeight;
+    for(xloc = x; xloc < x+length2; xloc++){
+        for(currentHeight = 0; currentHeight < height+1; currentHeight++){
+            for(yloc = y; yloc < y+currentHeight; yloc++){
+                if(xloc - x < length1){
+                    LCD_drawPixel(xloc,yloc,color1);                   
+                }else{
+                    LCD_drawPixel(xloc,yloc,color2);                   
+                }
+
+            }
+        }
+    }
+}
+
+void setRegister(char reg, char bits){
+    i2c_master_start();
+    i2c_master_send((address<<1)|0b00000000);
+    i2c_master_send(reg);
+    i2c_master_send(bits);
+    i2c_master_stop();
+}
+
+void initIMU(void){
+    ANSELBbits.ANSB2 = 0;
+    ANSELBbits.ANSB3 = 0;
+    
+    i2c_master_setup();
+    
+    // turn on IMU
+    // write to CTRL1_XL register, set smpl rate to 1.66 kHz, 2g sensitivity, 100Hz filter
+    setRegister(0x10,0b10000010);
+    //register - 10h
+    //bits - 1000 00 10
+    
+    // write to CTRL2_G register, set smpl rate to 1.66 kHz, 1000 dps sensitivity
+    setRegister(0x11,0b10001000);
+    //register - 11h
+    //bits - 1000 10 0 0
+    
+    // write to CTRL3_C - IF_INC bit, make it 1 to enable multiple read
+    setRegister(0x12,0b00000100);
+    //register - 12h
+    //bits - 00000100
+}   
+
+void I2C_read_multiple(unsigned char reg, unsigned char * data, int length){
+    i2c_master_start();
+    i2c_master_send((address<<1)|0b00000000);
+    i2c_master_send(reg);
+    i2c_master_restart();
+    i2c_master_send((address<<1)|0b00000001);
+    int ii;
+    for (ii = 0; ii < length;ii++){ 
+        data[ii] = i2c_master_recv();
+        if(ii == length-1){
+            i2c_master_ack(1);
+        }else{
+            i2c_master_ack(0);
+        }
+    }
+    i2c_master_stop();
+}
 
 // *****************************************************************************
 /* Application Data
@@ -268,6 +374,24 @@ void APP_Initialize(void) {
     //appData.emulateMouse = true;
     appData.hidInstance = 0;
     appData.isMouseReportSendBusy = false;
+    
+    /* PUT YOUR LCD, IMU, AND PIN INITIALIZATIONS HERE */
+        __builtin_disable_interrupts();
+  initIMU();                       // init I2C2, which we use as a master
+  LCD_init();                       // init LCD
+  LCD_clearScreen(WHITE);
+  __builtin_enable_interrupts();
+  
+   TRISAbits.TRISA4 = 0; //set A4 pin to output
+   LATAbits.LATA4 = 1; //set A4 OFF
+
+   int ii;
+   for(ii=0;ii<105;ii++){
+        FIRZrawData[ii] = 0;
+        FIRXrawData[ii] = 0;
+   }
+    startTime = _CP0_GET_COUNT();
+
 }
 
 /******************************************************************************
@@ -279,9 +403,12 @@ void APP_Initialize(void) {
  */
 
 void APP_Tasks(void) {
-    static int8_t vector = 0;
-    static uint8_t movement_length = 0;
-    int8_t dir_table[] = {-4, -4, -4, 0, 4, 4, 4, 0};
+//    static int8_t vector = 0;
+//    static uint8_t movement_length = 0;
+//    int8_t dir_table[] = {-4, -4, -4, 0, 4, 4, 4, 0};
+    static uint8_t inc = 0;
+    int mouseSpd = 0, mouseMult = 9;
+    float FIRX, FIRZ;
 
     /* Check the application's current state. */
     switch (appData.state) {
@@ -317,16 +444,88 @@ void APP_Tasks(void) {
             break;
 
         case APP_STATE_MOUSE_EMULATE:
+
+            //int lengthIMU = 14;
+            //unsigned char dataIMU[14];
+            //signed short adjDataIMU[(14/2)];
+
+            
+            I2C_read_multiple(0x20,dataIMU,14);
+
+            adjDataIMU[0] = (dataIMU[9]<<8)|dataIMU[8]; //ax
+            adjDataIMU[1] = (dataIMU[11]<<8)|dataIMU[10]; //ay
+            adjDataIMU[2] = (dataIMU[13]<<8)|dataIMU[12]; //az
+            adjDataIMU[3] = (dataIMU[3]<<8)|dataIMU[2]; //gx
+            adjDataIMU[4] = (dataIMU[5]<<8)|dataIMU[4]; //gy
+            adjDataIMU[5] = (dataIMU[7]<<8)|dataIMU[6]; //gz
+            
+            //apply filters
+            //FIR
+            int FIRZ = 0,jj;
+            float FIRZmult[5] = {0.0338, 0.2401, 0.4521, 0.2401, 0.0338};
+            FIRZ = 0;
+            FIRZrawData[i+5] = adjDataIMU[2];
+            for(jj=0;jj<5;jj++){
+                FIRZ = FIRZ + FIRZmult[jj] * FIRZrawData[i+5-jj];
+            }
+            int FIRX = 0;
+            float FIRXmult[5] = {0.0338, 0.2401, 0.4521, 0.2401, 0.0338};
+            FIRX = 0;
+            FIRXrawData[i+5] = adjDataIMU[0];
+            for(jj=0;jj<5;jj++){
+                FIRX = FIRX + FIRXmult[jj] * FIRXrawData[i+5-jj];
+            }
             
             // every 50th loop, or 20 times per second
-            if (movement_length > 50) {
+//            if (movement_length > 50) {
+            if (inc == mouseMult) {
+                if (FIRX < 0){
+                    mouseSpdX = 0;
+                    if (FIRX < -5000){
+                        mouseSpdX = -1;
+                        if (FIRX < -10000){
+                            mouseSpdX = -2;
+                        }
+                    }
+                }else{
+                    mouseSpdX = 0;
+                    if (FIRX > 5000){
+                        mouseSpdX = 1;
+                        if (FIRX > 10000){
+                            mouseSpdX = 2;
+                        }
+                    }
+                }
+                if (FIRZ < 0){
+                    mouseSpdY = 0;
+                    if (FIRZ < -5000){
+                        mouseSpdY = -1;
+                        if (FIRZ < -10000){
+                            mouseSpdY = -2;
+                        }
+                    }
+                }else{
+                    mouseSpdY = 0;
+                    if (FIRZ > 5000){
+                        mouseSpdY = 1;
+                        if (FIRZ > 10000){
+                            mouseSpdY = 2;
+                        }
+                    }
+                }
+                inc = 0;
+            }else{
+                mouseSpdX = 0;
+                mouseSpdY = 0;
+            }
+            inc++;
                 appData.mouseButton[0] = MOUSE_BUTTON_STATE_RELEASED;
                 appData.mouseButton[1] = MOUSE_BUTTON_STATE_RELEASED;
-                appData.xCoordinate = (int8_t) dir_table[vector & 0x07];
-                appData.yCoordinate = (int8_t) dir_table[(vector + 2) & 0x07];
-                vector++;
-                movement_length = 0;
-            }
+                appData.xCoordinate = (int8_t) mouseSpdX; //dir_table[vector & 0x07];
+                appData.yCoordinate = (int8_t) mouseSpdY; //dir_table[(vector + 2) & 0x07];
+//                vector++;
+//                movement_length = 0;
+//            }
 
             if (!appData.isMouseReportSendBusy) {
                 /* This means we can send the mouse report. The
@@ -378,7 +577,7 @@ void APP_Tasks(void) {
                             sizeof (MOUSE_REPORT));
                     appData.setIdleTimer = 0;
                 }
-                movement_length++;
+//                movement_length++;
             }
 
             break;
