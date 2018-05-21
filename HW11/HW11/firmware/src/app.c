@@ -407,7 +407,7 @@ void APP_Tasks(void) {
 //    static uint8_t movement_length = 0;
 //    int8_t dir_table[] = {-4, -4, -4, 0, 4, 4, 4, 0};
     static uint8_t inc = 0;
-    int mouseSpd = 0, mouseMult = 9;
+    int mouseSpd = 0, mouseMult = 10;
     float FIRX, FIRZ;
 
     /* Check the application's current state. */
@@ -476,43 +476,13 @@ void APP_Tasks(void) {
                 FIRX = FIRX + FIRXmult[jj] * FIRXrawData[i+5-jj];
             }
             
+            
+            
             // every 50th loop, or 20 times per second
 //            if (movement_length > 50) {
             if (inc == mouseMult) {
-                if (FIRX < 0){
-                    mouseSpdX = 0;
-                    if (FIRX < -5000){
-                        mouseSpdX = -1;
-                        if (FIRX < -10000){
-                            mouseSpdX = -2;
-                        }
-                    }
-                }else{
-                    mouseSpdX = 0;
-                    if (FIRX > 5000){
-                        mouseSpdX = 1;
-                        if (FIRX > 10000){
-                            mouseSpdX = 2;
-                        }
-                    }
-                }
-                if (FIRZ < 0){
-                    mouseSpdY = 0;
-                    if (FIRZ < -5000){
-                        mouseSpdY = -1;
-                        if (FIRZ < -10000){
-                            mouseSpdY = -2;
-                        }
-                    }
-                }else{
-                    mouseSpdY = 0;
-                    if (FIRZ > 5000){
-                        mouseSpdY = 1;
-                        if (FIRZ > 10000){
-                            mouseSpdY = 2;
-                        }
-                    }
-                }
+                mouseSpdX = FIRX / 100;
+                mouseSpdY = -FIRZ / 100;
                 inc = 0;
             }else{
                 mouseSpdX = 0;
