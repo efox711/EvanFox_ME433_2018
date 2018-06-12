@@ -78,10 +78,33 @@ void __ISR(_USB_1_VECTOR, ipl4AUTO) _IntHandlerUSBInstance0(void)
 
 void __ISR(_TIMER_4_VECTOR, IPL4SOFT) Timer4ISR(void) {
   // code for PI control goes here
-    float Kp=1,Ki=0;
-    int uL=0, uR=0, eL, eiL, eR, eiR;
-    int velL = 1; // 1 rev/s, 700 timer pulses / rev, runs 500 times /s
-    int velR = 1;
+    float Kp=1,Ki=0.1, K=0.05;
+    int uL=0, uR=0, eL, eiL, eR, eiR, err;
+    int velL = 0; // 1 rev/s, 700 timer pulses / rev, runs 500 times /s
+    int velR = 0;
+    
+    rxVal = 240;
+    err = rxVal - 240;
+    if(err<0) { //slow down left motor, speed up right motor
+        velL = velL + K*err;
+        velR = velR - K*err/2;
+        if(velL < 0) {
+            velL = 0;
+        }
+        if(velR > 5) {
+            velR = 5;
+        }
+    }else{
+        velR = velR - K*err;
+        velL = velL + K*err/2;
+        if(velR < 0) {
+            velR = 0;
+        }
+        if(velL > 5) {
+            velL = 5;
+        }
+    }
+    
     
     eL = velL - TMR3;
     eiL = eiL + eL;
