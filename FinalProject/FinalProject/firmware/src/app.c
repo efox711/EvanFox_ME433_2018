@@ -513,26 +513,26 @@ void APP_Tasks(void) {
             /* PUT THE TEXT YOU WANT TO SEND TO THE COMPUTER IN dataOut
             AND REMEMBER THE NUMBER OF CHARACTERS IN len */
             /* THIS IS WHERE YOU CAN READ YOUR IMU, PRINT TO THE LCD, ETC */
-//            len = sprintf(dataOut, "%d\r\n", i);
-//            i++; // increment the index so we see a change in the text
-//            /* IF A LETTER WAS RECEIVED, ECHO IT BACK SO THE USER CAN SEE IT */
-//             if (gotRx) {
-//                len = sprintf(dataOut, "got: %d\r\n", rxVal);
-//                i++;
-//                USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
-//                        &appData.writeTransferHandle,
-//                        dataOut, len,
-//                        USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
-//                rxPos = 0;
-//                gotRx = 0;
-//            } else {
-//                len = sprintf(dataOut, "%d\r\n", i);
-//                i++;
-//                USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
-//                        &appData.writeTransferHandle, dataOut, len,
-//                        USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
-//                startTime = _CP0_GET_COUNT();
-//            }
+            len = sprintf(dataOut, "%d\r\n", i);
+            i++; // increment the index so we see a change in the text
+            /* IF A LETTER WAS RECEIVED, ECHO IT BACK SO THE USER CAN SEE IT */
+             if (gotRx) {
+                len = sprintf(dataOut, "got: %d\r\n", rxVal);
+                i++;
+                USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
+                        &appData.writeTransferHandle,
+                        dataOut, len,
+                        USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
+                rxPos = 0;
+                gotRx = 0;
+            } else {
+                len = sprintf(dataOut, "%d\r\n", i);
+                i++;
+                USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
+                        &appData.writeTransferHandle, dataOut, len,
+                        USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
+                startTime = _CP0_GET_COUNT();
+            }
             break;
 
         case APP_STATE_WAIT_FOR_WRITE_COMPLETE:

@@ -38,7 +38,6 @@ build/default/production/_ext/340578644/sys_devcon.o:  \
  ../../../../../../../../../microchip/harmony/v2_05_01/framework/peripheral/devcon/processor/../templates/devcon_USB_PHY_SleepModeSet_Unsupported.h  \
  ../../../../../../../../../microchip/harmony/v2_05_01/framework/peripheral/devcon/processor/../templates/devcon_ECCModes_Unsupported.h  \
  ../../../../../../../../../microchip/harmony/v2_05_01/framework/peripheral/devcon/processor/../templates/devcon_JTAGEnable_Default.h  \
- ../../../../../../../../../microchip/harmony/v2_05_01/framework/peripheral/devcon/processor/../templates/devcon_AnalogChargePumpControl_Unsupported.h  \
  ../../../../../../../../../microchip/harmony/v2_05_01/framework/peripheral/devcon/processor/../templates/devcon_TraceOutput_Unsupported.h  \
  ../../../../../../../../../microchip/harmony/v2_05_01/framework/peripheral/devcon/processor/../templates/devcon_JTAGUsesTDO_Default.h  \
  ../../../../../../../../../microchip/harmony/v2_05_01/framework/peripheral/devcon/processor/../templates/devcon_IgnoreDebugFreeze_Unsupported.h  \
