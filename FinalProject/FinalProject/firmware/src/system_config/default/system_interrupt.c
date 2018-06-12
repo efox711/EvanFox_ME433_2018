@@ -78,68 +78,93 @@ void __ISR(_USB_1_VECTOR, ipl4AUTO) _IntHandlerUSBInstance0(void)
 
 void __ISR(_TIMER_4_VECTOR, IPL4SOFT) Timer4ISR(void) {
   // code for PI control goes here
-    float Kp=1,Ki=0.1, K=0.05;
-    int uL=0, uR=0, eL, eiL, eR, eiR, err;
-    int velL = 2; // 1 rev/s, 700 timer pulses / rev, runs 500 times /s
-    int velR = 2;
+    float Kp=1,Ki=0, K=0.05;
+    int uL=0, uR=0, eL, eiL, eR, eiR;
+    signed int err=0;
+    int velL; // 1 rev/s, 700 timer pulses / rev, runs 500 times /s
+    int velR;
+    velL = 1;
+    velR = 1;
     
-    err = rxVal - 50;
-    if(err<0) { //slow down left motor, speed up right motor
-        velL = velL + K*err;
-        velR = velR - K*err/2;
-        if(velL < 0) {
-            velL = 0;
-        }
-        if(velR > 5) {
-            velR = 5;
-        }
+    err = rxVal - 320;
+//    if(err<0) { //slow down left motor, speed up right motor
+//        velL = velL + K*err;
+//        velR = velR - K*err/2;
+//        if(velL < 0) {
+//            velL = 0;
+//        }
+//        if(velR > 5) {
+//            velR = 5;
+//        }
+//    }else{
+//        velR = velR - K*err;
+//        velL = velL + K*err/2;
+//        if(velR < 0) {
+//            velR = 0;
+//        }
+//        if(velL > 5) {
+//            velL = 5;
+//        }
+//    }
+//    
+//    
+//    eL = velL - TMR3;
+//    eiL = eiL + eL;
+//    if(eiL > 500){
+//        eiL = 500;
+//    } else if (eiL < -500){
+//        eiL = -500;
+//    }
+//    uL = Kp * eL + Ki * eiL;
+//    OC4RS = OC4RS + uL;
+//    if(OC4RS < 0){
+//        OC4RS = 0;
+//    } else if (OC4RS > 2399) {
+//        OC4RS = 2399;
+//    }
+//    
+//    eR = velR - TMR5;
+//    eiR = eiR + eR;
+//    if(eiR > 500){
+//        eiR = 500;
+//    } else if (eiR < -500){
+//        eiR = -500;
+//    }
+//    uR = Kp * eR + Ki * eiR;
+//    OC1RS = OC1RS + uR;
+//    if(OC1RS < 0){
+//        OC1RS = 0;
+//    } else if (OC1RS > 2399) {
+//        OC1RS = 2399;
+//    }
+//            
+//    Attempt with Direct COntrol
+    if(err<-40){
+        OC4RS = 0; //LEFT
+        OC1RS = 1150;
+    }else if(err>40){
+        OC1RS = 0;    //Right
+        OC4RS = 1200;
+    }else if(err == -320){
+        OC1RS = 0;
+        OC4RS = 1850;
     }else{
-        velR = velR - K*err;
-        velL = velL + K*err/2;
-        if(velR < 0) {
-            velR = 0;
-        }
-        if(velL > 5) {
-            velL = 5;
-        }
+        OC1RS = 950;
+        OC4RS = 1000;
     }
     
-    
-    eL = velL - TMR3;
-    eiL = eiL + eL;
-    if(eiL > 500){
-        eiL = 500;
-    } else if (eiL < -500){
-        eiL = -500;
-    }
-    uL = Kp * eL + Ki * eiL;
-    OC4RS = OC4RS + uL;
-    if(OC4RS < 0){
-        OC4RS = 0;
-    } else if (OC4RS > 2399) {
-        OC4RS = 2399;
-    }
-    
-    eR = velR - TMR5;
-    eiR = eiR + eR;
-    if(eiR > 500){
-        eiR = 500;
-    } else if (eiR < -500){
-        eiR = -500;
-    }
-    uR = Kp * eR + Ki * eiR;
-    OC1RS = OC1RS + uR;
     if(OC1RS < 0){
         OC1RS = 0;
     } else if (OC1RS > 2399) {
         OC1RS = 2399;
     }
-//            
-//    
-//    OC1RS = 850;    //Right
-//    OC4RS = 1000; //LEFT
-//    //up to 2399
-//    OC1RS = 0;
+    if(OC4RS < 0){
+        OC4RS = 0;
+    } else if (OC4RS > 2399) {
+        OC4RS = 2399;
+    }
+    //up to 2399
+//    OC1RS = 750; //Right
 //    OC4RS = 0;
 //    
     TMR5 = 0;

@@ -130,14 +130,6 @@ c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/
                               c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_fputc_simple.o) (_flsbuf)
 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fflush.o)
                               c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(filbuf.o) (fflush)
-c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fp32mul.o)
-                              build/default/production/_ext/1688732426/system_interrupt.o (fpmul)
-c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fp32subadd.o)
-                              build/default/production/_ext/1688732426/system_interrupt.o (fpsub)
-c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fptoli.o)
-                              build/default/production/_ext/1688732426/system_interrupt.o (fptosi)
-c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(sitofp.o)
-                              build/default/production/_ext/1688732426/system_interrupt.o (sitofp)
 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_udivdi3.o)
                               c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doprnt_cdnopuxX.eo) (__udivdi3)
 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_umoddi3.o)
@@ -180,127 +172,123 @@ section                    address  length [bytes]      (dec)  Description
 .text._vfscanf_cdnopuxX 0x9d000c8c          0x908        2312   
 .text._DRV_USBFS_DEVICE 0x9d001594          0x680        1664   
 .text                   0x9d001c14          0x8bc        2236  App's exec code 
-.text.Timer4ISR         0x9d0024d0          0x374         884   
-.text.APP_Tasks         0x9d002844          0x348         840   
-.text.fpsubadd          0x9d002b8c          0x278         632   
-.text.DRV_USBFS_DEVICE_ 0x9d002e04          0x22c         556   
-.text._USB_DEVICE_Event 0x9d003030          0x218         536   
-.text._USB_DEVICE_Proce 0x9d003248          0x214         532   
-.text._USB_DEVICE_Proce 0x9d00345c          0x20c         524   
-.text.APP_Initialize    0x9d003668          0x204         516   
-.text._USB_DEVICE_Contr 0x9d00386c          0x1fc         508   
-.text.USB_DEVICE_CDC_Wr 0x9d003a68          0x1cc         460   
-.text.DRV_USBFS_DEVICE_ 0x9d003c34          0x1c8         456   
-.text.fp32mul           0x9d003dfc          0x1bc         444   
-.text.DRV_USBFS_DEVICE_ 0x9d003fb8          0x1b8         440   
-.text.USB_DEVICE_CDC_Re 0x9d004170          0x1ac         428   
-.text.DRV_USBFS_DEVICE_ 0x9d00431c          0x198         408   
-.dinit                  0x9d0044b4          0x190         400   
-.text._filbuf           0x9d004644          0x188         392   
-.text._USB_DEVICE_Ep0Re 0x9d0047cc          0x184         388   
-.rodata                 0x9d004950          0x17c         380  Read-only const 
-.text._USB_DEVICE_CDC_A 0x9d004acc          0x174         372   
-.text.USB_DEVICE_Tasks  0x9d004c40          0x170         368   
-.text                   0x9d004db0          0x2d0         720  App's exec code 
-.text.USB_DEVICE_Initia 0x9d005080          0x15c         348   
-.text.DRV_USBFS_DEVICE_ 0x9d0051dc          0x158         344   
-.text.read              0x9d005334          0x158         344   
-.text._USB_DEVICE_CDC_I 0x9d00548c          0x14c         332   
-.text.fputc             0x9d0055d8          0x144         324   
-.text.DRV_USBFS_DEVICE_ 0x9d00571c          0x140         320   
-.text.DRV_USBFS_Initial 0x9d00585c          0x13c         316   
-.text._IntHandlerUSBIns 0x9d005998          0x130         304   
-.text.DRV_USBFS_DEVICE_ 0x9d005ac8          0x130         304   
-.text._flsbuf           0x9d005bf8          0x12c         300   
-.rodata                 0x9d005d24          0x128         296  Read-only const 
-.text.APP_USBDeviceCDCE 0x9d005e4c          0x104         260   
-.text.fgetc             0x9d005f50          0x104         260   
-.rodata                 0x9d006054          0x104         260  Read-only const 
-.text._USB_DEVICE_Confi 0x9d006158          0x100         256   
-.text._USB_DEVICE_Proce 0x9d006258          0x100         256   
-.text._USB_DEVICE_CDC_C 0x9d006358           0xf8         248   
-.text.APP_USBDeviceEven 0x9d006450           0xe0         224   
-.text.general_exception 0x9d006530           0xdc         220   
-.text._DRV_USBFS_DEVICE 0x9d00660c           0xd8         216   
-.text._USB_DEVICE_GetSt 0x9d0066e4           0xd4         212   
-.text._mon_putc         0x9d0067b8           0xd4         212   
-.rodata                 0x9d006890           0xd0         208  Read-only const 
-.text._USB_DEVICE_Ep0Tr 0x9d006960           0xc0         192   
-.text.SYS_Initialize    0x9d006a20           0xb8         184   
-.text._USB_DEVICE_DeIni 0x9d006ad8           0xa8         168   
-.text.range             0x9d006b80           0xa8         168   
-.text.atoi              0x9d006c28           0xa8         168   
-.text._USB_DEVICE_CDC_R 0x9d006cd0           0xa0         160   
-.text._USB_DEVICE_CDC_W 0x9d006d70           0xa0         160   
-.text.fflush            0x9d006e10           0xa0         160   
-.text._USB_DEVICE_Forwa 0x9d006eb0           0x9c         156   
-.text.write             0x9d006f4c           0x9c         156   
-.text._USB_DEVICE_GetFu 0x9d006fe8           0x84         132   
-.text._USB_DEVICE_FindE 0x9d00706c           0x84         132   
-.text.USB_DEVICE_Contro 0x9d0070f0           0x84         132   
-.text.DRV_USBFS_Tasks_I 0x9d007174           0x80         128   
-.text.fptoli            0x9d0071f4           0x80         128   
-.text.USB_DEVICE_Contro 0x9d007274           0x7c         124   
-.text.ungetc            0x9d0072f0           0x74         116   
-.text.DRV_USBFS_DEVICE_ 0x9d007364           0x70         112   
-.text.DRV_USBFS_ClientE 0x9d0073d4           0x6c         108   
-.text._USB_DEVICE_CDC_D 0x9d007440           0x6c         108   
-.text._DRV_USBFS_DEVICE 0x9d0074ac           0x68         104   
-.text._sprintf_cdnopuxX 0x9d007514           0x68         104   
-.text.wspace            0x9d00757c           0x60          96   
-.text.sitofp            0x9d0075dc           0x60          96   
-.text.USB_DEVICE_Endpoi 0x9d00763c           0x5c          92   
-.text.SYS_CLK_Initializ 0x9d007698           0x58          88   
-.text.SYS_DEVCON_System 0x9d0076f0           0x58          88   
-.text.SYS_DEVCON_Perfor 0x9d007748           0x58          88   
-.text.USB_DEVICE_EventH 0x9d0077a0           0x58          88   
-.text.USB_DEVICE_IRPSub 0x9d0077f8           0x58          88   
-.text.main_entry        0x9d007850           0x54          84   
-.text.SYS_INT_SourceDis 0x9d0078a4           0x54          84   
-.text._sscanf_cdnopuxX  0x9d0078f8           0x54          84   
-.text.USB_DEVICE_Detach 0x9d00794c           0x50          80   
-.text.DRV_USBFS_DEVICE_ 0x9d00799c           0x4c          76   
-.text.DRV_USBFS_DEVICE_ 0x9d0079e8           0x4c          76   
-.text.DRV_USBFS_DEVICE_ 0x9d007a34           0x4c          76   
-.text.USB_DEVICE_Open   0x9d007a80           0x4c          76   
-.text._USB_DEVICE_Redir 0x9d007acc           0x4c          76   
-.text._USB_DEVICE_CDC_E 0x9d007b18           0x4c          76   
-.text.SYS_DEVCON_System 0x9d007b64           0x48          72   
-.text.USB_DEVICE_Attach 0x9d007bac           0x48          72   
-.text.USB_DEVICE_Endpoi 0x9d007bf4           0x48          72   
-.text.USB_DEVICE_Contro 0x9d007c3c           0x48          72   
-.text.USB_DEVICE_IRPCan 0x9d007c84           0x48          72   
-.text._bootstrap_except 0x9d007ccc           0x48          72   
-.vector_default         0x9d007d14           0x48          72   
-.text.DRV_USBFS_Open    0x9d007d5c           0x44          68   
-.text                   0x9d007da0           0x44          68  App's exec code 
-.text._general_exceptio 0x9d007de4           0x40          64   
-.text.APP_StateReset    0x9d007e24           0x40          64   
-.text.USB_DEVICE_CDC_Ev 0x9d007e64           0x38          56   
-.text.DRV_USBFS_DEVICE_ 0x9d007e9c           0x34          52   
-.text.SYS_Tasks         0x9d007ed0           0x2c          44   
-.text.DRV_USBFS_Close   0x9d007efc           0x2c          44   
-.text._DRV_USBFS_DEVICE 0x9d007f28           0x2c          44   
-.text.DRV_USBFS_DEVICE_ 0x9d007f54           0x28          40   
-.text.DRV_USBFS_DEVICE_ 0x9d007f7c           0x28          40   
-.text.DRV_USBFS_DEVICE_ 0x9d007fa4           0x28          40   
-.text._USB_DEVICE_Clien 0x9d007fcc           0x28          40   
-.text.tolower           0x9d007ff4           0x24          36   
-.text.main              0x9d008018           0x20          32   
-.text._USB_DEVICE_CDC_G 0x9d008038           0x20          32   
-.text.SYS_INT_StatusGet 0x9d008058           0x1c          28   
-.text.SYS_INT_StatusRes 0x9d008074           0x1c          28   
-.rodata                 0x9d008090           0x18          24  Read-only const 
-.text                   0x9d0080a8           0x18          24  App's exec code 
-.text.SYS_DEVCON_Initia 0x9d0080c0           0x14          20   
-.text.DRV_USBFS_DEVICE_ 0x9d0080d4           0x14          20   
-.text.SYS_INT_Initializ 0x9d0080e8           0x14          20   
-.rodata                 0x9d0080fc           0x24          36  Read-only const 
-.text.SYS_CLK_SystemFre 0x9d008120            0xc          12   
-.text.DRV_USBFS_Tasks   0x9d00812c            0x8           8   
-.text._on_reset         0x9d008134            0x8           8   
-.text._on_bootstrap     0x9d00813c            0x8           8   
-      Total kseg0_program_mem used  :      0x8140       33088  26.1% of 0x1f000
+.text.APP_Tasks         0x9d0024d0          0x348         840   
+.text.DRV_USBFS_DEVICE_ 0x9d002818          0x22c         556   
+.text._USB_DEVICE_Event 0x9d002a44          0x218         536   
+.text._USB_DEVICE_Proce 0x9d002c5c          0x214         532   
+.text._USB_DEVICE_Proce 0x9d002e70          0x20c         524   
+.text.APP_Initialize    0x9d00307c          0x204         516   
+.text._USB_DEVICE_Contr 0x9d003280          0x1fc         508   
+.text.USB_DEVICE_CDC_Wr 0x9d00347c          0x1cc         460   
+.text.DRV_USBFS_DEVICE_ 0x9d003648          0x1c8         456   
+.text.DRV_USBFS_DEVICE_ 0x9d003810          0x1b8         440   
+.text.USB_DEVICE_CDC_Re 0x9d0039c8          0x1ac         428   
+.text.DRV_USBFS_DEVICE_ 0x9d003b74          0x198         408   
+.dinit                  0x9d003d0c          0x190         400   
+.text._filbuf           0x9d003e9c          0x188         392   
+.text._USB_DEVICE_Ep0Re 0x9d004024          0x184         388   
+.rodata                 0x9d0041a8          0x17c         380  Read-only const 
+.text._USB_DEVICE_CDC_A 0x9d004324          0x174         372   
+.text.USB_DEVICE_Tasks  0x9d004498          0x170         368   
+.text                   0x9d004608          0x2d0         720  App's exec code 
+.text.USB_DEVICE_Initia 0x9d0048d8          0x15c         348   
+.text.Timer4ISR         0x9d004a34          0x158         344   
+.text.DRV_USBFS_DEVICE_ 0x9d004b8c          0x158         344   
+.text.read              0x9d004ce4          0x158         344   
+.text._USB_DEVICE_CDC_I 0x9d004e3c          0x14c         332   
+.text.fputc             0x9d004f88          0x144         324   
+.text.DRV_USBFS_DEVICE_ 0x9d0050cc          0x140         320   
+.text.DRV_USBFS_Initial 0x9d00520c          0x13c         316   
+.text._IntHandlerUSBIns 0x9d005348          0x130         304   
+.text.DRV_USBFS_DEVICE_ 0x9d005478          0x130         304   
+.text._flsbuf           0x9d0055a8          0x12c         300   
+.rodata                 0x9d0056d4          0x128         296  Read-only const 
+.text.APP_USBDeviceCDCE 0x9d0057fc          0x104         260   
+.text.fgetc             0x9d005900          0x104         260   
+.rodata                 0x9d005a04          0x104         260  Read-only const 
+.text._USB_DEVICE_Confi 0x9d005b08          0x100         256   
+.text._USB_DEVICE_Proce 0x9d005c08          0x100         256   
+.text._USB_DEVICE_CDC_C 0x9d005d08           0xf8         248   
+.text.APP_USBDeviceEven 0x9d005e00           0xe0         224   
+.text.general_exception 0x9d005ee0           0xdc         220   
+.text._DRV_USBFS_DEVICE 0x9d005fbc           0xd8         216   
+.text._USB_DEVICE_GetSt 0x9d006094           0xd4         212   
+.text._mon_putc         0x9d006168           0xd4         212   
+.rodata                 0x9d006240           0xd0         208  Read-only const 
+.text._USB_DEVICE_Ep0Tr 0x9d006310           0xc0         192   
+.text.SYS_Initialize    0x9d0063d0           0xb8         184   
+.text._USB_DEVICE_DeIni 0x9d006488           0xa8         168   
+.text.range             0x9d006530           0xa8         168   
+.text.atoi              0x9d0065d8           0xa8         168   
+.text._USB_DEVICE_CDC_R 0x9d006680           0xa0         160   
+.text._USB_DEVICE_CDC_W 0x9d006720           0xa0         160   
+.text.fflush            0x9d0067c0           0xa0         160   
+.text._USB_DEVICE_Forwa 0x9d006860           0x9c         156   
+.text.write             0x9d0068fc           0x9c         156   
+.text._USB_DEVICE_GetFu 0x9d006998           0x84         132   
+.text._USB_DEVICE_FindE 0x9d006a1c           0x84         132   
+.text.USB_DEVICE_Contro 0x9d006aa0           0x84         132   
+.text.DRV_USBFS_Tasks_I 0x9d006b24           0x80         128   
+.text.USB_DEVICE_Contro 0x9d006ba4           0x7c         124   
+.text.ungetc            0x9d006c20           0x74         116   
+.text.DRV_USBFS_DEVICE_ 0x9d006c94           0x70         112   
+.text.DRV_USBFS_ClientE 0x9d006d04           0x6c         108   
+.text._USB_DEVICE_CDC_D 0x9d006d70           0x6c         108   
+.text._DRV_USBFS_DEVICE 0x9d006ddc           0x68         104   
+.text._sprintf_cdnopuxX 0x9d006e44           0x68         104   
+.text.wspace            0x9d006eac           0x60          96   
+.text.USB_DEVICE_Endpoi 0x9d006f0c           0x5c          92   
+.text.SYS_CLK_Initializ 0x9d006f68           0x58          88   
+.text.SYS_DEVCON_System 0x9d006fc0           0x58          88   
+.text.SYS_DEVCON_Perfor 0x9d007018           0x58          88   
+.text.USB_DEVICE_EventH 0x9d007070           0x58          88   
+.text.USB_DEVICE_IRPSub 0x9d0070c8           0x58          88   
+.text.main_entry        0x9d007120           0x54          84   
+.text.SYS_INT_SourceDis 0x9d007174           0x54          84   
+.text._sscanf_cdnopuxX  0x9d0071c8           0x54          84   
+.text.USB_DEVICE_Detach 0x9d00721c           0x50          80   
+.text.DRV_USBFS_DEVICE_ 0x9d00726c           0x4c          76   
+.text.DRV_USBFS_DEVICE_ 0x9d0072b8           0x4c          76   
+.text.DRV_USBFS_DEVICE_ 0x9d007304           0x4c          76   
+.text.USB_DEVICE_Open   0x9d007350           0x4c          76   
+.text._USB_DEVICE_Redir 0x9d00739c           0x4c          76   
+.text._USB_DEVICE_CDC_E 0x9d0073e8           0x4c          76   
+.text.SYS_DEVCON_System 0x9d007434           0x48          72   
+.text.USB_DEVICE_Attach 0x9d00747c           0x48          72   
+.text.USB_DEVICE_Endpoi 0x9d0074c4           0x48          72   
+.text.USB_DEVICE_Contro 0x9d00750c           0x48          72   
+.text.USB_DEVICE_IRPCan 0x9d007554           0x48          72   
+.text._bootstrap_except 0x9d00759c           0x48          72   
+.vector_default         0x9d0075e4           0x48          72   
+.text.DRV_USBFS_Open    0x9d00762c           0x44          68   
+.text                   0x9d007670           0x44          68  App's exec code 
+.text._general_exceptio 0x9d0076b4           0x40          64   
+.text.APP_StateReset    0x9d0076f4           0x40          64   
+.text.USB_DEVICE_CDC_Ev 0x9d007734           0x38          56   
+.text.DRV_USBFS_DEVICE_ 0x9d00776c           0x34          52   
+.text.SYS_Tasks         0x9d0077a0           0x2c          44   
+.text.DRV_USBFS_Close   0x9d0077cc           0x2c          44   
+.text._DRV_USBFS_DEVICE 0x9d0077f8           0x2c          44   
+.text.DRV_USBFS_DEVICE_ 0x9d007824           0x28          40   
+.text.DRV_USBFS_DEVICE_ 0x9d00784c           0x28          40   
+.text.DRV_USBFS_DEVICE_ 0x9d007874           0x28          40   
+.text._USB_DEVICE_Clien 0x9d00789c           0x28          40   
+.text.tolower           0x9d0078c4           0x24          36   
+.text.main              0x9d0078e8           0x20          32   
+.text._USB_DEVICE_CDC_G 0x9d007908           0x20          32   
+.text.SYS_INT_StatusGet 0x9d007928           0x1c          28   
+.text.SYS_INT_StatusRes 0x9d007944           0x1c          28   
+.rodata                 0x9d007960           0x18          24  Read-only const 
+.text                   0x9d007978           0x18          24  App's exec code 
+.text.SYS_DEVCON_Initia 0x9d007990           0x14          20   
+.text.DRV_USBFS_DEVICE_ 0x9d0079a4           0x14          20   
+.text.SYS_INT_Initializ 0x9d0079b8           0x14          20   
+.rodata                 0x9d0079cc           0x14          20  Read-only const 
+.text.SYS_CLK_SystemFre 0x9d0079e0            0xc          12   
+.text.DRV_USBFS_Tasks   0x9d0079ec            0x8           8   
+.text._on_reset         0x9d0079f4            0x8           8   
+.text._on_bootstrap     0x9d0079fc            0x8           8   
+      Total kseg0_program_mem used  :      0x7a00       31232  24.6% of 0x1f000
 
 kseg0 Boot-Memory Usage
 section                    address  length [bytes]      (dec)  Description
@@ -364,7 +352,7 @@ section                    address  length [bytes]      (dec)  Description
 .bev_excpt              0xbfc00380           0x10          16  BEV-Exception 
          Total kseg1_boot_mem used  :       0x1f4         500  42.8% of 0x490
         --------------------------------------------------------------------------
-         Total Program Memory used  :      0x84a4       33956  25.7% of 0x20490
+         Total Program Memory used  :      0x7d64       32100  24.3% of 0x20490
         --------------------------------------------------------------------------
 
 
@@ -827,22 +815,6 @@ Discarded input sections
  .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fflush.o)
  .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fflush.o)
  .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fflush.o)
- .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fp32mul.o)
- .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fp32mul.o)
- .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fp32mul.o)
- .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fp32mul.o)
- .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fp32subadd.o)
- .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fp32subadd.o)
- .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fp32subadd.o)
- .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fp32subadd.o)
- .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fptoli.o)
- .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fptoli.o)
- .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fptoli.o)
- .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fptoli.o)
- .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(sitofp.o)
- .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(sitofp.o)
- .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(sitofp.o)
- .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(sitofp.o)
  .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_udivdi3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_udivdi3.o)
  .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_udivdi3.o)
@@ -1736,164 +1708,164 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000    0x2909e
+.debug_info     0x00000000    0x29082
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x171f build/default/production/_ext/639803181/sys_clk_pic32mx.o
  .debug_info    0x0000171f     0x1678 build/default/production/_ext/340578644/sys_devcon.o
  .debug_info    0x00002d97     0x109a build/default/production/_ext/340578644/sys_devcon_pic32mx.o
  .debug_info    0x00003e31     0x4a57 build/default/production/_ext/1688732426/system_init.o
- .debug_info    0x00008888      0xeac build/default/production/_ext/1688732426/system_interrupt.o
- .debug_info    0x00009734     0x106c build/default/production/_ext/1688732426/system_exceptions.o
- .debug_info    0x0000a7a0      0xac8 build/default/production/_ext/1688732426/system_tasks.o
- .debug_info    0x0000b268     0x34cb build/default/production/_ext/1360937237/app.o
- .debug_info    0x0000e733      0x1d3 build/default/production/_ext/1360937237/main.o
- .debug_info    0x0000e906     0x49d9 build/default/production/_ext/1929468124/drv_usbfs.o
- .debug_info    0x000132df     0x7f50 build/default/production/_ext/1929468124/drv_usbfs_device.o
- .debug_info    0x0001b22f     0x1164 build/default/production/_ext/813635036/sys_int_pic32.o
- .debug_info    0x0001c393     0x5cb2 build/default/production/_ext/425215177/usb_device.o
- .debug_info    0x00022045     0x3c4c build/default/production/_ext/425215177/usb_device_cdc.o
- .debug_info    0x00025c91     0x145a build/default/production/_ext/425215177/usb_device_cdc_acm.o
- .debug_info    0x000270eb       0xf3 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_info    0x000271de       0xcc c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_info    0x000272aa       0xd4 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_info    0x0002737e       0xe6 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
- .debug_info    0x00027464       0xd0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sprintf_cdnopuxX.eo)
- .debug_info    0x00027534       0xce c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sscanf_cdnopuxX.eo)
- .debug_info    0x00027602       0xd1 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doprnt_cdnopuxX.eo)
- .debug_info    0x000276d3       0xf8 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doscan_cdnopuxX.eo)
- .debug_info    0x000277cb       0xc2 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fgetc.o)
- .debug_info    0x0002788d       0xc2 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_fputc_simple.o)
- .debug_info    0x0002794f       0xc0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(atoi.o)
- .debug_info    0x00027a0f      0x238 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ctypef.o)
- .debug_info    0x00027c47       0xc4 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ungetc.o)
- .debug_info    0x00027d0b       0xc5 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(filbuf.o)
- .debug_info    0x00027dd0       0xc5 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_flsbuf_simple.o)
- .debug_info    0x00027e95       0xc4 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fflush.o)
- .debug_info    0x00027f59      0x764 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_udivdi3.o)
- .debug_info    0x000286bd      0x7a1 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_umoddi3.o)
- .debug_info    0x00028e5e       0xbc c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(read.o)
- .debug_info    0x00028f1a       0xbe c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(write.o)
- .debug_info    0x00028fd8       0xc6 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(_mon_putc.o)
+ .debug_info    0x00008888      0xe90 build/default/production/_ext/1688732426/system_interrupt.o
+ .debug_info    0x00009718     0x106c build/default/production/_ext/1688732426/system_exceptions.o
+ .debug_info    0x0000a784      0xac8 build/default/production/_ext/1688732426/system_tasks.o
+ .debug_info    0x0000b24c     0x34cb build/default/production/_ext/1360937237/app.o
+ .debug_info    0x0000e717      0x1d3 build/default/production/_ext/1360937237/main.o
+ .debug_info    0x0000e8ea     0x49d9 build/default/production/_ext/1929468124/drv_usbfs.o
+ .debug_info    0x000132c3     0x7f50 build/default/production/_ext/1929468124/drv_usbfs_device.o
+ .debug_info    0x0001b213     0x1164 build/default/production/_ext/813635036/sys_int_pic32.o
+ .debug_info    0x0001c377     0x5cb2 build/default/production/_ext/425215177/usb_device.o
+ .debug_info    0x00022029     0x3c4c build/default/production/_ext/425215177/usb_device_cdc.o
+ .debug_info    0x00025c75     0x145a build/default/production/_ext/425215177/usb_device_cdc_acm.o
+ .debug_info    0x000270cf       0xf3 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_info    0x000271c2       0xcc c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_info    0x0002728e       0xd4 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_info    0x00027362       0xe6 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_info    0x00027448       0xd0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sprintf_cdnopuxX.eo)
+ .debug_info    0x00027518       0xce c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sscanf_cdnopuxX.eo)
+ .debug_info    0x000275e6       0xd1 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doprnt_cdnopuxX.eo)
+ .debug_info    0x000276b7       0xf8 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doscan_cdnopuxX.eo)
+ .debug_info    0x000277af       0xc2 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fgetc.o)
+ .debug_info    0x00027871       0xc2 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_fputc_simple.o)
+ .debug_info    0x00027933       0xc0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(atoi.o)
+ .debug_info    0x000279f3      0x238 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ctypef.o)
+ .debug_info    0x00027c2b       0xc4 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ungetc.o)
+ .debug_info    0x00027cef       0xc5 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(filbuf.o)
+ .debug_info    0x00027db4       0xc5 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_flsbuf_simple.o)
+ .debug_info    0x00027e79       0xc4 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fflush.o)
+ .debug_info    0x00027f3d      0x764 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_udivdi3.o)
+ .debug_info    0x000286a1      0x7a1 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_umoddi3.o)
+ .debug_info    0x00028e42       0xbc c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(read.o)
+ .debug_info    0x00028efe       0xbe c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(write.o)
+ .debug_info    0x00028fbc       0xc6 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(_mon_putc.o)
 
-.debug_abbrev   0x00000000     0x2b4d
+.debug_abbrev   0x00000000     0x2b4f
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x26b build/default/production/_ext/639803181/sys_clk_pic32mx.o
  .debug_abbrev  0x0000026b      0x2a0 build/default/production/_ext/340578644/sys_devcon.o
  .debug_abbrev  0x0000050b      0x204 build/default/production/_ext/340578644/sys_devcon_pic32mx.o
  .debug_abbrev  0x0000070f      0x330 build/default/production/_ext/1688732426/system_init.o
- .debug_abbrev  0x00000a3f      0x13f build/default/production/_ext/1688732426/system_interrupt.o
- .debug_abbrev  0x00000b7e      0x109 build/default/production/_ext/1688732426/system_exceptions.o
- .debug_abbrev  0x00000c87      0x11a build/default/production/_ext/1688732426/system_tasks.o
- .debug_abbrev  0x00000da1      0x278 build/default/production/_ext/1360937237/app.o
- .debug_abbrev  0x00001019       0x93 build/default/production/_ext/1360937237/main.o
- .debug_abbrev  0x000010ac      0x42b build/default/production/_ext/1929468124/drv_usbfs.o
- .debug_abbrev  0x000014d7      0x4bc build/default/production/_ext/1929468124/drv_usbfs_device.o
- .debug_abbrev  0x00001993      0x237 build/default/production/_ext/813635036/sys_int_pic32.o
- .debug_abbrev  0x00001bca      0x42f build/default/production/_ext/425215177/usb_device.o
- .debug_abbrev  0x00001ff9      0x40b build/default/production/_ext/425215177/usb_device_cdc.o
- .debug_abbrev  0x00002404      0x1be build/default/production/_ext/425215177/usb_device_cdc_acm.o
- .debug_abbrev  0x000025c2       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_abbrev  0x000025ea       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_abbrev  0x00002612       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_abbrev  0x0000263a       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
- .debug_abbrev  0x00002662       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sprintf_cdnopuxX.eo)
- .debug_abbrev  0x0000268a       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sscanf_cdnopuxX.eo)
- .debug_abbrev  0x000026b2       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doprnt_cdnopuxX.eo)
- .debug_abbrev  0x000026da       0x3c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doscan_cdnopuxX.eo)
- .debug_abbrev  0x00002716       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fgetc.o)
- .debug_abbrev  0x0000273e       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_fputc_simple.o)
- .debug_abbrev  0x00002766       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(atoi.o)
- .debug_abbrev  0x0000278e       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ctypef.o)
- .debug_abbrev  0x000027b6       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ungetc.o)
- .debug_abbrev  0x000027de       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(filbuf.o)
- .debug_abbrev  0x00002806       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_flsbuf_simple.o)
- .debug_abbrev  0x0000282e       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fflush.o)
- .debug_abbrev  0x00002856      0x138 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_udivdi3.o)
- .debug_abbrev  0x0000298e      0x147 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_umoddi3.o)
- .debug_abbrev  0x00002ad5       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(read.o)
- .debug_abbrev  0x00002afd       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(write.o)
- .debug_abbrev  0x00002b25       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(_mon_putc.o)
+ .debug_abbrev  0x00000a3f      0x141 build/default/production/_ext/1688732426/system_interrupt.o
+ .debug_abbrev  0x00000b80      0x109 build/default/production/_ext/1688732426/system_exceptions.o
+ .debug_abbrev  0x00000c89      0x11a build/default/production/_ext/1688732426/system_tasks.o
+ .debug_abbrev  0x00000da3      0x278 build/default/production/_ext/1360937237/app.o
+ .debug_abbrev  0x0000101b       0x93 build/default/production/_ext/1360937237/main.o
+ .debug_abbrev  0x000010ae      0x42b build/default/production/_ext/1929468124/drv_usbfs.o
+ .debug_abbrev  0x000014d9      0x4bc build/default/production/_ext/1929468124/drv_usbfs_device.o
+ .debug_abbrev  0x00001995      0x237 build/default/production/_ext/813635036/sys_int_pic32.o
+ .debug_abbrev  0x00001bcc      0x42f build/default/production/_ext/425215177/usb_device.o
+ .debug_abbrev  0x00001ffb      0x40b build/default/production/_ext/425215177/usb_device_cdc.o
+ .debug_abbrev  0x00002406      0x1be build/default/production/_ext/425215177/usb_device_cdc_acm.o
+ .debug_abbrev  0x000025c4       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_abbrev  0x000025ec       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_abbrev  0x00002614       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_abbrev  0x0000263c       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_abbrev  0x00002664       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sprintf_cdnopuxX.eo)
+ .debug_abbrev  0x0000268c       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sscanf_cdnopuxX.eo)
+ .debug_abbrev  0x000026b4       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doprnt_cdnopuxX.eo)
+ .debug_abbrev  0x000026dc       0x3c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doscan_cdnopuxX.eo)
+ .debug_abbrev  0x00002718       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fgetc.o)
+ .debug_abbrev  0x00002740       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_fputc_simple.o)
+ .debug_abbrev  0x00002768       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(atoi.o)
+ .debug_abbrev  0x00002790       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ctypef.o)
+ .debug_abbrev  0x000027b8       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ungetc.o)
+ .debug_abbrev  0x000027e0       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(filbuf.o)
+ .debug_abbrev  0x00002808       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_flsbuf_simple.o)
+ .debug_abbrev  0x00002830       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fflush.o)
+ .debug_abbrev  0x00002858      0x138 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x00002990      0x147 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_umoddi3.o)
+ .debug_abbrev  0x00002ad7       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(read.o)
+ .debug_abbrev  0x00002aff       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(write.o)
+ .debug_abbrev  0x00002b27       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(_mon_putc.o)
 
-.debug_line     0x00000000     0x5792
+.debug_line     0x00000000     0x5781
  *(.debug_line)
  .debug_line    0x00000000      0x497 build/default/production/_ext/639803181/sys_clk_pic32mx.o
  .debug_line    0x00000497      0x64f build/default/production/_ext/340578644/sys_devcon.o
  .debug_line    0x00000ae6      0x3b0 build/default/production/_ext/340578644/sys_devcon_pic32mx.o
  .debug_line    0x00000e96      0x662 build/default/production/_ext/1688732426/system_init.o
- .debug_line    0x000014f8      0x2bd build/default/production/_ext/1688732426/system_interrupt.o
- .debug_line    0x000017b5      0x1e3 build/default/production/_ext/1688732426/system_exceptions.o
- .debug_line    0x00001998      0x2b3 build/default/production/_ext/1688732426/system_tasks.o
- .debug_line    0x00001c4b      0x3c7 build/default/production/_ext/1360937237/app.o
- .debug_line    0x00002012       0xe2 build/default/production/_ext/1360937237/main.o
- .debug_line    0x000020f4      0x767 build/default/production/_ext/1929468124/drv_usbfs.o
- .debug_line    0x0000285b      0xdd3 build/default/production/_ext/1929468124/drv_usbfs_device.o
- .debug_line    0x0000362e      0x2dd build/default/production/_ext/813635036/sys_int_pic32.o
- .debug_line    0x0000390b      0x9f3 build/default/production/_ext/425215177/usb_device.o
- .debug_line    0x000042fe      0x653 build/default/production/_ext/425215177/usb_device_cdc.o
- .debug_line    0x00004951      0x24b build/default/production/_ext/425215177/usb_device_cdc_acm.o
- .debug_line    0x00004b9c       0xa5 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_line    0x00004c41       0x92 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_line    0x00004cd3       0x96 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_line    0x00004d69       0xa4 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
- .debug_line    0x00004e0d       0x7f c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sprintf_cdnopuxX.eo)
- .debug_line    0x00004e8c       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sscanf_cdnopuxX.eo)
- .debug_line    0x00004f0a       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doprnt_cdnopuxX.eo)
- .debug_line    0x00004f88       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doscan_cdnopuxX.eo)
- .debug_line    0x00005006       0x7d c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fgetc.o)
- .debug_line    0x00005083       0x7d c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_fputc_simple.o)
- .debug_line    0x00005100       0x7c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(atoi.o)
- .debug_line    0x0000517c        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ctype.o)
- .debug_line    0x0000517c       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ctypef.o)
- .debug_line    0x000051fa       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ungetc.o)
- .debug_line    0x00005278        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_iob.o)
- .debug_line    0x00005278       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(filbuf.o)
- .debug_line    0x000052f6       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_flsbuf_simple.o)
- .debug_line    0x00005374       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fflush.o)
- .debug_line    0x000053f2       0xfb c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_udivdi3.o)
- .debug_line    0x000054ed      0x10d c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_umoddi3.o)
- .debug_line    0x000055fa       0x86 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(read.o)
- .debug_line    0x00005680       0x87 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(write.o)
- .debug_line    0x00005707        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(xc32_uart.o)
- .debug_line    0x00005707       0x8b c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(_mon_putc.o)
+ .debug_line    0x000014f8      0x2ac build/default/production/_ext/1688732426/system_interrupt.o
+ .debug_line    0x000017a4      0x1e3 build/default/production/_ext/1688732426/system_exceptions.o
+ .debug_line    0x00001987      0x2b3 build/default/production/_ext/1688732426/system_tasks.o
+ .debug_line    0x00001c3a      0x3c7 build/default/production/_ext/1360937237/app.o
+ .debug_line    0x00002001       0xe2 build/default/production/_ext/1360937237/main.o
+ .debug_line    0x000020e3      0x767 build/default/production/_ext/1929468124/drv_usbfs.o
+ .debug_line    0x0000284a      0xdd3 build/default/production/_ext/1929468124/drv_usbfs_device.o
+ .debug_line    0x0000361d      0x2dd build/default/production/_ext/813635036/sys_int_pic32.o
+ .debug_line    0x000038fa      0x9f3 build/default/production/_ext/425215177/usb_device.o
+ .debug_line    0x000042ed      0x653 build/default/production/_ext/425215177/usb_device_cdc.o
+ .debug_line    0x00004940      0x24b build/default/production/_ext/425215177/usb_device_cdc_acm.o
+ .debug_line    0x00004b8b       0xa5 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_line    0x00004c30       0x92 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_line    0x00004cc2       0x96 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_line    0x00004d58       0xa4 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_line    0x00004dfc       0x7f c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sprintf_cdnopuxX.eo)
+ .debug_line    0x00004e7b       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sscanf_cdnopuxX.eo)
+ .debug_line    0x00004ef9       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doprnt_cdnopuxX.eo)
+ .debug_line    0x00004f77       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doscan_cdnopuxX.eo)
+ .debug_line    0x00004ff5       0x7d c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fgetc.o)
+ .debug_line    0x00005072       0x7d c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_fputc_simple.o)
+ .debug_line    0x000050ef       0x7c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(atoi.o)
+ .debug_line    0x0000516b        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ctype.o)
+ .debug_line    0x0000516b       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ctypef.o)
+ .debug_line    0x000051e9       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ungetc.o)
+ .debug_line    0x00005267        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_iob.o)
+ .debug_line    0x00005267       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(filbuf.o)
+ .debug_line    0x000052e5       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_flsbuf_simple.o)
+ .debug_line    0x00005363       0x7e c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fflush.o)
+ .debug_line    0x000053e1       0xfb c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_udivdi3.o)
+ .debug_line    0x000054dc      0x10d c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_umoddi3.o)
+ .debug_line    0x000055e9       0x86 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(read.o)
+ .debug_line    0x0000566f       0x87 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(write.o)
+ .debug_line    0x000056f6        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(xc32_uart.o)
+ .debug_line    0x000056f6       0x8b c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(_mon_putc.o)
 
-.debug_frame    0x00000000     0x11c0
+.debug_frame    0x00000000     0x118c
  *(.debug_frame)
  .debug_frame   0x00000000       0xa0 build/default/production/_ext/639803181/sys_clk_pic32mx.o
  .debug_frame   0x000000a0       0xe8 build/default/production/_ext/340578644/sys_devcon.o
  .debug_frame   0x00000188       0x28 build/default/production/_ext/340578644/sys_devcon_pic32mx.o
  .debug_frame   0x000001b0       0x28 build/default/production/_ext/1688732426/system_init.o
- .debug_frame   0x000001d8       0xb4 build/default/production/_ext/1688732426/system_interrupt.o
- .debug_frame   0x0000028c       0x28 build/default/production/_ext/1688732426/system_exceptions.o
- .debug_frame   0x000002b4       0x28 build/default/production/_ext/1688732426/system_tasks.o
- .debug_frame   0x000002dc       0x84 build/default/production/_ext/1360937237/app.o
- .debug_frame   0x00000360       0x28 build/default/production/_ext/1360937237/main.o
- .debug_frame   0x00000388       0xc8 build/default/production/_ext/1929468124/drv_usbfs.o
- .debug_frame   0x00000450      0x1e0 build/default/production/_ext/1929468124/drv_usbfs_device.o
- .debug_frame   0x00000630       0x90 build/default/production/_ext/813635036/sys_int_pic32.o
- .debug_frame   0x000006c0      0x4d8 build/default/production/_ext/425215177/usb_device.o
- .debug_frame   0x00000b98      0x17c build/default/production/_ext/425215177/usb_device_cdc.o
- .debug_frame   0x00000d14       0x28 build/default/production/_ext/425215177/usb_device_cdc_acm.o
- .debug_frame   0x00000d3c       0x2c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_frame   0x00000d68       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_frame   0x00000d88       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_frame   0x00000da8       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
- .debug_frame   0x00000dc8       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sprintf_cdnopuxX.eo)
- .debug_frame   0x00000df0       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sscanf_cdnopuxX.eo)
- .debug_frame   0x00000e18       0x38 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doprnt_cdnopuxX.eo)
- .debug_frame   0x00000e50       0x6c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doscan_cdnopuxX.eo)
- .debug_frame   0x00000ebc       0x2c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fgetc.o)
- .debug_frame   0x00000ee8       0x2c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_fputc_simple.o)
- .debug_frame   0x00000f14       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(atoi.o)
- .debug_frame   0x00000f34      0x120 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ctypef.o)
- .debug_frame   0x00001054       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ungetc.o)
- .debug_frame   0x00001074       0x30 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(filbuf.o)
- .debug_frame   0x000010a4       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_flsbuf_simple.o)
- .debug_frame   0x000010cc       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fflush.o)
- .debug_frame   0x000010f4       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_udivdi3.o)
- .debug_frame   0x00001114       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_umoddi3.o)
- .debug_frame   0x00001134       0x2c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(read.o)
- .debug_frame   0x00001160       0x38 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(write.o)
- .debug_frame   0x00001198       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(_mon_putc.o)
+ .debug_frame   0x000001d8       0x80 build/default/production/_ext/1688732426/system_interrupt.o
+ .debug_frame   0x00000258       0x28 build/default/production/_ext/1688732426/system_exceptions.o
+ .debug_frame   0x00000280       0x28 build/default/production/_ext/1688732426/system_tasks.o
+ .debug_frame   0x000002a8       0x84 build/default/production/_ext/1360937237/app.o
+ .debug_frame   0x0000032c       0x28 build/default/production/_ext/1360937237/main.o
+ .debug_frame   0x00000354       0xc8 build/default/production/_ext/1929468124/drv_usbfs.o
+ .debug_frame   0x0000041c      0x1e0 build/default/production/_ext/1929468124/drv_usbfs_device.o
+ .debug_frame   0x000005fc       0x90 build/default/production/_ext/813635036/sys_int_pic32.o
+ .debug_frame   0x0000068c      0x4d8 build/default/production/_ext/425215177/usb_device.o
+ .debug_frame   0x00000b64      0x17c build/default/production/_ext/425215177/usb_device_cdc.o
+ .debug_frame   0x00000ce0       0x28 build/default/production/_ext/425215177/usb_device_cdc_acm.o
+ .debug_frame   0x00000d08       0x2c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_frame   0x00000d34       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_frame   0x00000d54       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_frame   0x00000d74       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_frame   0x00000d94       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sprintf_cdnopuxX.eo)
+ .debug_frame   0x00000dbc       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sscanf_cdnopuxX.eo)
+ .debug_frame   0x00000de4       0x38 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doprnt_cdnopuxX.eo)
+ .debug_frame   0x00000e1c       0x6c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doscan_cdnopuxX.eo)
+ .debug_frame   0x00000e88       0x2c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fgetc.o)
+ .debug_frame   0x00000eb4       0x2c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_fputc_simple.o)
+ .debug_frame   0x00000ee0       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(atoi.o)
+ .debug_frame   0x00000f00      0x120 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ctypef.o)
+ .debug_frame   0x00001020       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ungetc.o)
+ .debug_frame   0x00001040       0x30 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(filbuf.o)
+ .debug_frame   0x00001070       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_flsbuf_simple.o)
+ .debug_frame   0x00001098       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fflush.o)
+ .debug_frame   0x000010c0       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_udivdi3.o)
+ .debug_frame   0x000010e0       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_umoddi3.o)
+ .debug_frame   0x00001100       0x2c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(read.o)
+ .debug_frame   0x0000112c       0x38 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(write.o)
+ .debug_frame   0x00001164       0x28 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(_mon_putc.o)
 
 .debug_str      0x00000000      0x7fe
  *(.debug_str)
@@ -1937,26 +1909,26 @@ END GROUP
  .debug_str     0x000007fe        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(xc32_uart.o)
  .debug_str     0x000007fe        0x0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(_mon_putc.o)
 
-.debug_loc      0x00000000     0x748a
+.debug_loc      0x00000000     0x72ba
  *(.debug_loc)
  .debug_loc     0x00000000       0x49 build/default/production/_ext/639803181/sys_clk_pic32mx.o
  .debug_loc     0x00000049       0xf0 build/default/production/_ext/340578644/sys_devcon.o
  .debug_loc     0x00000139       0x91 build/default/production/_ext/340578644/sys_devcon_pic32mx.o
  .debug_loc     0x000001ca       0x21 build/default/production/_ext/1688732426/system_init.o
- .debug_loc     0x000001eb      0x210 build/default/production/_ext/1688732426/system_interrupt.o
- .debug_loc     0x000003fb      0x433 build/default/production/_ext/1360937237/app.o
- .debug_loc     0x0000082e      0x4de build/default/production/_ext/1929468124/drv_usbfs.o
- .debug_loc     0x00000d0c     0x2301 build/default/production/_ext/1929468124/drv_usbfs_device.o
- .debug_loc     0x0000300d       0x7c build/default/production/_ext/813635036/sys_int_pic32.o
- .debug_loc     0x00003089     0x1f0b build/default/production/_ext/425215177/usb_device.o
- .debug_loc     0x00004f94      0xdac build/default/production/_ext/425215177/usb_device_cdc.o
- .debug_loc     0x00005d40      0x1ff build/default/production/_ext/425215177/usb_device_cdc_acm.o
- .debug_loc     0x00005f3f       0x2c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_loc     0x00005f6b      0xa6a c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_udivdi3.o)
- .debug_loc     0x000069d5      0xa3d c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_umoddi3.o)
- .debug_loc     0x00007412       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(read.o)
- .debug_loc     0x00007432       0x38 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(write.o)
- .debug_loc     0x0000746a       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(_mon_putc.o)
+ .debug_loc     0x000001eb       0x40 build/default/production/_ext/1688732426/system_interrupt.o
+ .debug_loc     0x0000022b      0x433 build/default/production/_ext/1360937237/app.o
+ .debug_loc     0x0000065e      0x4de build/default/production/_ext/1929468124/drv_usbfs.o
+ .debug_loc     0x00000b3c     0x2301 build/default/production/_ext/1929468124/drv_usbfs_device.o
+ .debug_loc     0x00002e3d       0x7c build/default/production/_ext/813635036/sys_int_pic32.o
+ .debug_loc     0x00002eb9     0x1f0b build/default/production/_ext/425215177/usb_device.o
+ .debug_loc     0x00004dc4      0xdac build/default/production/_ext/425215177/usb_device_cdc.o
+ .debug_loc     0x00005b70      0x1ff build/default/production/_ext/425215177/usb_device_cdc_acm.o
+ .debug_loc     0x00005d6f       0x2c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_loc     0x00005d9b      0xa6a c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_udivdi3.o)
+ .debug_loc     0x00006805      0xa3d c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_umoddi3.o)
+ .debug_loc     0x00007242       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(read.o)
+ .debug_loc     0x00007262       0x38 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(write.o)
+ .debug_loc     0x0000729a       0x20 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(_mon_putc.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -2169,685 +2141,659 @@ LOAD data_init
  .text          0x9d002078      0x458 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a(_udivdi3.o)
                 0x9d002078                __udivdi3
 
-.text.Timer4ISR
-                0x9d0024d0      0x374
- .text.Timer4ISR
-                0x9d0024d0      0x374 build/default/production/_ext/1688732426/system_interrupt.o
-                0x9d0024d0                Timer4ISR
-
 .text.APP_Tasks
-                0x9d002844      0x348
+                0x9d0024d0      0x348
  .text.APP_Tasks
-                0x9d002844      0x348 build/default/production/_ext/1360937237/app.o
-                0x9d002844                APP_Tasks
-
-.text.fpsubadd  0x9d002b8c      0x278
- .text.fpsubadd
-                0x9d002b8c      0x278 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fp32subadd.o)
-                0x9d002b8c                fpsub
-                0x9d002b8c                __subsf3
-                0x9d002b94                __addsf3
-                0x9d002b94                fpadd
+                0x9d0024d0      0x348 build/default/production/_ext/1360937237/app.o
+                0x9d0024d0                APP_Tasks
 
 .text.DRV_USBFS_DEVICE_IRPSubmit
-                0x9d002e04      0x22c
+                0x9d002818      0x22c
  .text.DRV_USBFS_DEVICE_IRPSubmit
-                0x9d002e04      0x22c build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d002e04                DRV_USBFS_DEVICE_IRPSubmit
+                0x9d002818      0x22c build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d002818                DRV_USBFS_DEVICE_IRPSubmit
 
 .text._USB_DEVICE_EventHandler
-                0x9d003030      0x218
+                0x9d002a44      0x218
  .text._USB_DEVICE_EventHandler
-                0x9d003030      0x218 build/default/production/_ext/425215177/usb_device.o
-                0x9d003030                _USB_DEVICE_EventHandler
+                0x9d002a44      0x218 build/default/production/_ext/425215177/usb_device.o
+                0x9d002a44                _USB_DEVICE_EventHandler
 
 .text._USB_DEVICE_ProcessStandardDeviceSetRequests
-                0x9d003248      0x214
+                0x9d002c5c      0x214
  .text._USB_DEVICE_ProcessStandardDeviceSetRequests
-                0x9d003248      0x214 build/default/production/_ext/425215177/usb_device.o
-                0x9d003248                _USB_DEVICE_ProcessStandardDeviceSetRequests
+                0x9d002c5c      0x214 build/default/production/_ext/425215177/usb_device.o
+                0x9d002c5c                _USB_DEVICE_ProcessStandardDeviceSetRequests
 
 .text._USB_DEVICE_ProcessStandardDeviceGetRequests
-                0x9d00345c      0x20c
+                0x9d002e70      0x20c
  .text._USB_DEVICE_ProcessStandardDeviceGetRequests
-                0x9d00345c      0x20c build/default/production/_ext/425215177/usb_device.o
-                0x9d00345c                _USB_DEVICE_ProcessStandardDeviceGetRequests
+                0x9d002e70      0x20c build/default/production/_ext/425215177/usb_device.o
+                0x9d002e70                _USB_DEVICE_ProcessStandardDeviceGetRequests
 
 .text.APP_Initialize
-                0x9d003668      0x204
+                0x9d00307c      0x204
  .text.APP_Initialize
-                0x9d003668      0x204 build/default/production/_ext/1360937237/app.o
-                0x9d003668                APP_Initialize
+                0x9d00307c      0x204 build/default/production/_ext/1360937237/app.o
+                0x9d00307c                APP_Initialize
 
 .text._USB_DEVICE_ControlTransferHandler
-                0x9d00386c      0x1fc
+                0x9d003280      0x1fc
  .text._USB_DEVICE_ControlTransferHandler
-                0x9d00386c      0x1fc build/default/production/_ext/425215177/usb_device.o
-                0x9d00386c                _USB_DEVICE_ControlTransferHandler
+                0x9d003280      0x1fc build/default/production/_ext/425215177/usb_device.o
+                0x9d003280                _USB_DEVICE_ControlTransferHandler
 
 .text.USB_DEVICE_CDC_Write
-                0x9d003a68      0x1cc
+                0x9d00347c      0x1cc
  .text.USB_DEVICE_CDC_Write
-                0x9d003a68      0x1cc build/default/production/_ext/425215177/usb_device_cdc.o
-                0x9d003a68                USB_DEVICE_CDC_Write
+                0x9d00347c      0x1cc build/default/production/_ext/425215177/usb_device_cdc.o
+                0x9d00347c                USB_DEVICE_CDC_Write
 
 .text.DRV_USBFS_DEVICE_EndpointStallClear
-                0x9d003c34      0x1c8
+                0x9d003648      0x1c8
  .text.DRV_USBFS_DEVICE_EndpointStallClear
-                0x9d003c34      0x1c8 build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d003c34                DRV_USBFS_DEVICE_EndpointStallClear
-
-.text.fp32mul   0x9d003dfc      0x1bc
- .text.fp32mul  0x9d003dfc      0x1bc c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fp32mul.o)
-                0x9d003dfc                fpmul
-                0x9d003dfc                __mulsf3
+                0x9d003648      0x1c8 build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d003648                DRV_USBFS_DEVICE_EndpointStallClear
 
 .text.DRV_USBFS_DEVICE_EndpointStall
-                0x9d003fb8      0x1b8
+                0x9d003810      0x1b8
  .text.DRV_USBFS_DEVICE_EndpointStall
-                0x9d003fb8      0x1b8 build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d003fb8                DRV_USBFS_DEVICE_EndpointStall
+                0x9d003810      0x1b8 build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d003810                DRV_USBFS_DEVICE_EndpointStall
 
 .text.USB_DEVICE_CDC_Read
-                0x9d004170      0x1ac
+                0x9d0039c8      0x1ac
  .text.USB_DEVICE_CDC_Read
-                0x9d004170      0x1ac build/default/production/_ext/425215177/usb_device_cdc.o
-                0x9d004170                USB_DEVICE_CDC_Read
+                0x9d0039c8      0x1ac build/default/production/_ext/425215177/usb_device_cdc.o
+                0x9d0039c8                USB_DEVICE_CDC_Read
 
 .text.DRV_USBFS_DEVICE_EndpointEnable
-                0x9d00431c      0x198
+                0x9d003b74      0x198
  .text.DRV_USBFS_DEVICE_EndpointEnable
-                0x9d00431c      0x198 build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d00431c                DRV_USBFS_DEVICE_EndpointEnable
+                0x9d003b74      0x198 build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d003b74                DRV_USBFS_DEVICE_EndpointEnable
 
-.dinit          0x9d0044b4      0x190
- .dinit         0x9d0044b4      0x190 data_init
+.dinit          0x9d003d0c      0x190
+ .dinit         0x9d003d0c      0x190 data_init
 
-.text._filbuf   0x9d004644      0x188
- .text._filbuf  0x9d004644      0x188 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(filbuf.o)
-                0x9d004644                _filbuf
+.text._filbuf   0x9d003e9c      0x188
+ .text._filbuf  0x9d003e9c      0x188 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(filbuf.o)
+                0x9d003e9c                _filbuf
 
 .text._USB_DEVICE_Ep0ReceiveCompleteCallback
-                0x9d0047cc      0x184
+                0x9d004024      0x184
  .text._USB_DEVICE_Ep0ReceiveCompleteCallback
-                0x9d0047cc      0x184 build/default/production/_ext/425215177/usb_device.o
-                0x9d0047cc                _USB_DEVICE_Ep0ReceiveCompleteCallback
+                0x9d004024      0x184 build/default/production/_ext/425215177/usb_device.o
+                0x9d004024                _USB_DEVICE_Ep0ReceiveCompleteCallback
 
-.rodata         0x9d004950      0x17c
- .rodata        0x9d004950      0x17c build/default/production/_ext/1688732426/system_init.o
-                0x9d004950                usbDevInitData
-                0x9d004984                usbMasterDescriptor
-                0x9d0049b0                stringDescriptors
-                0x9d0049bc                sd002
-                0x9d0049ec                sd001
-                0x9d004a20                sd000
-                0x9d004a24                fullSpeedConfigDescSet
-                0x9d004a28                fullSpeedConfigurationDescriptor
-                0x9d004a6c                deviceDescriptor
-                0x9d004a80                funcRegistrationTable
-                0x9d004a94                cdcInit0
-                0x9d004aa0                drvUSBFSInit
+.rodata         0x9d0041a8      0x17c
+ .rodata        0x9d0041a8      0x17c build/default/production/_ext/1688732426/system_init.o
+                0x9d0041a8                usbDevInitData
+                0x9d0041dc                usbMasterDescriptor
+                0x9d004208                stringDescriptors
+                0x9d004214                sd002
+                0x9d004244                sd001
+                0x9d004278                sd000
+                0x9d00427c                fullSpeedConfigDescSet
+                0x9d004280                fullSpeedConfigurationDescriptor
+                0x9d0042c4                deviceDescriptor
+                0x9d0042d8                funcRegistrationTable
+                0x9d0042ec                cdcInit0
+                0x9d0042f8                drvUSBFSInit
 
 .text._USB_DEVICE_CDC_ACMSetUpPacketHandler
-                0x9d004acc      0x174
+                0x9d004324      0x174
  .text._USB_DEVICE_CDC_ACMSetUpPacketHandler
-                0x9d004acc      0x174 build/default/production/_ext/425215177/usb_device_cdc_acm.o
-                0x9d004acc                _USB_DEVICE_CDC_ACMSetUpPacketHandler
+                0x9d004324      0x174 build/default/production/_ext/425215177/usb_device_cdc_acm.o
+                0x9d004324                _USB_DEVICE_CDC_ACMSetUpPacketHandler
 
 .text.USB_DEVICE_Tasks
-                0x9d004c40      0x170
+                0x9d004498      0x170
  .text.USB_DEVICE_Tasks
-                0x9d004c40      0x170 build/default/production/_ext/425215177/usb_device.o
-                0x9d004c40                USB_DEVICE_Tasks
+                0x9d004498      0x170 build/default/production/_ext/425215177/usb_device.o
+                0x9d004498                USB_DEVICE_Tasks
 
-.text           0x9d004db0      0x2d0
- .text          0x9d004db0      0x168 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(memcpy.o)
-                0x9d004db0                memcpy
- .text          0x9d004f18      0x168 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(strlen.o)
-                0x9d004f18                strlen
+.text           0x9d004608      0x2d0
+ .text          0x9d004608      0x168 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(memcpy.o)
+                0x9d004608                memcpy
+ .text          0x9d004770      0x168 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(strlen.o)
+                0x9d004770                strlen
 
 .text.USB_DEVICE_Initialize
-                0x9d005080      0x15c
+                0x9d0048d8      0x15c
  .text.USB_DEVICE_Initialize
-                0x9d005080      0x15c build/default/production/_ext/425215177/usb_device.o
-                0x9d005080                USB_DEVICE_Initialize
+                0x9d0048d8      0x15c build/default/production/_ext/425215177/usb_device.o
+                0x9d0048d8                USB_DEVICE_Initialize
+
+.text.Timer4ISR
+                0x9d004a34      0x158
+ .text.Timer4ISR
+                0x9d004a34      0x158 build/default/production/_ext/1688732426/system_interrupt.o
+                0x9d004a34                Timer4ISR
 
 .text.DRV_USBFS_DEVICE_IRPCancelAll
-                0x9d0051dc      0x158
+                0x9d004b8c      0x158
  .text.DRV_USBFS_DEVICE_IRPCancelAll
-                0x9d0051dc      0x158 build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d0051dc                DRV_USBFS_DEVICE_IRPCancelAll
+                0x9d004b8c      0x158 build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d004b8c                DRV_USBFS_DEVICE_IRPCancelAll
 
-.text.read      0x9d005334      0x158
- .text.read     0x9d005334      0x158 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(read.o)
-                0x9d005334                read
+.text.read      0x9d004ce4      0x158
+ .text.read     0x9d004ce4      0x158 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(read.o)
+                0x9d004ce4                read
 
 .text._USB_DEVICE_CDC_Initialization
-                0x9d00548c      0x14c
+                0x9d004e3c      0x14c
  .text._USB_DEVICE_CDC_Initialization
-                0x9d00548c      0x14c build/default/production/_ext/425215177/usb_device_cdc.o
-                0x9d00548c                _USB_DEVICE_CDC_Initialization
+                0x9d004e3c      0x14c build/default/production/_ext/425215177/usb_device_cdc.o
+                0x9d004e3c                _USB_DEVICE_CDC_Initialization
 
-.text.fputc     0x9d0055d8      0x144
- .text.fputc    0x9d0055d8      0x144 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_fputc_simple.o)
-                0x9d0055d8                fputc
+.text.fputc     0x9d004f88      0x144
+ .text.fputc    0x9d004f88      0x144 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_fputc_simple.o)
+                0x9d004f88                fputc
 
 .text.DRV_USBFS_DEVICE_EndpointDisable
-                0x9d00571c      0x140
+                0x9d0050cc      0x140
  .text.DRV_USBFS_DEVICE_EndpointDisable
-                0x9d00571c      0x140 build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d00571c                DRV_USBFS_DEVICE_EndpointDisable
+                0x9d0050cc      0x140 build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d0050cc                DRV_USBFS_DEVICE_EndpointDisable
 
 .text.DRV_USBFS_Initialize
-                0x9d00585c      0x13c
+                0x9d00520c      0x13c
  .text.DRV_USBFS_Initialize
-                0x9d00585c      0x13c build/default/production/_ext/1929468124/drv_usbfs.o
-                0x9d00585c                DRV_USBFS_Initialize
+                0x9d00520c      0x13c build/default/production/_ext/1929468124/drv_usbfs.o
+                0x9d00520c                DRV_USBFS_Initialize
 
 .text._IntHandlerUSBInstance0
-                0x9d005998      0x130
+                0x9d005348      0x130
  .text._IntHandlerUSBInstance0
-                0x9d005998      0x130 build/default/production/_ext/1688732426/system_interrupt.o
-                0x9d005998                _IntHandlerUSBInstance0
+                0x9d005348      0x130 build/default/production/_ext/1688732426/system_interrupt.o
+                0x9d005348                _IntHandlerUSBInstance0
 
 .text.DRV_USBFS_DEVICE_IRPCancel
-                0x9d005ac8      0x130
+                0x9d005478      0x130
  .text.DRV_USBFS_DEVICE_IRPCancel
-                0x9d005ac8      0x130 build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d005ac8                DRV_USBFS_DEVICE_IRPCancel
+                0x9d005478      0x130 build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d005478                DRV_USBFS_DEVICE_IRPCancel
 
-.text._flsbuf   0x9d005bf8      0x12c
- .text._flsbuf  0x9d005bf8      0x12c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_flsbuf_simple.o)
-                0x9d005bf8                _flsbuf
+.text._flsbuf   0x9d0055a8      0x12c
+ .text._flsbuf  0x9d0055a8      0x12c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(_flsbuf_simple.o)
+                0x9d0055a8                _flsbuf
 
-.rodata         0x9d005d24      0x128
- .rodata        0x9d005d24      0x128 build/default/production/_ext/1688732426/system_exceptions.o
+.rodata         0x9d0056d4      0x128
+ .rodata        0x9d0056d4      0x128 build/default/production/_ext/1688732426/system_exceptions.o
 
 .text.APP_USBDeviceCDCEventHandler
-                0x9d005e4c      0x104
+                0x9d0057fc      0x104
  .text.APP_USBDeviceCDCEventHandler
-                0x9d005e4c      0x104 build/default/production/_ext/1360937237/app.o
-                0x9d005e4c                APP_USBDeviceCDCEventHandler
+                0x9d0057fc      0x104 build/default/production/_ext/1360937237/app.o
+                0x9d0057fc                APP_USBDeviceCDCEventHandler
 
-.text.fgetc     0x9d005f50      0x104
- .text.fgetc    0x9d005f50      0x104 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fgetc.o)
-                0x9d005f50                fgetc
+.text.fgetc     0x9d005900      0x104
+ .text.fgetc    0x9d005900      0x104 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fgetc.o)
+                0x9d005900                fgetc
 
-.rodata         0x9d006054      0x104
- .rodata        0x9d006054      0x104 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ctype.o)
-                0x9d006054                _ctype
+.rodata         0x9d005a04      0x104
+ .rodata        0x9d005a04      0x104 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ctype.o)
+                0x9d005a04                _ctype
 
 .text._USB_DEVICE_ConfigureDevice
-                0x9d006158      0x100
+                0x9d005b08      0x100
  .text._USB_DEVICE_ConfigureDevice
-                0x9d006158      0x100 build/default/production/_ext/425215177/usb_device.o
-                0x9d006158                _USB_DEVICE_ConfigureDevice
+                0x9d005b08      0x100 build/default/production/_ext/425215177/usb_device.o
+                0x9d005b08                _USB_DEVICE_ConfigureDevice
 
 .text._USB_DEVICE_ProcessStandardEndpointRequest
-                0x9d006258      0x100
+                0x9d005c08      0x100
  .text._USB_DEVICE_ProcessStandardEndpointRequest
-                0x9d006258      0x100 build/default/production/_ext/425215177/usb_device.o
-                0x9d006258                _USB_DEVICE_ProcessStandardEndpointRequest
+                0x9d005c08      0x100 build/default/production/_ext/425215177/usb_device.o
+                0x9d005c08                _USB_DEVICE_ProcessStandardEndpointRequest
 
 .text._USB_DEVICE_CDC_ControlTransferHandler
-                0x9d006358       0xf8
+                0x9d005d08       0xf8
  .text._USB_DEVICE_CDC_ControlTransferHandler
-                0x9d006358       0xf8 build/default/production/_ext/425215177/usb_device_cdc.o
-                0x9d006358                _USB_DEVICE_CDC_ControlTransferHandler
+                0x9d005d08       0xf8 build/default/production/_ext/425215177/usb_device_cdc.o
+                0x9d005d08                _USB_DEVICE_CDC_ControlTransferHandler
 
 .text.APP_USBDeviceEventHandler
-                0x9d006450       0xe0
+                0x9d005e00       0xe0
  .text.APP_USBDeviceEventHandler
-                0x9d006450       0xe0 build/default/production/_ext/1360937237/app.o
-                0x9d006450                APP_USBDeviceEventHandler
+                0x9d005e00       0xe0 build/default/production/_ext/1360937237/app.o
+                0x9d005e00                APP_USBDeviceEventHandler
 
 .text.general_exception
-                0x9d006530       0xdc
+                0x9d005ee0       0xdc
  .text.general_exception
-                0x9d006530       0xdc c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(general-exception.o)
-                0x9d006530                _general_exception_context
+                0x9d005ee0       0xdc c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(general-exception.o)
+                0x9d005ee0                _general_exception_context
 
 .text._DRV_USBFS_DEVICE_EndpointBDTEntryArm
-                0x9d00660c       0xd8
+                0x9d005fbc       0xd8
  .text._DRV_USBFS_DEVICE_EndpointBDTEntryArm
-                0x9d00660c       0xd8 build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d00660c                _DRV_USBFS_DEVICE_EndpointBDTEntryArm
+                0x9d005fbc       0xd8 build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d005fbc                _DRV_USBFS_DEVICE_EndpointBDTEntryArm
 
 .text._USB_DEVICE_GetStringDescriptorRequestProcess
-                0x9d0066e4       0xd4
+                0x9d006094       0xd4
  .text._USB_DEVICE_GetStringDescriptorRequestProcess
-                0x9d0066e4       0xd4 build/default/production/_ext/425215177/usb_device.o
-                0x9d0066e4                _USB_DEVICE_GetStringDescriptorRequestProcess
+                0x9d006094       0xd4 build/default/production/_ext/425215177/usb_device.o
+                0x9d006094                _USB_DEVICE_GetStringDescriptorRequestProcess
 
 .text._mon_putc
-                0x9d0067b8       0xd4
+                0x9d006168       0xd4
  .text._mon_putc
-                0x9d0067b8       0xd4 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(_mon_putc.o)
-                0x9d0067b8                _mon_putc
+                0x9d006168       0xd4 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(_mon_putc.o)
+                0x9d006168                _mon_putc
 
-.rodata         0x9d006890       0xd0
- .rodata        0x9d006890       0xd0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doprnt_cdnopuxX.eo)
+.rodata         0x9d006240       0xd0
+ .rodata        0x9d006240       0xd0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doprnt_cdnopuxX.eo)
 
 .text._USB_DEVICE_Ep0TransmitCompleteCallback
-                0x9d006960       0xc0
+                0x9d006310       0xc0
  .text._USB_DEVICE_Ep0TransmitCompleteCallback
-                0x9d006960       0xc0 build/default/production/_ext/425215177/usb_device.o
-                0x9d006960                _USB_DEVICE_Ep0TransmitCompleteCallback
+                0x9d006310       0xc0 build/default/production/_ext/425215177/usb_device.o
+                0x9d006310                _USB_DEVICE_Ep0TransmitCompleteCallback
 
 .text.SYS_Initialize
-                0x9d006a20       0xb8
+                0x9d0063d0       0xb8
  .text.SYS_Initialize
-                0x9d006a20       0xb8 build/default/production/_ext/1688732426/system_init.o
-                0x9d006a20                SYS_Initialize
+                0x9d0063d0       0xb8 build/default/production/_ext/1688732426/system_init.o
+                0x9d0063d0                SYS_Initialize
 
 .text._USB_DEVICE_DeInitializeAllFunctionDrivers
-                0x9d006ad8       0xa8
+                0x9d006488       0xa8
  .text._USB_DEVICE_DeInitializeAllFunctionDrivers
-                0x9d006ad8       0xa8 build/default/production/_ext/425215177/usb_device.o
-                0x9d006ad8                _USB_DEVICE_DeInitializeAllFunctionDrivers
+                0x9d006488       0xa8 build/default/production/_ext/425215177/usb_device.o
+                0x9d006488                _USB_DEVICE_DeInitializeAllFunctionDrivers
 
-.text.range     0x9d006b80       0xa8
- .text.range    0x9d006b80       0xa8 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doscan_cdnopuxX.eo)
+.text.range     0x9d006530       0xa8
+ .text.range    0x9d006530       0xa8 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doscan_cdnopuxX.eo)
 
-.text.atoi      0x9d006c28       0xa8
- .text.atoi     0x9d006c28       0xa8 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(atoi.o)
-                0x9d006c28                atoi
+.text.atoi      0x9d0065d8       0xa8
+ .text.atoi     0x9d0065d8       0xa8 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(atoi.o)
+                0x9d0065d8                atoi
 
 .text._USB_DEVICE_CDC_ReadIRPCallback
-                0x9d006cd0       0xa0
+                0x9d006680       0xa0
  .text._USB_DEVICE_CDC_ReadIRPCallback
-                0x9d006cd0       0xa0 build/default/production/_ext/425215177/usb_device_cdc.o
-                0x9d006cd0                _USB_DEVICE_CDC_ReadIRPCallback
+                0x9d006680       0xa0 build/default/production/_ext/425215177/usb_device_cdc.o
+                0x9d006680                _USB_DEVICE_CDC_ReadIRPCallback
 
 .text._USB_DEVICE_CDC_WriteIRPCallback
-                0x9d006d70       0xa0
+                0x9d006720       0xa0
  .text._USB_DEVICE_CDC_WriteIRPCallback
-                0x9d006d70       0xa0 build/default/production/_ext/425215177/usb_device_cdc.o
-                0x9d006d70                _USB_DEVICE_CDC_WriteIRPCallback
+                0x9d006720       0xa0 build/default/production/_ext/425215177/usb_device_cdc.o
+                0x9d006720                _USB_DEVICE_CDC_WriteIRPCallback
 
-.text.fflush    0x9d006e10       0xa0
- .text.fflush   0x9d006e10       0xa0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fflush.o)
-                0x9d006e10                fflush
+.text.fflush    0x9d0067c0       0xa0
+ .text.fflush   0x9d0067c0       0xa0 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(fflush.o)
+                0x9d0067c0                fflush
 
 .text._USB_DEVICE_ForwardControlXfrToFunction
-                0x9d006eb0       0x9c
+                0x9d006860       0x9c
  .text._USB_DEVICE_ForwardControlXfrToFunction
-                0x9d006eb0       0x9c build/default/production/_ext/425215177/usb_device.o
-                0x9d006eb0                _USB_DEVICE_ForwardControlXfrToFunction
+                0x9d006860       0x9c build/default/production/_ext/425215177/usb_device.o
+                0x9d006860                _USB_DEVICE_ForwardControlXfrToFunction
 
-.text.write     0x9d006f4c       0x9c
- .text.write    0x9d006f4c       0x9c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(write.o)
-                0x9d006f4c                write
+.text.write     0x9d0068fc       0x9c
+ .text.write    0x9d0068fc       0x9c c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(write.o)
+                0x9d0068fc                write
 
 .text._USB_DEVICE_GetFunctionDriverEntryByInterface
-                0x9d006fe8       0x84
+                0x9d006998       0x84
  .text._USB_DEVICE_GetFunctionDriverEntryByInterface
-                0x9d006fe8       0x84 build/default/production/_ext/425215177/usb_device.o
-                0x9d006fe8                _USB_DEVICE_GetFunctionDriverEntryByInterface
+                0x9d006998       0x84 build/default/production/_ext/425215177/usb_device.o
+                0x9d006998                _USB_DEVICE_GetFunctionDriverEntryByInterface
 
 .text._USB_DEVICE_FindEndpoint
-                0x9d00706c       0x84
+                0x9d006a1c       0x84
  .text._USB_DEVICE_FindEndpoint
-                0x9d00706c       0x84 build/default/production/_ext/425215177/usb_device.o
-                0x9d00706c                _USB_DEVICE_FindEndpoint
+                0x9d006a1c       0x84 build/default/production/_ext/425215177/usb_device.o
+                0x9d006a1c                _USB_DEVICE_FindEndpoint
 
 .text.USB_DEVICE_ControlSend
-                0x9d0070f0       0x84
+                0x9d006aa0       0x84
  .text.USB_DEVICE_ControlSend
-                0x9d0070f0       0x84 build/default/production/_ext/425215177/usb_device.o
-                0x9d0070f0                USB_DEVICE_ControlSend
+                0x9d006aa0       0x84 build/default/production/_ext/425215177/usb_device.o
+                0x9d006aa0                USB_DEVICE_ControlSend
 
 .text.DRV_USBFS_Tasks_ISR
-                0x9d007174       0x80
+                0x9d006b24       0x80
  .text.DRV_USBFS_Tasks_ISR
-                0x9d007174       0x80 build/default/production/_ext/1929468124/drv_usbfs.o
-                0x9d007174                DRV_USBFS_Tasks_ISR
-
-.text.fptoli    0x9d0071f4       0x80
- .text.fptoli   0x9d0071f4       0x80 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(fptoli.o)
-                0x9d0071f4                fptoli
-                0x9d0071f4                fptosi
-                0x9d0071f4                __fixsfsi
+                0x9d006b24       0x80 build/default/production/_ext/1929468124/drv_usbfs.o
+                0x9d006b24                DRV_USBFS_Tasks_ISR
 
 .text.USB_DEVICE_ControlStatus
-                0x9d007274       0x7c
+                0x9d006ba4       0x7c
  .text.USB_DEVICE_ControlStatus
-                0x9d007274       0x7c build/default/production/_ext/425215177/usb_device.o
-                0x9d007274                USB_DEVICE_ControlStatus
+                0x9d006ba4       0x7c build/default/production/_ext/425215177/usb_device.o
+                0x9d006ba4                USB_DEVICE_ControlStatus
 
-.text.ungetc    0x9d0072f0       0x74
- .text.ungetc   0x9d0072f0       0x74 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ungetc.o)
-                0x9d0072f0                ungetc
+.text.ungetc    0x9d006c20       0x74
+ .text.ungetc   0x9d006c20       0x74 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ungetc.o)
+                0x9d006c20                ungetc
 
 .text.DRV_USBFS_DEVICE_Attach
-                0x9d007364       0x70
+                0x9d006c94       0x70
  .text.DRV_USBFS_DEVICE_Attach
-                0x9d007364       0x70 build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d007364                DRV_USBFS_DEVICE_Attach
+                0x9d006c94       0x70 build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d006c94                DRV_USBFS_DEVICE_Attach
 
 .text.DRV_USBFS_ClientEventCallBackSet
-                0x9d0073d4       0x6c
+                0x9d006d04       0x6c
  .text.DRV_USBFS_ClientEventCallBackSet
-                0x9d0073d4       0x6c build/default/production/_ext/1929468124/drv_usbfs.o
-                0x9d0073d4                DRV_USBFS_ClientEventCallBackSet
+                0x9d006d04       0x6c build/default/production/_ext/1929468124/drv_usbfs.o
+                0x9d006d04                DRV_USBFS_ClientEventCallBackSet
 
 .text._USB_DEVICE_CDC_Deinitialization
-                0x9d007440       0x6c
+                0x9d006d70       0x6c
  .text._USB_DEVICE_CDC_Deinitialization
-                0x9d007440       0x6c build/default/production/_ext/425215177/usb_device_cdc.o
-                0x9d007440                _USB_DEVICE_CDC_Deinitialization
+                0x9d006d70       0x6c build/default/production/_ext/425215177/usb_device_cdc.o
+                0x9d006d70                _USB_DEVICE_CDC_Deinitialization
 
 .text._DRV_USBFS_DEVICE_IRPQueueFlush
-                0x9d0074ac       0x68
+                0x9d006ddc       0x68
  .text._DRV_USBFS_DEVICE_IRPQueueFlush
-                0x9d0074ac       0x68 build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d0074ac                _DRV_USBFS_DEVICE_IRPQueueFlush
+                0x9d006ddc       0x68 build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d006ddc                _DRV_USBFS_DEVICE_IRPQueueFlush
 
 .text._sprintf_cdnopuxX
-                0x9d007514       0x68
+                0x9d006e44       0x68
  .text._sprintf_cdnopuxX
-                0x9d007514       0x68 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sprintf_cdnopuxX.eo)
-                0x9d007514                _sprintf_cdnopuxX
+                0x9d006e44       0x68 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sprintf_cdnopuxX.eo)
+                0x9d006e44                _sprintf_cdnopuxX
 
-.text.wspace    0x9d00757c       0x60
- .text.wspace   0x9d00757c       0x60 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doscan_cdnopuxX.eo)
-
-.text.sitofp    0x9d0075dc       0x60
- .text.sitofp   0x9d0075dc       0x60 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libm.a(sitofp.o)
-                0x9d0075dc                __floatsisf
-                0x9d0075dc                litofp
-                0x9d0075dc                sitofp
+.text.wspace    0x9d006eac       0x60
+ .text.wspace   0x9d006eac       0x60 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(doscan_cdnopuxX.eo)
 
 .text.USB_DEVICE_EndpointEnable
-                0x9d00763c       0x5c
+                0x9d006f0c       0x5c
  .text.USB_DEVICE_EndpointEnable
-                0x9d00763c       0x5c build/default/production/_ext/425215177/usb_device.o
-                0x9d00763c                USB_DEVICE_EndpointEnable
+                0x9d006f0c       0x5c build/default/production/_ext/425215177/usb_device.o
+                0x9d006f0c                USB_DEVICE_EndpointEnable
 
 .text.SYS_CLK_Initialize
-                0x9d007698       0x58
+                0x9d006f68       0x58
  .text.SYS_CLK_Initialize
-                0x9d007698       0x58 build/default/production/_ext/639803181/sys_clk_pic32mx.o
-                0x9d007698                SYS_CLK_Initialize
+                0x9d006f68       0x58 build/default/production/_ext/639803181/sys_clk_pic32mx.o
+                0x9d006f68                SYS_CLK_Initialize
 
 .text.SYS_DEVCON_SystemUnlock
-                0x9d0076f0       0x58
+                0x9d006fc0       0x58
  .text.SYS_DEVCON_SystemUnlock
-                0x9d0076f0       0x58 build/default/production/_ext/340578644/sys_devcon.o
-                0x9d0076f0                SYS_DEVCON_SystemUnlock
+                0x9d006fc0       0x58 build/default/production/_ext/340578644/sys_devcon.o
+                0x9d006fc0                SYS_DEVCON_SystemUnlock
 
 .text.SYS_DEVCON_PerformanceConfig
-                0x9d007748       0x58
+                0x9d007018       0x58
  .text.SYS_DEVCON_PerformanceConfig
-                0x9d007748       0x58 build/default/production/_ext/340578644/sys_devcon_pic32mx.o
-                0x9d007748                SYS_DEVCON_PerformanceConfig
+                0x9d007018       0x58 build/default/production/_ext/340578644/sys_devcon_pic32mx.o
+                0x9d007018                SYS_DEVCON_PerformanceConfig
 
 .text.USB_DEVICE_EventHandlerSet
-                0x9d0077a0       0x58
+                0x9d007070       0x58
  .text.USB_DEVICE_EventHandlerSet
-                0x9d0077a0       0x58 build/default/production/_ext/425215177/usb_device.o
-                0x9d0077a0                USB_DEVICE_EventHandlerSet
+                0x9d007070       0x58 build/default/production/_ext/425215177/usb_device.o
+                0x9d007070                USB_DEVICE_EventHandlerSet
 
 .text.USB_DEVICE_IRPSubmit
-                0x9d0077f8       0x58
+                0x9d0070c8       0x58
  .text.USB_DEVICE_IRPSubmit
-                0x9d0077f8       0x58 build/default/production/_ext/425215177/usb_device.o
-                0x9d0077f8                USB_DEVICE_IRPSubmit
+                0x9d0070c8       0x58 build/default/production/_ext/425215177/usb_device.o
+                0x9d0070c8                USB_DEVICE_IRPSubmit
 
 .text.main_entry
-                0x9d007850       0x54
+                0x9d007120       0x54
  .text.main_entry
-                0x9d007850       0x54 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/./proc/32MX250F128B/crt0_mips32r2.o
-                0x9d007884                __crt0_exit
+                0x9d007120       0x54 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib/./proc/32MX250F128B/crt0_mips32r2.o
+                0x9d007154                __crt0_exit
 
 .text.SYS_INT_SourceDisable
-                0x9d0078a4       0x54
+                0x9d007174       0x54
  .text.SYS_INT_SourceDisable
-                0x9d0078a4       0x54 build/default/production/_ext/813635036/sys_int_pic32.o
-                0x9d0078a4                SYS_INT_SourceDisable
+                0x9d007174       0x54 build/default/production/_ext/813635036/sys_int_pic32.o
+                0x9d007174                SYS_INT_SourceDisable
 
 .text._sscanf_cdnopuxX
-                0x9d0078f8       0x54
+                0x9d0071c8       0x54
  .text._sscanf_cdnopuxX
-                0x9d0078f8       0x54 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sscanf_cdnopuxX.eo)
-                0x9d0078f8                _sscanf_cdnopuxX
+                0x9d0071c8       0x54 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(sscanf_cdnopuxX.eo)
+                0x9d0071c8                _sscanf_cdnopuxX
 
 .text.USB_DEVICE_Detach
-                0x9d00794c       0x50
+                0x9d00721c       0x50
  .text.USB_DEVICE_Detach
-                0x9d00794c       0x50 build/default/production/_ext/425215177/usb_device.o
-                0x9d00794c                USB_DEVICE_Detach
+                0x9d00721c       0x50 build/default/production/_ext/425215177/usb_device.o
+                0x9d00721c                USB_DEVICE_Detach
 
 .text.DRV_USBFS_DEVICE_Detach
-                0x9d00799c       0x4c
+                0x9d00726c       0x4c
  .text.DRV_USBFS_DEVICE_Detach
-                0x9d00799c       0x4c build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d00799c                DRV_USBFS_DEVICE_Detach
+                0x9d00726c       0x4c build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d00726c                DRV_USBFS_DEVICE_Detach
 
 .text.DRV_USBFS_DEVICE_EndpointIsEnabled
-                0x9d0079e8       0x4c
+                0x9d0072b8       0x4c
  .text.DRV_USBFS_DEVICE_EndpointIsEnabled
-                0x9d0079e8       0x4c build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d0079e8                DRV_USBFS_DEVICE_EndpointIsEnabled
+                0x9d0072b8       0x4c build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d0072b8                DRV_USBFS_DEVICE_EndpointIsEnabled
 
 .text.DRV_USBFS_DEVICE_EndpointIsStalled
-                0x9d007a34       0x4c
+                0x9d007304       0x4c
  .text.DRV_USBFS_DEVICE_EndpointIsStalled
-                0x9d007a34       0x4c build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d007a34                DRV_USBFS_DEVICE_EndpointIsStalled
+                0x9d007304       0x4c build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d007304                DRV_USBFS_DEVICE_EndpointIsStalled
 
 .text.USB_DEVICE_Open
-                0x9d007a80       0x4c
+                0x9d007350       0x4c
  .text.USB_DEVICE_Open
-                0x9d007a80       0x4c build/default/production/_ext/425215177/usb_device.o
-                0x9d007a80                USB_DEVICE_Open
+                0x9d007350       0x4c build/default/production/_ext/425215177/usb_device.o
+                0x9d007350                USB_DEVICE_Open
 
 .text._USB_DEVICE_RedirectControlXfrToClient
-                0x9d007acc       0x4c
+                0x9d00739c       0x4c
  .text._USB_DEVICE_RedirectControlXfrToClient
-                0x9d007acc       0x4c build/default/production/_ext/425215177/usb_device.o
-                0x9d007acc                _USB_DEVICE_RedirectControlXfrToClient
+                0x9d00739c       0x4c build/default/production/_ext/425215177/usb_device.o
+                0x9d00739c                _USB_DEVICE_RedirectControlXfrToClient
 
 .text._USB_DEVICE_CDC_EndpointDisable
-                0x9d007b18       0x4c
+                0x9d0073e8       0x4c
  .text._USB_DEVICE_CDC_EndpointDisable
-                0x9d007b18       0x4c build/default/production/_ext/425215177/usb_device_cdc.o
-                0x9d007b18                _USB_DEVICE_CDC_EndpointDisable
+                0x9d0073e8       0x4c build/default/production/_ext/425215177/usb_device_cdc.o
+                0x9d0073e8                _USB_DEVICE_CDC_EndpointDisable
 
 .text.SYS_DEVCON_SystemLock
-                0x9d007b64       0x48
+                0x9d007434       0x48
  .text.SYS_DEVCON_SystemLock
-                0x9d007b64       0x48 build/default/production/_ext/340578644/sys_devcon.o
-                0x9d007b64                SYS_DEVCON_SystemLock
+                0x9d007434       0x48 build/default/production/_ext/340578644/sys_devcon.o
+                0x9d007434                SYS_DEVCON_SystemLock
 
 .text.USB_DEVICE_Attach
-                0x9d007bac       0x48
+                0x9d00747c       0x48
  .text.USB_DEVICE_Attach
-                0x9d007bac       0x48 build/default/production/_ext/425215177/usb_device.o
-                0x9d007bac                USB_DEVICE_Attach
+                0x9d00747c       0x48 build/default/production/_ext/425215177/usb_device.o
+                0x9d00747c                USB_DEVICE_Attach
 
 .text.USB_DEVICE_EndpointDisable
-                0x9d007bf4       0x48
+                0x9d0074c4       0x48
  .text.USB_DEVICE_EndpointDisable
-                0x9d007bf4       0x48 build/default/production/_ext/425215177/usb_device.o
-                0x9d007bf4                USB_DEVICE_EndpointDisable
+                0x9d0074c4       0x48 build/default/production/_ext/425215177/usb_device.o
+                0x9d0074c4                USB_DEVICE_EndpointDisable
 
 .text.USB_DEVICE_ControlReceive
-                0x9d007c3c       0x48
+                0x9d00750c       0x48
  .text.USB_DEVICE_ControlReceive
-                0x9d007c3c       0x48 build/default/production/_ext/425215177/usb_device.o
-                0x9d007c3c                USB_DEVICE_ControlReceive
+                0x9d00750c       0x48 build/default/production/_ext/425215177/usb_device.o
+                0x9d00750c                USB_DEVICE_ControlReceive
 
 .text.USB_DEVICE_IRPCancelAll
-                0x9d007c84       0x48
+                0x9d007554       0x48
  .text.USB_DEVICE_IRPCancelAll
-                0x9d007c84       0x48 build/default/production/_ext/425215177/usb_device.o
-                0x9d007c84                USB_DEVICE_IRPCancelAll
+                0x9d007554       0x48 build/default/production/_ext/425215177/usb_device.o
+                0x9d007554                USB_DEVICE_IRPCancelAll
 
 .text._bootstrap_exception_handler
-                0x9d007ccc       0x48
+                0x9d00759c       0x48
  .text._bootstrap_exception_handler
-                0x9d007ccc       0x48 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
-                0x9d007ccc                _bootstrap_exception_handler
+                0x9d00759c       0x48 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+                0x9d00759c                _bootstrap_exception_handler
 
 .vector_default
-                0x9d007d14       0x48
+                0x9d0075e4       0x48
  .vector_default
-                0x9d007d14       0x48 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
-                0x9d007d14                _DefaultInterrupt
+                0x9d0075e4       0x48 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+                0x9d0075e4                _DefaultInterrupt
 
 .text.DRV_USBFS_Open
-                0x9d007d5c       0x44
+                0x9d00762c       0x44
  .text.DRV_USBFS_Open
-                0x9d007d5c       0x44 build/default/production/_ext/1929468124/drv_usbfs.o
-                0x9d007d5c                DRV_USBFS_Open
+                0x9d00762c       0x44 build/default/production/_ext/1929468124/drv_usbfs.o
+                0x9d00762c                DRV_USBFS_Open
 
-.text           0x9d007da0       0x44
- .text          0x9d007da0       0x44 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\pic32_software_reset.o
-                0x9d007da0                __pic32_software_reset
+.text           0x9d007670       0x44
+ .text          0x9d007670       0x44 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\pic32_software_reset.o
+                0x9d007670                __pic32_software_reset
 
 .text._general_exception_handler
-                0x9d007de4       0x40
+                0x9d0076b4       0x40
  .text._general_exception_handler
-                0x9d007de4       0x40 build/default/production/_ext/1688732426/system_exceptions.o
-                0x9d007de4                _general_exception_handler
+                0x9d0076b4       0x40 build/default/production/_ext/1688732426/system_exceptions.o
+                0x9d0076b4                _general_exception_handler
 
 .text.APP_StateReset
-                0x9d007e24       0x40
+                0x9d0076f4       0x40
  .text.APP_StateReset
-                0x9d007e24       0x40 build/default/production/_ext/1360937237/app.o
-                0x9d007e24                APP_StateReset
+                0x9d0076f4       0x40 build/default/production/_ext/1360937237/app.o
+                0x9d0076f4                APP_StateReset
 
 .text.USB_DEVICE_CDC_EventHandlerSet
-                0x9d007e64       0x38
+                0x9d007734       0x38
  .text.USB_DEVICE_CDC_EventHandlerSet
-                0x9d007e64       0x38 build/default/production/_ext/425215177/usb_device_cdc.o
-                0x9d007e64                USB_DEVICE_CDC_EventHandlerSet
+                0x9d007734       0x38 build/default/production/_ext/425215177/usb_device_cdc.o
+                0x9d007734                USB_DEVICE_CDC_EventHandlerSet
 
 .text.DRV_USBFS_DEVICE_SOFNumberGet
-                0x9d007e9c       0x34
+                0x9d00776c       0x34
  .text.DRV_USBFS_DEVICE_SOFNumberGet
-                0x9d007e9c       0x34 build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d007e9c                DRV_USBFS_DEVICE_SOFNumberGet
+                0x9d00776c       0x34 build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d00776c                DRV_USBFS_DEVICE_SOFNumberGet
 
 .text.SYS_Tasks
-                0x9d007ed0       0x2c
+                0x9d0077a0       0x2c
  .text.SYS_Tasks
-                0x9d007ed0       0x2c build/default/production/_ext/1688732426/system_tasks.o
-                0x9d007ed0                SYS_Tasks
+                0x9d0077a0       0x2c build/default/production/_ext/1688732426/system_tasks.o
+                0x9d0077a0                SYS_Tasks
 
 .text.DRV_USBFS_Close
-                0x9d007efc       0x2c
+                0x9d0077cc       0x2c
  .text.DRV_USBFS_Close
-                0x9d007efc       0x2c build/default/production/_ext/1929468124/drv_usbfs.o
-                0x9d007efc                DRV_USBFS_Close
+                0x9d0077cc       0x2c build/default/production/_ext/1929468124/drv_usbfs.o
+                0x9d0077cc                DRV_USBFS_Close
 
 .text._DRV_USBFS_DEVICE_Initialize
-                0x9d007f28       0x2c
+                0x9d0077f8       0x2c
  .text._DRV_USBFS_DEVICE_Initialize
-                0x9d007f28       0x2c build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d007f28                _DRV_USBFS_DEVICE_Initialize
+                0x9d0077f8       0x2c build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d0077f8                _DRV_USBFS_DEVICE_Initialize
 
 .text.DRV_USBFS_DEVICE_AddressSet
-                0x9d007f54       0x28
+                0x9d007824       0x28
  .text.DRV_USBFS_DEVICE_AddressSet
-                0x9d007f54       0x28 build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d007f54                DRV_USBFS_DEVICE_AddressSet
+                0x9d007824       0x28 build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d007824                DRV_USBFS_DEVICE_AddressSet
 
 .text.DRV_USBFS_DEVICE_RemoteWakeupStart
-                0x9d007f7c       0x28
+                0x9d00784c       0x28
  .text.DRV_USBFS_DEVICE_RemoteWakeupStart
-                0x9d007f7c       0x28 build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d007f7c                DRV_USBFS_DEVICE_RemoteWakeupStart
+                0x9d00784c       0x28 build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d00784c                DRV_USBFS_DEVICE_RemoteWakeupStart
 
 .text.DRV_USBFS_DEVICE_RemoteWakeupStop
-                0x9d007fa4       0x28
+                0x9d007874       0x28
  .text.DRV_USBFS_DEVICE_RemoteWakeupStop
-                0x9d007fa4       0x28 build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d007fa4                DRV_USBFS_DEVICE_RemoteWakeupStop
+                0x9d007874       0x28 build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d007874                DRV_USBFS_DEVICE_RemoteWakeupStop
 
 .text._USB_DEVICE_ClientHandleValidate
-                0x9d007fcc       0x28
+                0x9d00789c       0x28
  .text._USB_DEVICE_ClientHandleValidate
-                0x9d007fcc       0x28 build/default/production/_ext/425215177/usb_device.o
-                0x9d007fcc                _USB_DEVICE_ClientHandleValidate
+                0x9d00789c       0x28 build/default/production/_ext/425215177/usb_device.o
+                0x9d00789c                _USB_DEVICE_ClientHandleValidate
 
-.text.tolower   0x9d007ff4       0x24
- .text.tolower  0x9d007ff4       0x24 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ctypef.o)
-                0x9d007ff4                tolower
+.text.tolower   0x9d0078c4       0x24
+ .text.tolower  0x9d0078c4       0x24 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libc.a(ctypef.o)
+                0x9d0078c4                tolower
 
-.text.main      0x9d008018       0x20
- .text.main     0x9d008018       0x20 build/default/production/_ext/1360937237/main.o
-                0x9d008018                main
+.text.main      0x9d0078e8       0x20
+ .text.main     0x9d0078e8       0x20 build/default/production/_ext/1360937237/main.o
+                0x9d0078e8                main
 
 .text._USB_DEVICE_CDC_GlobalInitialize
-                0x9d008038       0x20
+                0x9d007908       0x20
  .text._USB_DEVICE_CDC_GlobalInitialize
-                0x9d008038       0x20 build/default/production/_ext/425215177/usb_device_cdc.o
-                0x9d008038                _USB_DEVICE_CDC_GlobalInitialize
+                0x9d007908       0x20 build/default/production/_ext/425215177/usb_device_cdc.o
+                0x9d007908                _USB_DEVICE_CDC_GlobalInitialize
 
 .text.SYS_INT_StatusGetAndDisable
-                0x9d008058       0x1c
+                0x9d007928       0x1c
  .text.SYS_INT_StatusGetAndDisable
-                0x9d008058       0x1c build/default/production/_ext/813635036/sys_int_pic32.o
-                0x9d008058                SYS_INT_StatusGetAndDisable
+                0x9d007928       0x1c build/default/production/_ext/813635036/sys_int_pic32.o
+                0x9d007928                SYS_INT_StatusGetAndDisable
 
 .text.SYS_INT_StatusRestore
-                0x9d008074       0x1c
+                0x9d007944       0x1c
  .text.SYS_INT_StatusRestore
-                0x9d008074       0x1c build/default/production/_ext/813635036/sys_int_pic32.o
-                0x9d008074                SYS_INT_StatusRestore
+                0x9d007944       0x1c build/default/production/_ext/813635036/sys_int_pic32.o
+                0x9d007944                SYS_INT_StatusRestore
 
-.rodata         0x9d008090       0x18
- .rodata        0x9d008090       0x18 build/default/production/_ext/1360937237/app.o
+.rodata         0x9d007960       0x18
+ .rodata        0x9d007960       0x18 build/default/production/_ext/1360937237/app.o
 
-.text           0x9d0080a8       0x18
- .text          0x9d0080a8       0x18 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
-                0x9d0080a8                _nmi_handler
+.text           0x9d007978       0x18
+ .text          0x9d007978       0x18 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
+                0x9d007978                _nmi_handler
 
 .text.SYS_DEVCON_Initialize
-                0x9d0080c0       0x14
+                0x9d007990       0x14
  .text.SYS_DEVCON_Initialize
-                0x9d0080c0       0x14 build/default/production/_ext/340578644/sys_devcon.o
-                0x9d0080c0                SYS_DEVCON_Initialize
+                0x9d007990       0x14 build/default/production/_ext/340578644/sys_devcon.o
+                0x9d007990                SYS_DEVCON_Initialize
 
 .text.DRV_USBFS_DEVICE_CurrentSpeedGet
-                0x9d0080d4       0x14
+                0x9d0079a4       0x14
  .text.DRV_USBFS_DEVICE_CurrentSpeedGet
-                0x9d0080d4       0x14 build/default/production/_ext/1929468124/drv_usbfs_device.o
-                0x9d0080d4                DRV_USBFS_DEVICE_CurrentSpeedGet
+                0x9d0079a4       0x14 build/default/production/_ext/1929468124/drv_usbfs_device.o
+                0x9d0079a4                DRV_USBFS_DEVICE_CurrentSpeedGet
 
 .text.SYS_INT_Initialize
-                0x9d0080e8       0x14
+                0x9d0079b8       0x14
  .text.SYS_INT_Initialize
-                0x9d0080e8       0x14 build/default/production/_ext/813635036/sys_int_pic32.o
-                0x9d0080e8                SYS_INT_Initialize
+                0x9d0079b8       0x14 build/default/production/_ext/813635036/sys_int_pic32.o
+                0x9d0079b8                SYS_INT_Initialize
 
-.rodata         0x9d0080fc       0x24
- .rodata        0x9d0080fc       0x14 build/default/production/_ext/425215177/usb_device_cdc.o
-                0x9d0080fc                cdcFunctionDriver
- .rodata        0x9d008110       0x10 build/default/production/_ext/1688732426/system_interrupt.o
+.rodata         0x9d0079cc       0x14
+ .rodata        0x9d0079cc       0x14 build/default/production/_ext/425215177/usb_device_cdc.o
+                0x9d0079cc                cdcFunctionDriver
 
 .text.SYS_CLK_SystemFrequencyGet
-                0x9d008120        0xc
+                0x9d0079e0        0xc
  .text.SYS_CLK_SystemFrequencyGet
-                0x9d008120        0xc build/default/production/_ext/639803181/sys_clk_pic32mx.o
-                0x9d008120                SYS_CLK_SystemFrequencyGet
+                0x9d0079e0        0xc build/default/production/_ext/639803181/sys_clk_pic32mx.o
+                0x9d0079e0                SYS_CLK_SystemFrequencyGet
 
 .text.DRV_USBFS_Tasks
-                0x9d00812c        0x8
+                0x9d0079ec        0x8
  .text.DRV_USBFS_Tasks
-                0x9d00812c        0x8 build/default/production/_ext/1929468124/drv_usbfs.o
-                0x9d00812c                DRV_USBFS_Tasks
+                0x9d0079ec        0x8 build/default/production/_ext/1929468124/drv_usbfs.o
+                0x9d0079ec                DRV_USBFS_Tasks
 
 .text._on_reset
-                0x9d008134        0x8
+                0x9d0079f4        0x8
  .text._on_reset
-                0x9d008134        0x8 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
-                0x9d008134                _on_reset
+                0x9d0079f4        0x8 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+                0x9d0079f4                _on_reset
 
 .text._on_bootstrap
-                0x9d00813c        0x8
+                0x9d0079fc        0x8
  .text._on_bootstrap
-                0x9d00813c        0x8 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
-                0x9d00813c                _on_bootstrap
+                0x9d0079fc        0x8 c:/program files (x86)/microchip/xc32/v2.05/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+                0x9d0079fc                _on_bootstrap

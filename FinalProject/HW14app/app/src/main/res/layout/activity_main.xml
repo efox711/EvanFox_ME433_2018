@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -13,17 +17,51 @@
         android:orientation="vertical"
         android:visibility="visible">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nothing yet"
+            android:id="@+id/cameraStatus"/>
+
+        <SurfaceView
+            android:id="@+id/surfaceview"
+            android:layout_width="640px"
+            android:layout_height="480px" />
+
+        <SeekBar
+            android:id="@+id/seek1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:progress="20"
+            android:secondaryProgress="20" />
+
+
+        <TextView
+            android:id="@+id/textView01"
+            android:text="initial value "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextureView
+            android:id="@+id/textureview"
+            android:layout_width="640px"
+            android:layout_height="480px" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="   HW14   "
+        android:text="   FINALPROJECT   "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
         <SeekBar
-            android:id="@+id/seek1"
+            android:id="@+id/seek2"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -34,7 +72,7 @@
             />
 
         <TextView
-            android:id="@+id/textView01"
+            android:id="@+id/textView04"
             android:text="initial value "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -68,5 +106,6 @@
         </ScrollView>
 
     </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
